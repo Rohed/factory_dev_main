@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+       
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <style>
+    .col{
+     min-height: 400px;
+     }
+     .cusblock{
+     display:none;
+     }
+     #customers{
+     display:inline-block;
+     }
+    </style>
+  </head>
+<body>
+   <div class='container-flexible'>
+      <div class="row">
+         <div class="col-3">
+            <div class="row">
+               <div class="col" id='logo'>
+                  <!-- LOGO here -->
+                  <img src="https://drive.google.com/uc?export=view&id=<?= LOGOIMG?>">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col" id='customers'>
+                  <!-- Customer Dropdown here -->
+                  <b>Customer</b>
+                  <div id='custdropdown'></div>
+                
+                   <input  class="form-control"  id="custNAME" placeholder='Name' style="display:none;" />
+                     <input  class="form-control"  id="custADDRESS" placeholder='Address'  style="display:none;"  />
+               </div>
+                <div class="col" >
+                  <b>Order ID</b>
+                <div class="input-group">
+                        <input type="text" class="form-control" name="orderID" id="orderID" placeholder="Order ID" />
+                     </div>
+                </div>
+            </div>
+         </div>
+         <div class="col-6">
+            <div class="row" >
+               <div class="col">
+                  <!-- Address Generator here -->
+                  <div  id='addresses'>
+               <!--   <table>
+                   <tr> <td>Street:</td><td><div class="input-group"><input type="text" id="Street" class="form-control"  aria-describedby="sizing-addon2"></div></td></tr>
+                   <tr> <td>City:</td><td><div class="input-group"><input type="text" id="City" class="form-control"  aria-describedby="sizing-addon2"></div></td></tr>
+                   <tr> <td>Town:</td><td><div class="input-group"><input type="text" id="Town" class="form-control"  aria-describedby="sizing-addon2"></div></td></tr>
+                   <tr> <td>Post Code:</td><td><div class="input-group"><input type="text" id="Zip" class="form-control"  aria-describedby="sizing-addon2"></div></td></tr>
+                  </table>-->
+                  </div>
+               </div>
+            </div>
+            <div class="row" >
+               <div class="col"  id='forms'>
+                  <!-- form body here -->
+                  <div id='pageBody'>
+                  </div>
+               </div>
+            </div>   
+               <div class="row">
+                  <div class="col" >
+                     <button id='subModalForm' type="button" class="btn btn-primary" >Submit</button>
+                  </div>
+               </div>
+         
+         </div>
+         <div class="col-3">
+          <div class="row">
+                  <div class="col" >
+            <!-- Date here -->
+            <b>Order Date</b>
+            <div class="input-group"><input type="date" id="orderDate" class="form-control" placeholder="Order Date" aria-describedby="sizing-addon2"></div>
+         </div>
+      </div>
+     </div>
+  </div>
+  </div>
+</body>
+  
+  
+  <script>
+  
+  var PCDROP=[];
+  var PDDROP=[];
+  var pcINPARR=[];
+  var pdINPARR=[];
+ google.script.run.withSuccessHandler(setOrderID).getNewOrderID();
+ function setOrderID(orderID){
+ console.log(orderID);
+ $('#orderID').val(orderID);
+    $('#orderDate').val( (new Date()).toISOString().split('T')[0]);
+
+ 
+ }
+function autofillFORM(data){
+
+if(data.recipe){
+
+if(data.type=='PC'){
+$('#PD'+data.num).val(data.descr);
+}else{
+$('#PC'+data.num).val(data.prod);
+}
+$('#brandSelect'+data.num).val(data.brandSKU);
+$('#flavourSelect'+data.num).val(data.flavour.sku);
+$('#recipeSelect'+data.num).val(data.recipe.name);
+$('#recipeSelect'+data.num).attr('key',data.recipe.id);
+$('#bottleType'+data.num).val(data.botSKU);
+$('#lidType'+data.num).val(data.lidSKU);
+//$('#packagingType'+data.num).val(data.packagingType);
+$("select[name='packagingType"+data.num+"']").find("option[value='"+data.packagingType.sku+"']").attr("selected",true);
+
+}
+
+}
+
+
+function searchFOR(event){
+  var id=$(event).attr('typ');
+var num=$(event).attr('num');
+console.log('searchFOR');
+ 
+
+     if(id=='PC'){
+     var val=document.getElementById(pcINPARR[parseInt(num,10)-1][0]).value;
+     }else{
+     var val=document.getElementById(pdINPARR[parseInt(num,10)-1][0]).value;
+     }
+     console.log(val,id,num);
+            google.script.run.withSuccessHandler(autofillFORM).getFormDataSingle(val,id,num);
+
+  
+
+}
+function presetVAL(event){
+  var id=$(event).attr('typ');
+var num=$(event).attr('num');
+console.log('keyup');
+
+    if(id=='PC'){
+    setVal3(event,pcINPARR[parseInt(num,10)-1][2],document.getElementById(pcINPARR[parseInt(num,10)-1][0]),pcINPARR[parseInt(num,10)-1][1]);
+    }else{
+    setVal3(event,pdINPARR[parseInt(num,10)-1][2],document.getElementById(pdINPARR[parseInt(num,10)-1][0]),pdINPARR[parseInt(num,10)-1][1]);
+    
+    
+  
+  }
+}
+
+
+RegExp.escape = function (s) {
+    return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};
+function show3(event) {
+
+ 
+  var id=$(event).attr('typ');
+   var num=$(event).attr('num');
+  console.log(id);
+  if(id=='PC'){
+  var drop=pcINPARR[parseInt(num,10)-1][2];
+  var opt=document.getElementById(pcINPARR[parseInt(num,10)-1][1]);
+  var inp=document.getElementById(pcINPARR[parseInt(num,10)-1][0]);
+  var arr=PCDROP;
+  }else if(id=='PD'){
+  var drop=pdINPARR[parseInt(num,10)-1][2];
+  var opt=document.getElementById(pdINPARR[parseInt(num,10)-1][1]);
+  var inp=document.getElementById(pdINPARR[parseInt(num,10)-1][0]);
+  var arr=PDDROP;
+  }
+console.log(drop);
+//document.getElementById('list1').style.display = 'block';
+    var dropdown = document.getElementById(drop);
+    dropdown.style.display = 'none';
+
+    opt.options.length = 0;
+
+    if (inp.value) {
+        dropdown.style.display = 'block';
+        opt.size = 3;
+        var textCountry = inp.value;
+
+        for (var i = 0; i < arr.length; i++) {
+            var testableRegExp = new RegExp(RegExp.escape(textCountry), "i");
+            if (String(arr[i]).match(testableRegExp)) {
+                addValue3(arr[i], arr[i],opt);
+
+            }
+        }
+        
+        var size = dropdown.children[0].children;
+        if (size.length > 0)
+        {
+           var defaultSize = 16;
+           if (size.length < 10)
+           {
+              defaultSize *= size.length;
+           }
+           else
+           {
+              defaultSize *= 10;
+           }
+           dropdown.children[0].style.height = defaultSize + "px";
+        }
+        
+    }
+}
+
+function addValue3(text, val,option) {
+    var createOptions = document.createElement('option');
+    option.appendChild(createOptions);
+    createOptions.text = text;
+    createOptions.value = val;
+}
+
+//Settin the value in the box by firing the click event
+function setVal3(selectedVal,dropdown,inp,type) {
+
+    inp.value = selectedVal.value;
+      $(".dropdowns").hide();
+     inp.click();
+}
+
+  var formdata;
+  var numrows=1;
+
+    var orders=[];
+
+        google.script.run.withSuccessHandler(buildForm).getFormData();
+
+
+    function buildForm(data) {
+    for(var i=0;i<data.PC.length;i++){
+    PCDROP.push(data.PC[i].prod);
+     
+    }
+        for(var i=0;i<data.PD.length;i++){
+    PDDROP.push(data.PD[i].descr);
+     
+    }
+
+       formdata=data;
+       
+       
+       
+        var custhtml='';
+        
+        var customerSelect = '<option id="blanl" value=""></option>';
+        for (var i = 0; i < data.customers.length; i++) {
+            customerSelect += '<option value="' + data.customers[i].sku + '">' + data.customers[i].name + '<option>';
+        }
+       customerSelect +=  '<option value="New Customer" >New Customer<option>';
+       custhtml+= '<select class="form-control" id="customerSelect" onChange="checkifNewCustomer(this)">' + customerSelect + '</select>';
+      
+      
+   
+        var html = '';
+
+        html += '<table class="form_table" id="formvals">';
+        html += '<tr><td><b>Product Code</b></td><td><b>Product Description</b></td><td><b>Brand</b></td><td><b>Flavour</b></td><td><b>Recipe</b></td><td><b>Bottle Type</b></td><td><b>Lid Type</b></td><td><b>Packaging Tube</b></td><td><b>Bottles</b></td><td><b>Pre Printed Bottle Labels</b></td><td><b>Pre Printed Pack Labels</b></td></tr>';
+        html += '<tr>';
+
+       
+     html += '<td><div class="input-group"><input autocomplete="on"  typ="PC" class="form-control" id="PC1" num="1" placeholder="Product Code" aria-describedby="sizing-addon2"  onclick="searchFOR(this);" onkeyup="show3(this)"/></div>';
+      html += '<div class="dropdowns"  id="dropdownC1">';
+      html += '<select typ="PC" num="1" name="listC1" id="listC1" onclick="presetVAL(this);"></select>';
+      html += '</div></td>';
+      
+      html += '<td><div class="input-group"><input autocomplete="on" typ="PD" class="form-control" id="PD1" num="1"  placeholder="Product Description" aria-describedby="sizing-addon2"  onclick="searchFOR(this);"  onkeyup="show3(this)"/></div>';
+      html += '<div  class="dropdowns" id="dropdownP1">';
+      html += '<select typ="PD" num="1" name="listD1" id="listD1"  onclick="presetVAL(this);"></select>';
+      html += '</div></td>';
+
+        var brandSelect = '<option id="blanc" value=""></option>';
+        for (var i = 0; i < data.brands.length; i++) {
+            brandSelect += '<option value="' + data.brands[i].sku + '">' + data.brands[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" id="brandSelect1">' + brandSelect + '</select></td>';
+
+
+        var flavourSelect = '<option id="blanc" value=""></option>';
+        for (var i = 0; i < data.flavours.length; i++) {
+            flavourSelect += '<option value="' + data.flavours[i].sku + '">' + data.flavours[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" id="flavourSelect1">' + flavourSelect + '</select></td>';
+
+        var recipeSelect = '<option id="blanc" value=""></option>';
+        for (var i = 0; i < data.recipes.length; i++) {
+            recipeSelect += '<option id="' + data.recipes[i][1] + '" value="' + data.recipes[i][0] + '" key="' + data.recipes[i][1] + '">' + data.recipes[i][0] + '<option>';
+        }
+
+        html += '<td><select class="form-control" id="recipeSelect1">' + recipeSelect + '</select></td>';
+
+       
+        var bottleSelect = '<option id="blanc" value=""></option>';
+        for (var i = 0; i < data.bottletypes.length; i++) {
+            bottleSelect += '<option value="' + data.bottletypes[i].sku + '">' + data.bottletypes[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" id="bottleType1">' + bottleSelect + '</select></td>';
+
+        var lidSelect = '<option id="blanc" value=""></option>';
+        for (var i = 0; i < data.lids.length; i++) {
+            lidSelect += '<option value="' + data.lids[i].sku + '">' + data.lids[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" id="lidType1">' + lidSelect + '</select></td>';
+
+
+        var packagingSelect = '<option id="blanl" value=""></option>';
+        for (var i = 0; i < data.packagings.length; i++) {
+            packagingSelect += '<option id="' + data.packagings[i].sku + '" value="' + data.packagings[i].sku + '">' + data.packagings[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" name="packagingType1" id="packagingType1">' + packagingSelect + '</select></td>';
+        
+       html += '<td><div class="input-group"><input type="text" id="numBottles1" class="form-control" placeholder="Bottles" aria-describedby="sizing-addon2"></div></td>';
+      html += '<td><div class="form-check"><input type="checkbox"  id="prePrintedBottleLabels1"/></div></td><td><div class="form-check"><input type="checkbox"  id="prePrintedPackLabels1"/></div></td>';
+
+        html += '<td><button class="btn btn-primary" id="savebtn1" onclick="newrow(this)" type="button"><i class="fa fa-plus-square" aria-hidden="true"></i></button></td></tr></table>';
+
+        $('#pageBody').html(html);
+        $('#custdropdown').html(custhtml);
+        
+  pcINPARR.push(['PC1','listC1','dropdownC1',]);
+ pdINPARR.push(['PD1','listD1','dropdownP1',]);
+
+        
+    }
+
+function newrow(e) {
+ console.log(numrows);
+ numrows++;
+ 
+ var data=formdata;
+
+        var html = '';
+
+
+      
+        html += '<tr>';
+ 
+ 
+        
+     html += '<td><div class="input-group"><input autocomplete="on"  typ="PC" class="form-control" id="PC'+numrows+'" num="'+numrows+'" placeholder="Product Code" aria-describedby="sizing-addon2" onclick="searchFOR(this);"  onkeyup="show3(this)"/></div>';
+      html += '<div class="dropdowns"  id="dropdownC'+numrows+'">';
+      html += '<select typ="PC" num="'+numrows+'" name="listC'+numrows+'" id="listC'+numrows+'"  onclick="presetVAL(this);"></select>';
+      html += '</div></td>';
+      
+      html += '<td><div class="input-group"><input autocomplete="on" typ="PD" class="form-control" id="PD'+numrows+'" num="'+numrows+'"  placeholder="Product Description" aria-describedby="sizing-addon2" onclick="searchFOR(this);"   onkeyup="show3(this)"/></div>';
+      html += '<div class="dropdowns"  id="dropdownP'+numrows+'">';
+      html += '<select typ="PD" num="'+numrows+'"  name="listD'+numrows+'" id="listD'+numrows+'"  onclick="presetVAL(this);"></select>';
+      html += '</div></td>';
+      
+      
+        var brandSelect = '<option id="blanl" value=""></option>';
+        for (var i = 0; i < data.brands.length; i++) {
+            brandSelect += '<option value="' + data.brands[i].sku + '">' + data.brands[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" id="brandSelect'+numrows+'">' + brandSelect + '</select></td>';
+
+
+      
+        var flavourSelect = '<option id="blanl" value=""></option>';
+        for (var i = 0; i < data.flavours.length; i++) {
+            flavourSelect += '<option value="' + data.flavours[i].sku + '">' + data.flavours[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" id="flavourSelect'+numrows+'">' + flavourSelect + '</select></td>';
+
+        var recipeSelect = '<option id="blanl" value=""></option>';
+        for (var i = 0; i < data.recipes.length; i++) {
+            recipeSelect += '<option id="' + data.recipes[i][1]+ '" value="' + data.recipes[i][0] + '" key="' + data.recipes[i][1] + '" >' + data.recipes[i][0] + '<option>';
+        }
+
+        html += '<td><select class="form-control" id="recipeSelect'+numrows+'">' + recipeSelect + '</select></td>';
+
+
+
+       
+        var bottleSelect = '<option id="blanl" value=""></option>';
+        for (var i = 0; i < data.bottletypes.length; i++) {
+            bottleSelect += '<option value="' + data.bottletypes[i].sku + '">' + data.bottletypes[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" id="bottleType'+numrows+'">' + bottleSelect + '</select></td>';
+
+        var lidSelect = '<option id="blanl" value=""></option>';
+        for (var i = 0; i < data.lids.length; i++) {
+            lidSelect += '<option value="' + data.lids[i].sku + '">' + data.lids[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" id="lidType'+numrows+'">' + lidSelect + '</select></td>';
+
+
+        var packagingSelect = '<option id="blanl" value=""></option>';
+        for (var i = 0; i < data.packagings.length; i++) {
+            packagingSelect += '<option id="' + data.packagings[i].sku + '" value="' + data.packagings[i].sku + '">' + data.packagings[i].name + '<option>';
+        }
+        html += '<td><select class="form-control" name="packagingType'+numrows+'" id="packagingType'+numrows+'">' + packagingSelect + '</select></td>';
+        
+        html += '<td><div class="input-group"><input type="text" id="numBottles'+numrows+'" class="form-control" placeholder="Bottles" aria-describedby="sizing-addon2"></div></td>';
+      html += '<td><div class="form-check"><input type="checkbox"  id="prePrintedBottleLabels'+numrows+'"/></div></td><td><div class="form-check"><input type="checkbox"  id="prePrintedPackLabels'+numrows+'"/></div></td>';        
+        
+        html += '<td><button class="btn btn-primary" id="savebtn'+numrows+'"  onclick="newrow()" type="button"><i class="fa fa-plus-square" aria-hidden="true"></i></button></td></tr>';
+
+        $('#formvals').append(html);
+         
+
+         
+  pcINPARR.push(['PC'+numrows,'listC'+numrows,'dropdownC'+numrows,]);
+ pdINPARR.push(['PD'+numrows,'listD'+numrows,'dropdownP'+numrows,]);
+
+      
+
+ $('#savebtn'+(numrows-1)).css('display','none');
+ 
+ }
+
+    $('#subModalForm').on('click', function(e) {
+    
+    var orders=[];
+      for(var i=0;i<numrows;i++){
+      var productcode= $('#PC'+(i+1)).val();
+      if(productcode){
+        var date = $('#orderDate').val();
+        var batch = '';
+        var orderID=$('#orderID').val();
+        
+        var productdescription= $('#PD'+(i+1)).val();
+        var priority = '';
+        if(!newCUSTSelected){
+        var customerSKU = $('#customerSelect').val();
+        var customerSelect= $('#customerSelect option:selected').text();
+        }else{
+        var customerSelect = $('#custNAME').val();
+        var customerAddress= $('#custADDRESS').val();
+       
+        }
+        var brandSKU = $('#brandSelect'+(i+1)).val();
+        var brandSelect= $('#brandSelect'+(i+1)+' option:selected').text();
+        
+        var recipeKey = $('option:selected', '#recipeSelect'+(i+1)).attr('key');
+        
+        var recipeName = $('#recipeSelect'+(i+1)).val();
+        var type = $('option:selected', '#recipeSelect').attr('type');
+        var flavourSelect = $('#flavourSelect'+(i+1)).val();
+        var flavourName= $('#flavourSelect'+(i+1)+' option:selected').text();
+        
+        
+        var numBottles = $('#numBottles'+(i+1)).val();
+        numBottles = parseInt(numBottles, 10);
+        var stocking = 0;
+        
+        var botSKU = $('#bottleType'+(i+1)).val();
+        var bottleType= $('#bottleType'+(i+1)+' option:selected').text();
+        
+        var lidSKU = $('#lidType'+(i+1)).val();
+        var lidType= $('#lidType'+(i+1)+' option:selected').text();
+        var packagingTypesku = $('#packagingType'+(i+1)).val();
+        var packagingTypename= $('#packagingType'+(i+1)+' option:selected').text();
+
+    /*    
+        var Street=$('#Street').val();
+        var City=$('#City').val();
+        var Town=$('#Town').val();
+        var Zip=$('#Zip').val();
+        */
+//var Location=Street+' '+City+' '+Town+' '+Zip;
+
+        var object = {
+            orderID:orderID,
+            productcode:productcode,
+            productdescription:productdescription,
+            orderdate: date,
+            batch: batch,
+            priority: priority,
+            customer: customerSelect,
+               customerSKU: customerSKU,
+            recipe: {
+                id: '',
+                name: '',
+            },
+            brand: brandSelect,
+             brandSKU: brandSKU,
+            flavour: {
+            sku:'',
+            name:'',
+            },
+            bottles: numBottles,
+            stocking: stocking,
+            btype: bottleType,
+            lid: lidType,
+            botSKU: botSKU,
+            lidSKU: lidSKU,
+    
+          packagingType:{
+          sku:'',
+          name:'',
+          
+          },
+          ppp:$('#prePrintedBottleLabels'+(i+1)).is(":checked"),
+          ppb:$('#prePrintedPackLabels'+(i+1)).is(":checked"),
+        };
+
+
+        object.packagingType.sku=packagingTypesku;
+        object.packagingType.name=packagingTypename;
+        object.recipe.name = recipeName;
+        object.recipe.id = recipeKey;
+        object.flavour.name = flavourName;
+        object.flavour.sku = flavourSelect;
+        if(newCUSTSelected){
+        object.createCustomer=true;
+        object.cust={
+        
+        name:customerSelect,
+        address:customerAddress,
+        }
+       
+        }
+        orders.push(object);
+        }
+        }
+        google.script.run.withSuccessHandler(newOrderSuccess).saveOrderArray(orders);
+
+
+
+    });
+
+    function newOrderSuccess(e) {
+       
+        alert(e);
+
+    }
+  
+  var newCUSTSelected=false;
+ function checkifNewCustomer(event){
+var value = $(event).val();
+if(value=='New Customer'){
+
+$(event).hide();
+newCUSTSelected=true;
+$("#custADDRESS").css('display','inline-block');
+$("#custNAME").css('display','inline-block');
+}
+} 
+  
+  </script>
+</html>
+
+

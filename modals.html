@@ -1,0 +1,1991 @@
+<div id="checkBatches" class="modal fade bd-example-modal-lg" aria-labelledby="myLargeModalLabel" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content modallarge" id="checkdiv">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-bodyc" id='checkBatchesBody'>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="htmlMSGmodal" class="modal fade bd-example-modal" aria-labelledby="myLargeModalLabel" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content" style='width:1400px; height:90%; left: -300px;'>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="htmlMSGmodalbody">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="myModal" class="modal fade bd-example-modal-lg" aria-labelledby="myLargeModalLabel" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content modallarge">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Order</h4>
+                <button type='button' class="btn btn-primary" id='newOrder'>Order</button>
+                <button type='button' class="btn btn-primary" id='newflavourmixOrder'>Flavour Mix</button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subModalForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                <button id='subflavourmixFormOrder' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="myModal2" class="modal fade bd-example-modal-lg" aria-labelledby="myLargeModalLabel" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Item</h4>
+            </div>
+            <div class="modal-body2">
+                <table class="form_table">
+                    <tr>
+                        <td>
+                            <h4>Description</h4></td>
+                        <td>
+                            <h4>Order Date</h4></td>
+                        <td>
+                            <h4>Delivery Date</h4></td>
+                        <td>
+                            <h4>Paid Date</h4></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input autocomplete="on" sku="" page="" class="form-control" id="description" placeholder="Product Description" aria-describedby="sizing-addon2" />
+                                 <input autocomplete="on" sku="" page="" class="form-control" id="description2" style="display:none;" placeholder="Product Description" aria-describedby="sizing-addon2" />
+                                <input autocomplete="on" class="form-control" id="descriptionpage" style="display:none;" placeholder="Product Description" aria-describedby="sizing-addon2" />
+                                <input autocomplete="on" class="form-control" id="descriptionsku" style="display:none;" placeholder="Product Description" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="dropdown4">
+                                <select name="list4" onclick="setVal4(this);" id="list4"></select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="date" id="orderDate1" class="form-control" placeholder="Order Date" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-group">
+                                <input type="date" id="deliveryDate" class="form-control" placeholder="Delivery Date" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="date" id="paiddate" class="form-control" placeholder="Paid Date" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>ETA / Days</h4></td>
+                        <td>
+                            <h4>Order Quantity</h4></td>
+                        <td>
+                            <h4>Note</h4></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="eta" class="form-control" placeholder="ETA / Days" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="quantity" class="form-control" placeholder="Order Quantity (ml -ink,vg,pg,Nicotine else Litres/Bottles)" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="note" class="form-control" placeholder="Note" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subModalForm2' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="myModal3" class="modal fade bd-example-modal-lg" aria-labelledby="myLargeModalLabel" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Info</h4>
+            </div>
+            <div class="modal-body3">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subModalForm3' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="myModal4" class="modal fade bd-example-modal-lg" aria-labelledby="myLargeModalLabel" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Info</h4>
+            </div>
+            <div class="modal-body4">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subModalForm4' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newflavour" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Flavour</h4>
+            </div>
+            <div class="modal-body5">
+                <p>Please write the new Flavour</p>
+                <div class="input-group">
+                    <input type="text" id="flavName" class="form-control" placeholder="Amber Leaf" aria-describedby="sizing-addon2">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subflavourForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newflavourmix" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style='overflow:hidden; min-height:1100px;'>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Flavour Maker</h4>
+                <button class='btn btn-danger' id='deleteflavourmixButton'>Remove</button>
+            </div>
+            <p>Flavour mixing guide lines :</p>
+            <p>- Please select flavours and allocate up to 10 different flavours per mix.
+                <br />- Each flavour selected should equate to a value from 1ml to 10ml.
+                <br />- Your mix should accumulate in total a maximum of 10ml
+                <br />- The minimum of a single flavour can be 1ml
+                <br />- The maximum in total of all flavours in a mix can only be 10ml</p>
+            <p>Please note : Mixtures are based on the rules of scale and will be calculated accordingly based on mixture levels and actual order quantities.</p>
+            <div class="newflavourmixBody">
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="flavourmixName" class="form-control" placeholder="Amber Leaf" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="flavourmixSKU" class="form-control" placeholder="FLAV2342A" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div id='plusBox'>
+
+                    <button class='btn btn-default' style="margin: 5px auto; " id='flavourmixPlusButton'><i class="fa fa-plus-square-o" aria-hidden="true"></i></button>
+                    <button class='btn btn-default' style="margin: 5px auto; " id='flavourmixMinusButton'><i class="fa fa-minus-square-o" aria-hidden="true"></i></button>
+                </div>
+
+                <div class="container" style='width:1100px'>
+                    <div class="row">
+                        <div class="col-xs-6" id='bottleDiv'>
+                            <div id='totalsDiv' class='valtotal'></div>
+                            <div class="bottleBlockGroup">
+                                <div class="bottleBlock" id="bottleBlock10"></div>
+                                <div class="bottleBlock" id="bottleBlock9"></div>
+                                <div class="bottleBlock" id="bottleBlock8"></div>
+                                <div class="bottleBlock" id="bottleBlock7"></div>
+                                <div class="bottleBlock" id="bottleBlock6"></div>
+                                <div class="bottleBlock" id="bottleBlock5"></div>
+                                <div class="bottleBlock" id="bottleBlock4"></div>
+                                <div class="bottleBlock" id="bottleBlock3"></div>
+                                <div class="bottleBlock" id="bottleBlock2"></div>
+                                <div class="bottleBlock" id="bottleBlock1"></div>
+                            </div>
+                            <div class="bottleImage">
+                                <img style='heigth:400px; width:200px;' id="BOTTLEIMG" src="https://drive.google.com/uc?export=view&id=17y_MVC8n7iywrRMgV0RCoxjLXutfHtVE">
+                            </div>
+                        </div>
+                        <div class="col-xs-6" id='flavourDropdowns'>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="editflavourmixBody">
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="eflavourmixName" placeholder="Amber Leaf" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownflavourmixName">
+                                <select name="flavourmixNames" id="flavourmixNames" onclick='helperSETVAL(this)'></select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="eflavourmixSKU" placeholder="FLAV2342A" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownflavourmixSKU">
+                                <select name="flavourmixSKUs" id="flavourmixSKUs" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                </table>
+                <div class="container" style='width:1100px'>
+                    <div class="row">
+                        <div class="col-xs-6" id='bottleDiv'>
+                            <div id='totalsDiv' class='valtotal'></div>
+                            <div class="bottleBlockGroup">
+                                <div class="bottleBlock" id="bottleBlock10"></div>
+                                <div class="bottleBlock" id="bottleBlock9"></div>
+                                <div class="bottleBlock" id="bottleBlock8"></div>
+                                <div class="bottleBlock" id="bottleBlock7"></div>
+                                <div class="bottleBlock" id="bottleBlock6"></div>
+                                <div class="bottleBlock" id="bottleBlock5"></div>
+                                <div class="bottleBlock" id="bottleBlock4"></div>
+                                <div class="bottleBlock" id="bottleBlock3"></div>
+                                <div class="bottleBlock" id="bottleBlock2"></div>
+                                <div class="bottleBlock" id="bottleBlock1"></div>
+                            </div>
+                            <div class="bottleImage">
+                                <img style='heigth:400px; width:200px;' src="https://drive.google.com/uc?export=view&id=17y_MVC8n7iywrRMgV0RCoxjLXutfHtVE">
+                            </div>
+                        </div>
+                        <div class="col-xs-6" id='flavourDropdowns'>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subflavourmixForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newcustomer" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Customer</h4>
+            </div>
+            <div class="modal-body5">
+                <p>Please write the Customer Name and Address</p>
+                <div class="input-group">
+                    <input type="text" id="custName" class="form-control" placeholder="Andy Wales" aria-describedby="sizing-addon2">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="custAddress" class="form-control" placeholder="4110 Sorrento Valley Blvd. Ste C" aria-describedby="sizing-addon2">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subCustomerForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newBottle" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Bottle</h4>
+            </div>
+            <div class="modal-body5">
+                <p>Please write the new Bottle Type</p>
+                <div class="input-group">
+                    <input type="text" id="bottletypeinput" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subBottleForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="shippingModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Generate Shipping Note</h4>
+            </div>
+            <div class="modal-bodyshipping">
+                <p>Please Select Packaging Codes</p>
+                <div class="form-group">
+                    <select id="sbOne" class="form-control" multiple="multiple">
+
+                    </select>
+                </div>
+                <br />
+                <button type="button" class="left" id="left"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                <button type="button" class="right" id="right"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                <button type="button" class="leftall" id="leftall"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></button>
+                <button type="button" class="rightall" id="rightall"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button>
+                <br />
+                <label for="sbTwo">Selected</label>
+                <div class="form-group">
+                    <select id="sbTwo" class="form-control" multiple="multiple">
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='printShipping' type="button" class="btn btn-primary" data-dismiss="modal">Print Shipping note 1</button>
+                <button id='printShipping2' type="button" class="btn btn-primary" data-dismiss="modal">Print Shipping note 2</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="xeroModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="max-height:1200px; overflow:hidden;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Generate Xero Note</h4>
+            </div>
+            <div class="modal-bodyshipping">
+                <p>Please the IDs you want to print</p>
+                <div class='startSearch'>
+                    From:
+                    <input type="date" onchange='filterxero(this);' page="xeroModal" class="form-control" id="startSearchOrderIDs" />
+                </div>
+                <div class='startSearch'>
+                    To:
+                    <input type="date" onchange='filterxero(this);' page="xeroModal" class="form-control" id="endSearchOrderIDs" />
+                </div>
+                <div class='startSearch'>
+                    <input type="text" class="form-control" page="xeroModal" id="keyword" />
+                </div>
+                <div class='startSearch'>
+                    <button class='btn btn-default' id="serachxero" page="xeroModal" onclick="filterxero(this);">Search </button>
+                </div>
+                <div class="form-group">
+                    <select id="xrOne" class="form-control" multiple="multiple">
+
+                    </select>
+                </div>
+                <br />
+                <button type="button" class="left" id="left"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                <button type="button" class="right" id="right"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                <button type="button" class="leftall" id="leftall"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></button>
+                <button type="button" class="rightall" id="rightall"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button>
+                <br />
+                <label for="xrTwo">Selected</label>
+                <div class="form-group">
+                    <select id="xrTwo" class="form-control" multiple="multiple">
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='printxero' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="statusModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="max-height:1200px; overflow:hidden;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Check Status</h4>
+            </div>
+            <div class="modal-bodyshipping">
+                <p>Please the IDs you want to check</p>
+                <div class='startSearch'>
+                    From:
+                    <input type="date" onchange='filterxero(this);' page="statusModal" class="form-control" id="startSearchOrderIDs" />
+                </div>
+                <div class='startSearch'>
+                    To:
+                    <input type="date" onchange='filterxero(this);' page="statusModal" class="form-control" id="endSearchOrderIDs" />
+                </div>
+                <div class='startSearch'>
+                    <input type="text" class="form-control" page="statusModal" id="keyword" />
+                </div>
+                <div class='startSearch'>
+                    <button class='btn btn-default' id="serachxero" page="statusModal" onclick="filterxero(this);">Search </button>
+                </div>
+                <div class="form-group">
+                    <select id="statusOne" class="form-control" multiple="multiple">
+
+                    </select>
+                </div>
+                <br />
+                <button type="button" class="left" id="left"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                <button type="button" class="right" id="right"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                <button type="button" class="leftall" id="leftall"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></button>
+                <button type="button" class="rightall" id="rightall"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button>
+                <br />
+                <label for="statusTwo">Selected</label>
+                <div class="form-group">
+                    <select id="statusTwo" class="form-control" multiple="multiple">
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='statuscheck' type="button" class="btn btn-primary" data-dismiss="modal">Check Status</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="priorityModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="max-height:1000px; overflow:hidden;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Order Priorities</h4>
+            </div>
+            <div class="modal-bodypriority">
+
+
+                <div class="priorityBody">
+                    <div id='plusBox'>
+
+                        <button class='btn btn-default' style="margin: 5px auto; " id='priorityPlusButton'><i class="fa fa-plus-square-o" aria-hidden="true"></i></button>
+                        <button class='btn btn-default' style="margin: 5px auto; " id='priorityMinusButton'><i class="fa fa-minus-square-o" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <hr />
+                <div class="priorityBlock" id="priorityBlockID'+prioritynum+'">
+                    <div style="margin: 5px auto; width: 400px; display: inline-block; border:none;" class="form-control">
+                        <h3>Order ID</h3></div>
+                    <div type="text" class="form-control" style="width:150px;display:inline-block; border:none; " id="priorityAmount'+prioritynum+'" />
+                    <h3>Priority</h3></div>
+            </div>
+
+            <div id="priorityDropdowns">
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id='savepriorityButton' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="newBrand" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Brand</h4>
+            </div>
+            <div class="modal-body5">
+                <p>Please write the new Brand</p>
+                <div class="input-group">
+                    <input type="text" id="brandid" class="form-control" placeholder="Artisan" aria-describedby="sizing-addon2">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subBrandForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newLid" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Lid</h4>
+            </div>
+            <div class="modal-body5">
+                <p>Please write the new Lid type</p>
+                <div class="input-group">
+                    <input type="text" id="lidid" class="form-control" placeholder="10ml Cap A" aria-describedby="sizing-addon2">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subLidForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newMisc" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Misc.</h4>
+            </div>
+            <div class="modal-body5">
+                <p>Please write the new Misc. Item</p>
+                <div class="input-group">
+                    <input type="text" id="miscid" class="form-control" placeholder="Labels 30ml bottle" aria-describedby="sizing-addon2">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subMiscForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newPackaging" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Packaging</h4>
+                <button class='btn btn-danger' style='display:none;' id='delete_edit_packaging'>Remove</button>
+
+            </div>
+            <div id='newPackagingBody' class="newPackagingBody">
+
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="packagingName" class="form-control" placeholder="1product Tube" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="packagingSKU" class="form-control" placeholder="PAC2931" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bottles Per Pack:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="botperPack" class="form-control" placeholder="3" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <!--<tr><td>Pack Label:</td><td><div class="input-group"><select type="text" id="tubelabel" class="form-control" aria-describedby="sizing-addon2"></select></div></td></tr> -->
+                    <tr>
+                        <td>Ink Per Label:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="ink" class="form-control" placeholder="0.002" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id='editPackagingBody' class="editPackagingBody">
+
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="epackagingName" placeholder="Packaging Name" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownPackagingNames">
+                                <select name="PackagingNames" id="PackagingNames" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="epackagingSKU" placeholder="Packaging SKU" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownPackagingSKU">
+                                <select name="PackagingSKUS" id="PackagingSKUS" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Bottles Per Pack:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="ebotperPack" class="form-control" placeholder="3" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- <tr><td>Pack Label:</td><td><div class="input-group"><select type="text" name="etubelabel" id="etubelabel" class="form-control" aria-describedby="sizing-addon2"></select></div></td></tr> -->
+                    <tr>
+                        <td>Ink Per Label:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="eink" class="form-control" placeholder="0.002" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subPackagingForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newBox" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Box</h4>
+                <button class='btn btn-danger' style='display:none;' id='delete_edit_box'>Remove</button>
+
+            </div>
+            <div id='newBoxBody' class="newBoxBody">
+
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="boxName" class="form-control" placeholder="25 black box" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="boxSKU" class="form-control" placeholder="BOX2931" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Packs Per Box:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="divTubesForBox" class="form-control" placeholder="5" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div id='editBoxBody' class="editBoxBody">
+
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="eboxName" placeholder="25 black box" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownBoxNames">
+                                <select name="BoxNames" id="BoxNames" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="eboxSKU" placeholder="BOX2931" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownBoxSKU">
+                                <select name="BoxSKUS" id="BoxSKUS" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Packs Per Box:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="edivTubesForBox" class="form-control" placeholder="5" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subBoxForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newLabel" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Label</h4>
+                <button class='btn btn-danger' style='display:none;' id='delete_edit_Label'>Remove</button>
+
+            </div>
+            <div id='newLabelBody' class="newLabelBody">
+
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="LabelName" class="form-control" placeholder="Label 1" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="LabelSKU" class="form-control" placeholder="LAB233L" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div id='editLabelBody' class="editLabelBody">
+
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="eLabelName" placeholder="Label 1" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownLabelNames">
+                                <select name="LabelNames" id="LabelNames" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="eLabelSKU" placeholder="LAB233L" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownLabelSKU">
+                                <select name="LabelSKUS" id="LabelSKUS" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subLabelForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newColor" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Color</h4>
+                <button class='btn btn-danger' style='display:none;' id='delete_edit_Color'>Remove</button>
+
+            </div>
+            <div id='newColorBody' class="newColorBody">
+
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="ColorName" class="form-control" placeholder="Color 1" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" id="ColorSKU" class="form-control" placeholder="COL233L" aria-describedby="sizing-addon2">
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div id='editColorBody' class="editColorBody">
+
+                <table class='table'>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="eColorName" placeholder="Color 1" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownColorNames">
+                                <select name="ColorNames" id="ColorNames" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SKU:</td>
+                        <td>
+
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="eColorSKU" placeholder="COL233L" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="DropdownColorSKU">
+                                <select name="ColorSKUS" id="ColorSKUS" onclick='helperSETVAL(this)'></select>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subColorForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newRecipe" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Recipe</h4>
+                <button class='btn btn-danger' style='display:none;' id='delete_edit_recipe'>Remove</button>
+
+            </div>
+            <div id='newRecipeBody' class="newRecipeBody">
+
+                <table class="table">
+
+                    <tbody>
+                        <tr>
+                            <td>SKU:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="SKU" id="recipeCODE">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Name" id="recipeName">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Nicotine:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="recipeNicotine">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nicotine Salts:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="recipeNicotineSalts">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CBD MG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="recipeCBD">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>MCT MG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="recipeMCT">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>AG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="recipeAG">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>VG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="212" id="recipeVG">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="206" id="recipePG">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Flavour:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="200" id="recipeFlavour">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>VG/AG Ratio:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="20" id="recipevgval">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PG Ratio:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="80" id="recipepgval">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Strength:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="recipestrength">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Color:</td>
+                            <td>
+                                <select class="form-control" id="colorSelect"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Color Percentage:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="colorpercentage">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div id='editRecipeBody' class='editRecipeBody'>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>CODE:</td>
+                            <td>
+
+                                <div class="input-group">
+                                    <input autocomplete="on" class="form-control" id="erecipeCODE" placeholder="Recipe Code" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                                </div>
+                                <div id="DropdownRecipeCodes">
+                                    <select name="RecipeCodes" id="RecipeCodes" onclick='helperSETVAL(this)'></select>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>
+
+                                <div class="input-group">
+                                    <input autocomplete="on" class="form-control" id="erecipeName" placeholder="Recipe Name" onkeyup="showGLOBAL(this)" aria-describedby="sizing-addon2" />
+                                </div>
+                                <div id="DropdownRecipeNames">
+                                    <select name="RecipeNames" id="RecipeNames" onclick='helperSETVAL(this)'></select>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nicotine:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="erecipeNicotine">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nicotine Salts:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="erecipeNicotineSalts">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CBD MG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="erecipeCBD">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MCT MG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="erecipeMCT">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="erecipeAG">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>VG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="212" id="erecipeVG">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PG:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="206" id="erecipePG">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Flavour:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="200" id="erecipeFlavour">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>VG/AG Ratio:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="20" id="erecipevgval">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PG Ratio:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="80" id="erecipepgval">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Strength:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="erecipestrength">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Color:</td>
+                            <td>
+                                <select class="form-control" id="ecolorSelect"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Color Percentage:</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="3" id="ecolorpercentage">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subRecipeForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exportToSheet" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Export</h4>
+            </div>
+            <div class="modal-body5">
+                <p>Export Sheets:</p>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" page='ALLPAGES' class="form-check-input"> Select All
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Orders' name='expCheckbox' class="form-check-input"> Orders
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Mixing' name='expCheckbox' class="form-check-input"> Mixing
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='MixingTeam' name='expCheckbox' class="form-check-input"> Mixing Team
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Production' name='expCheckbox' class="form-check-input"> Production
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Printing' name='expCheckbox' class="form-check-input"> Printing
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Labelling' name='expCheckbox' class="form-check-input"> Labelling
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Packaging' name='expCheckbox' class="form-check-input"> Packaging
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Shipping' name='expCheckbox' class="form-check-input"> Shipping
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Locations' name='expCheckbox' class="form-check-input"> Locations
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Inventory' name='expCheckbox' class="form-check-input"> Inventory
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='QTY' name='expCheckbox' class="form-check-input"> QTY
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='PC/PD' name='expCheckbox' class="form-check-input"> PC/PD
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Packages' name='expCheckbox' class="form-check-input"> Packages
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Recipes' name='expCheckbox' class="form-check-input"> Recipes
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Boxes' name='expCheckbox' class="form-check-input"> Boxes
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Customers' name='expCheckbox' class="form-check-input"> Customers
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Flavours' name='expCheckbox' class="form-check-input"> Flavours
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Lids' name='expCheckbox' class="form-check-input"> Caps
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='BottleTypes' name='expCheckbox' class="form-check-input"> Bottles
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Brands' name='expCheckbox' class="form-check-input"> Brands
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='FlavourMixes' name='expCheckbox' class="form-check-input"> Flavour Mixes
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Labels' name='expCheckbox' class="form-check-input"> Labels
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" page='Color' name='expCheckbox' class="form-check-input"> Colors
+                    </label>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id='subExportForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newOrdersfromCSV" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Orders</h4>
+            </div>
+            <div class="modal-body5">
+                <p>Pick a file</p>
+                <form id="myForm" onsubmit="return false;">
+
+                    <div class="input-group">
+                        <input class="form-control" type="file" id="myFiles" name="myFiles" aria-describedby="sizing-addon2" />
+                    </div>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_btn">Upload File</button>
+                    <!--<input type="submit" value="Upload File" onclick="google.script.run
+                      .serverFunc(this.parentNode);
+                      return false;"> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="newQTYfromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Inport QTY from Spreadsheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newPDCFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Product Code/Description from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet2" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn2">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="newRecipesFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Recipes from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet3" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn3">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newBoxesFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Boxes from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet4" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn4">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newPackagesFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Packages from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet5" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn5">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newCustomersFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Customers from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet6" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn6">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newBrandsFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Brands from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet7" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn7">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newFlavoursFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Flavours from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet8" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn8">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newBottlesFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Bottles from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet9" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn9">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newCapsFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Caps from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet10" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn10">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newLabelsFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Labels from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet11" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn11">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="newInventoryFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Inventory from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet14" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn14">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="newColorsFromSheet" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Colors from Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet12" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn12">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="newBlankPCList" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Import Sheet</h4>
+            </div>
+            <div class="modal-body7">
+                <p>Before Upload Please check that your spreadsheet follows the desired format.</p>
+
+                <div class="input-group">
+                    <input class="form-control" type="text" id="mysheet13" aria-describedby="sizing-addon2" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_sheet_btn13">Upload Sheet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="newPCDmodal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:1000px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Product Code/Description</h4>
+            </div>
+            <div class="modal-body7">
+                <table class='table'>
+                    <tr>
+                        <td>Code</td>
+                        <td>Description</td>
+                        <td>Linked Code</td>
+                        <td>Recipe</td>
+                        <td>Brand</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="NPC" placeholder="Product Code" aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="NPD" placeholder="Product Description" aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="NlinkedBB" placeholder="Linked Item" aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-control" id='newPCDrecipe'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='newPCDbrand'></select>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Flavour</td>
+                        <td>Bottle</td>
+                        <td>Cap</td>
+                        <td>Packaging</td>
+                        <td>Fill ammount</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control" id='newPCDflavour'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='newPCDbottle'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='newPCDcap'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='newPCDpackaging'></select>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='newPCDfill' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Premix SKU</td>
+                        <td>Premix Name</td>
+                        <td>Colored Premix SKU</td>
+                        <td>Colored Premix Name</td>
+                        <td>Unbranded SKU</td>
+                        <td>Unbranded Name</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='newpremixSKU' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='newpremixdescr' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='newpremixSKUColored' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='newpremixdescrColored' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='newunbrandSKU' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='newunbranddescr' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Box</td>
+                        <td>Bottle Label</td>
+                        <td>Pre Printed Bottle Label</td>
+                        <td>Pack Label</td>
+                        <td>Pre Printed Pack Label</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control" id='newboxname'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='newbotlabel'></select>
+                        </td>
+
+                        <td>
+                            <select class="form-control" id='newppbotlabel'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='newpacklabel'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='newpppacklabel'></select>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_new_PCD">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="editPCDmodal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:1000px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Product Code/Description</h4>
+                <button class='btn btn-danger' id='delete_edit_PCD'>Remove</button>
+            </div>
+            <div class="modal-body5">
+                <table class='table'>
+                    <tr>
+                        <td>Code</td>
+                        <td>Description</td>
+                        <td>Linked Code</td>
+                        <td>Recipe</td>
+                        <td>Brand</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="EPC" placeholder="Product Code" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="dropdown">
+                                <select name="list1" id="list1"></select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input autocomplete="on" class="form-control" id="EPD" placeholder="Product Description" aria-describedby="sizing-addon2" />
+                            </div>
+                            <div id="dropdown2">
+                                <select name="list2" id="list2"></select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="ElinkedBB" placeholder="Linked Item" aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-control" id='editPCDrecipe'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='editPCDbrand'></select>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Flavour</td>
+                        <td>Bottle</td>
+                        <td>Cap</td>
+                        <td>Packaging</td>
+                        <td>Fill ammount</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control" id='editPCDflavour'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='editPCDbottle'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='editPCDcap'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='editPCDpackaging'></select>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='editfill' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Premix SKU</td>
+                        <td>Premix Name</td>
+                        <td>Colored Premix SKU</td>
+                        <td>Colored Premix Name</td>
+                        <td>Unbranded SKU</td>
+                        <td>Unbranded Name</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='editpremixSKU' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='editpremixdescr' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='editpremixSKUColored' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='editpremixdescrColored' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='editunbrandSKU' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id='editunbranddescr' aria-describedby="sizing-addon2" />
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Box</td>
+                        <td>Bottle Label</td>
+                        <td>Pre Printed Bottle Label</td>
+                        <td>Pack Label</td>
+                        <td>Pre Printed Pack Label</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control" id='editboxname' aria-describedby="sizing-addon2"></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='editbotlabel'></select>
+                        </td>
+
+                        <td>
+                            <select class="form-control" id='editppbotlabel'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='editpacklabel'></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id='editpppacklabel'></select>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_edit_PCD">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

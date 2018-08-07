@@ -1,0 +1,3716 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+    .modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  max-height: 500px;
+  overflow: scroll;
+}
+        
+    .bold td{
+    font-size: 16px;
+    text-align:center;
+    
+    
+    }
+    table tr td{
+    
+    white-space:nowrap;
+    }
+    .form_table{
+    border-spacing: 10px;
+    
+    }
+    /*----- Tab Links -----*/
+    
+ 
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+  .tab-links2:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+ .tab-links2 li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#195685;
+            font-size:16px;
+            font-weight:600;
+            color:white;
+            transition:all linear 0.15s;
+        }
+        .tab-links2 a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#195685;
+            font-size:16px;
+            font-weight:600;
+            color:white;
+            transition:all linear 0.15s;
+            }
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+       .tab-links2 a:hover {
+                  background:#a7cce5;
+                  text-decoration:none;
+              }
+              
+    li.active a, li.active a:hover {
+        background-color:white;
+        color:#4c4c4c;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background-color:white;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+        
+        ul {
+        margin:0;
+        }
+        
+   .modallarge{
+   width:1500px;
+   right:500px;
+   
+   } 
+   
+       .logo{
+        position:absolute;
+        top:0;
+       
+        right:0;
+        
+        }
+        
+                .navbar {
+    margin-top: 140px;
+    }
+    
+         #checkBatchesBody{
+        width:1000px;
+        
+        }
+
+#searchBox{
+display: inline-block;
+}
+#filterdates{
+display: inline-block;
+width:200px;
+}
+.searchItem{
+display:inline-block;
+}
+
+
+
+.searchDates{
+display:inline-block;
+}
+
+.startSearch, .endSearch{
+display:inline-block;
+
+}
+
+.nav-item2{
+
+display: inline-block;
+
+}
+
+    #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}   
+
+
+
+/*
+.modal.show .modal-dialog {
+-webkit-transform: translate(0,0);
+transform: translate(0,0);
+width: 100%;
+    max-height: 900px;
+    min-height: 300px;
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: block;
+  padding-right: 22px;
+  width: 100%;
+     max-height: 900px;
+    min-height: 300px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 0;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    max-height: 900px;
+    min-height: 300px;
+    overflow: scroll;
+    width: 100%;
+   
+}*/
+    </style>
+  </head>
+  <body>
+    <!--  
+  <div id="myModal3" class="modal fade" aria-labelledby="myLargeModalLabel" role="dialog">
+            <div class="modal-dialog modal">
+
+                <!-- Modal content-->
+    <!--  <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit Info</h4>
+                    </div>
+                    <div class="modal-body3">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id='subModalForm3' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>-->
+        
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back To Top</button>        
+        
+        
+        
+    <div class='container-fluid'>
+    
+          <div id="checkBatches" class="modal fade bd-example-modal-lg" aria-labelledby="myLargeModalLabel" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content modallarge" id="checkdiv">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 
+                    </div>
+                    <div class="modal-bodyc" id='checkBatchesBody'>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="shippingModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Generate Shipping Note</h4>
+                    </div>
+                    <div class="modal-bodyshipping">
+                    <p>Please Select Packaging Codes</p>
+                    <div class="form-group">
+                    <select id="sbOne"  class="form-control" multiple="multiple">
+         
+                    </select>
+                    </div>
+                    <br />
+                    <button type="button" class="left" id="left"  ><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                    <button type="button" class="right" id="right"  ><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    <button type="button" class="leftall" id="leftall"  ><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></button>
+                     <button type="button" class="rightall" id="rightall" ><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button>
+                          <br />
+                    <label for="sbTwo">Selected</label>
+                    <div class="form-group">
+                    <select id="sbTwo" class="form-control" multiple="multiple">
+                    
+                    </select>
+                    </div>
+                 
+                        
+                   
+   
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                               <button id='printShipping' type="button" class="btn btn-primary" data-dismiss="modal">Print Shipping note 1</button>
+                        <button id='printShipping2' type="button" class="btn btn-primary" data-dismiss="modal">Print Shipping note 2</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <!-- Modal -->
+        <div id="htmlMSGmodal" class="modal fade bd-example-modal" aria-labelledby="myLargeModalLabel" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content"  style='width:1400px; height:90%; left: -300px;'>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="htmlMSGmodalbody">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   </div>
+                </div>
+
+            </div>
+        </div>
+     <!-- Modal -->
+        <div class="modal fade" id="statusModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" style="max-height:1200px; overflow:hidden;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Check Status</h4>
+                    </div>
+                    <div class="modal-bodyshipping">
+                    <p>Please the IDs you want to check</p>
+                    <div class='startSearch'>
+                    From:
+                    <input type="date" onchange='filterxero(this);' page="statusModal" class="form-control" id="startSearchOrderIDs"/>
+                    </div>
+                    <div class='startSearch'>  
+                    To:
+                    <input type="date" onchange='filterxero(this);'  page="statusModal" class="form-control" id="endSearchOrderIDs"/>
+                    </div>
+                    <div class='startSearch'>  
+                    <input type="text" class="form-control"  page="statusModal" id="keyword"/>
+                    </div>
+                     <div class='startSearch'> 
+                     <button class='btn btn-default' id="serachxero"  page="statusModal" onclick="filterxero(this);">Search </button>
+                     </div>
+                    <div class="form-group">
+                    <select id="statusOne"  class="form-control" multiple="multiple">
+                  
+                    </select>
+                    </div>
+                    <br />
+                    <button type="button" class="left" id="left"  ><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                    <button type="button" class="right" id="right"  ><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    <button type="button" class="leftall" id="leftall"  ><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></button>
+                     <button type="button" class="rightall" id="rightall" ><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button>
+                          <br />
+                    <label for="statusTwo">Selected</label>
+                    <div class="form-group">
+                    <select id="statusTwo" class="form-control" multiple="multiple">
+                    
+                    </select>
+                    </div>
+                 
+                        
+                   
+   
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id='statuscheck' type="button" class="btn btn-primary" data-dismiss="modal">Check Status</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    
+     <!-- Modal -->
+        <div class="modal fade" id="xeroModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" style="max-height:1200px; overflow:hidden;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Generate Xero Note</h4>
+                    </div>
+                    <div class="modal-bodyshipping">
+                    <p>Please the IDs you want to print</p>
+                    <div class='startSearch'>
+                    From:
+                    <input type="date" onchange='filterxero(this);' page="xeroModal" class="form-control" id="startSearchOrderIDs"/>
+                    </div>
+                    <div class='startSearch'>  
+                    To:
+                    <input type="date" onchange='filterxero(this);'  page="xeroModal" class="form-control" id="endSearchOrderIDs"/>
+                    </div>
+                    <div class='startSearch'>  
+                    <input type="text" class="form-control"  page="xeroModal" id="keyword"/>
+                    </div>
+                     <div class='startSearch'> 
+                     <button class='btn btn-default' id="serachxero"  page="xeroModal" onclick="filterxero(this);">Search </button>
+                     </div>
+                    <div class="form-group">
+                    <select id="xrOne"  class="form-control" multiple="multiple">
+                  
+                    </select>
+                    </div>
+                    <br />
+                    <button type="button" class="left" id="left"  ><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                    <button type="button" class="right" id="right"  ><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    <button type="button" class="leftall" id="leftall"  ><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></button>
+                     <button type="button" class="rightall" id="rightall" ><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button>
+                          <br />
+                    <label for="xrTwo">Selected</label>
+                    <div class="form-group">
+                    <select id="xrTwo" class="form-control" multiple="multiple">
+                    
+                    </select>
+                    </div>
+                 
+                        
+                   
+   
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id='printxero' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+    
+
+                <!-- Modal content-->
+        <div id="myModal2" class="modal fade bd-example-modal-lg" aria-labelledby="myLargeModalLabel" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New Item</h4>
+                    </div>
+                    <div class="modal-body2">
+                    <table class="form_table">
+                   <tr><td><h4>Description</h4></td><td><h4>Order Date</h4></td><td><h4>Delivery Date</h4></td><td><h4>Paid Date</h4></td></tr>
+       
+                   <tr><td>
+                   <div class="input-group"><input autocomplete="on" sku="" page="" class="form-control" id="description" placeholder="Product Description" aria-describedby="sizing-addon2"/>
+                   <input autocomplete="on" sku="" page="" class="form-control" id="description2"  style='display:none;' placeholder="Product Description" aria-describedby="sizing-addon2"/>
+                  <input autocomplete="on" class="form-control" id="descriptionpage"  style="display:none;"  placeholder="Product Description"  aria-describedby="sizing-addon2"/>
+                  <input autocomplete="on"  class="form-control" id="descriptionsku" style="display:none;" placeholder="Product Description" aria-describedby="sizing-addon2"/>
+                   </div>
+                   <div id="dropdown4">
+                   <select name="list4"  onclick="setVal4(this);" id="list4"></select>
+                   </div>
+                   </td>
+                   <td><div class="input-group"><input type="date" id="orderDate1" class="form-control" placeholder="Order Date" aria-describedby="sizing-addon2"></div></td>
+                   
+                   <td><div class="input-group"><input type="date" id="deliveryDate" class="form-control" placeholder="Delivery Date" aria-describedby="sizing-addon2"></div></td>
+                   <td><div class="input-group"><input type="date" id="paiddate" class="form-control" placeholder="Paid Date" aria-describedby="sizing-addon2"></div></td></tr>
+                   <tr><td><h4>ETA / Days</h4></td><td><h4>Order Quantity</h4></td><td><h4>Note</h4></td></tr>
+                   <tr><td><div class="input-group"><input type="text" id="eta" class="form-control" placeholder="ETA / Days" aria-describedby="sizing-addon2"></div></td>
+                    <td><div class="input-group"><input type="text" id="quantity" class="form-control" placeholder="Order Quantity (ml -ink,vg,pg,nicotine else Litres/Bottles)" aria-describedby="sizing-addon2"></div></td>
+                   <td><div class="input-group"><input type="text" id="note" class="form-control" placeholder="Note" aria-describedby="sizing-addon2"></div></td></tr>
+                    </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id='subModalForm2' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        
+        <!-- Modal -->
+        <div class="modal fade bd-example-modal-lg" id="myModal" aria-labelledby="myLargeModalLabel" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content"  style="width: 1000px;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit Info</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id='subModalForm' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="myModal3" class="modal fade bd-example-modal-lg" aria-labelledby="myLargeModalLabel" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New Order</h4>
+                    </div>
+                    <div class="modal-body3">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id='subModalForm3' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+   
+    <div id="partial" class="modal fade bd-example-modal-sm" aria-labelledby="myLargeModalLabel" role="dialog">
+        <div class="modal-dialog modal-sm">
+
+            <!-- Modal content-->
+            <div class="modal-content modalsmall" style="width: 500px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Submit Partial</h4>
+                </div>
+                <div id='pratialBody' class="pratialBody">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id='subpartial' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
+
+        </div>
+  </div>
+  
+     
+    <div id="overProd" class="modal fade bd-example-modal-sm" aria-labelledby="myLargeModalLabel"  role="dialog">
+        <div class="modal-dialog modal-sm">
+
+            <!-- Modal content-->
+            <div class="modal-content modalsmall" style="width: 500px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Submit Over Production</h4>
+                </div>
+                <div id='overProdBody' class="overProdBody">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id='suboverProd' type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
+
+        </div>
+  </div>
+        <div class='logo'> <img src="https://drive.google.com/uc?export=view&id=<?= LOGOIMG?>">
+         <h1><?= TITLE?></h1>
+        </div>
+        <div  style='margin-top:40px;'>
+
+            <nav class="navbar navbar-default" role="navigation">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="nav-item">
+                        <h2><?= sheetName?> - V1.0</h2>
+                    </li>
+                    <li style="margin-top:50px;" class="nav-item">
+                    <div  class='searchDates' id='searchDates'> 
+                    <div class='startSearch'>
+                    From:
+                    <input type="date" onchange='datesearch();' class="form-control" id="startSearch"/>
+                    </div>
+                    <div class='startSearch'>   
+                    To:
+                    <input type="date" onchange='datesearch();' class="form-control" id="endSearch"/>
+                    </div>
+                    <select class="form-control"  id='filterdates'> 
+                    <option value='orderdate' selected>Order Date</option>
+                    <option value='starttime'>Start Date</option>
+                    <option value='CompletionDate'>Completion Date</option>
+                    </select>
+                    </div> 
+                    <div class='nav-item2'>
+                      <div id="searchBox" class='searchBox<?= sheetName?>'>                        
+                      </div>
+        
+                      </div>
+                    </li>
+                       <li class="nav-item">
+                         <div id='selButton' style='display:none;'>
+                           <div id='selection'>
+                           </div>
+                           <button type="button" id='printPage' style="display:none;" onclick="printP()" ><span id='btntext'></span></button>
+                           <div id="packNote" style="display:none;">Please select all items that are part of the same box before clicking Generate Packing List.</div>
+                         </div>
+                           <button type="button" id='newitem'  style="display:none;"  class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2"  >New Item</button>
+                           <div id='selectionShipping' style="display:none;">
+                           
+                           <button type="button" id='getShippingCodes' style="display:none;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#shippingModal">Generate Shipping Note</button>
+                           </div>  
+                        </li>
+                       
+                    <li class="nav-item">
+                        <button id='refresh'><i class="fa fa-refresh fa-5x" aria-hidden="true"></i></button>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left" id="ordersNav"style="margin-right:500px; display:none;">      
+                <li class="nav-item">
+                <div>
+               
+                <button type="button" id='getOrderIDs' class="btn btn-info btn-lg" data-toggle="modal" data-target="#xeroModal">Print Xero</button>
+                <button type="button" id='getOrderIDs2' class="btn btn-info btn-lg" data-toggle="modal" data-target="#statusModal">Check Order Status</button>
+                <button type="button" id='checkstock'  onclick="printOrders()" >Print Selected Order(s)</button>
+                <button type="button" id='selectAllOrders'  onclick="selectAll()">Select All</button>
+
+                </div>
+                </li>
+                
+                </ul>
+                  <ul class="tab-links" id='mixingTabs'>
+                <li class="active"><a href="#tab1" sub='submix' page='MixingTeam' id="defaultAnchor">Mixing Team</a></li>
+                <li><a sub='submix'  page='FlavourMixMixingTeam'  href="#tab2">Flavour Mix Mixing Team</a></li>
+                 <li><a sub='submix'  page='PremixColoring'  href="#tab3">Premix Coloring</a></li>
+                </ul>
+                <ul class="tab-links">
+                <li class="active"><a href="#tab1" sub='sub' param='Not Run' id="defaultAnchor">Not Run</a></li>
+                <li><a sub='sub'  param='Busy' href="#tab2">Busy</a></li>
+                <li><a  sub='sub'  param='Completed' href="#tab3">Completed</a></li>
+                 <li><a  sub='sub'  id='allsearch' param='all' href="#tab4">All</a></li>
+                 <li><a  sub='sub'  id='scheduled' param='schedule' href="#tab5">Scheduled</a></li>
+                </ul>
+                <div id="scheduleOptions" style="display:none;">
+                <select class="form-control"  id='scheduleSelect'> 
+                
+                </select>
+                <button type='button' class="btn btn-primary" id="getSelectedScheduleButton">Load</button>
+                </div>
+                <ul  class="tab-links" id="paginationSelect">
+                      <li><span class="form-control" style='margin:20px 0;' >Split Pages By:  </span></li> <li><select   class="form-control" style='margin:20px 0; width:100px;' id='splitcountselect' onchange="changeSplit()"><option>50</option><option>100</option><option>150</option><option>200</option><option>250</option><option>300</option><option>400</option><option>500</option><option value='all'>All</option></select></li>
+                 <li><span class="form-control" style='margin:20px 0;' ><div  class='content' id='Pagination2'></div></span></li>
+                </ul>
+            </nav>
+
+            <div id='pageBody' class='pageBody'></div>
+                  <div id="tab9" class="tab" style='display:none'>
+                    <nav class="navbar navbar-default" role="navigation">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class='nav-item'>
+                                <div class="input-group" style="width:500px; margin:10px;">
+                                <input type="text" class="form-control" id='searchword' placeholder="Search for...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-secondary" id='searchQTY' type="button">Search</button>
+                                </span>
+                                </div>
+                            </li>
+                            <li class='nav-item'>
+                                  <div class="tabs2">
+                                <ul class="tab-links2">
+                                    <li class="active"><a href="#Misc" id="defaultAnchor">Main QTY</a></li>
+                                    <li><a href="#Labels">Labels</a></li>
+                                    <li><a href="#Boxes">Boxes</a></li>
+                                    <li><a href="#Packages">Packages</a></li>
+                                    <li><a href="#Color">Colors</a></li>
+                                    <li><a href="#Flavours">Flavours</a></li>
+                                    <li><a href="#BottleTypes">Bottle Types</a></li>
+                                    <li><a href="#Lids">Cap Types</a></li>
+                                    <li><a href="#PremixesTypes">Premixes</a></li>
+                                    <li><a href="#UnbrandedTypes">Unbranded Bottles</a></li>
+                                    <li><a href="#BrandedTypes">Branded Bottles</a></li>
+                                    
+                                </ul>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div id='QTYbody'></div>
+                
+
+                </div>
+        </div>
+          <div id='Pagination'></div>
+      </div>
+      
+</body>
+  <script>
+  function formatDateDisplay(datems){
+     try{
+     if(datems&&datems!=""){
+      var now=new Date(datems);
+      
+      
+      var day = ("0" + now.getDate()).slice(-2);
+      var month = ("0" + (now.getMonth() + 1)).slice(-2);
+      
+      var today = (day)+"-"+(month)+"-"+now.getFullYear() ;
+     
+      return today;
+      }else{
+       return '';
+      }
+      }catch(e){
+      console.log('Unable to format date: ',datems);
+      return '';
+      }
+    }
+    
+             function formatDateDisplay2(datems){
+    try{
+    if(datems&&datems!=""){
+    var num = parseInt(datems,10);
+    if(num<5000){
+     var now=new Date(datems);
+    }else{
+    var now=new Date(num);
+    }
+    var now1 = now.toISOString().replace('T',' ').replace('Z','').split('.');
+  
+    var now2=now1[0].split(' ');
+    
+    var now3=now2[0].split('-');
+    var now4=now3[2]+'-'+now3[1]+'-'+now3[0]+' '+now2[1];
+    
+    return now4;
+
+    }else{
+    return '';
+    }
+    }catch(e){
+    console.log('Unable to format date: ',datems);
+    return '';
+    }
+    }
+    function formatDateInput(datems){
+    try{
+    var now=new Date(datems);
+     if(now.getTime()){
+    }else{
+      var now=new Date();
+    }
+    
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    
+    var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+      return today;
+      }catch(e){
+      console.log('Unable to format date: ',datems);
+      var now=new Date();
+      
+      
+      var day = ("0" + now.getDate()).slice(-2);
+      var month = ("0" + (now.getMonth() + 1)).slice(-2);
+      
+      var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+      return today;
+      
+      }
+    }
+    
+    
+  var qtySheet="#Misc";       
+    window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+   var sheet = <?= sheetName?>;
+ var app='Slave Sheet';
+ var selPage=sheet;  
+     google.script.run.withSuccessHandler(logSuccess).logUser(sheet,app);  
+$('#refresh').on('click',function(){
+  populateSlSheetTable();
+});
+     function logSuccess(){
+ console.log('User Logged.');
+ } 
+var SEARCHNUM=0;
+
+//THREE SUB TABS
+var BASEPARAM={
+orderBy : ['final_status'],
+equalTo: 'Not Run'
+
+};
+
+
+function getBaseSearchParam(event){
+
+var param=$(event).attr('param');
+
+BASEPARAM.equalTo=param;
+
+}
+
+var SEARCHNUM=0;
+    //Form
+ //   getSearchBoxData('Orders');
+    thisPage='Orders';
+    //Tabs
+    $('.tab-links a').on('click', function(e) {
+        e.preventDefault();
+    e.stopPropagation();
+       pagesSplit=false;
+    var subtab=$(this).attr('sub');
+    if(subtab=='sub'){
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+
+       if($(this).attr('id')=='scheduled'){
+     $("#scheduleOptions").show();
+     
+     google.script.run.withSuccessHandler(setScheduleDropdown).getScheduleDropdown();   
+     
+     
+     }else{
+     
+     var param=$(this).attr('param');
+     BASEPARAM.equalTo=param;
+     filterpage('xx',true);
+     
+     
+     }
+    }else if(subtab=='submix'){
+    
+     $(this).parent('li').addClass('active').siblings().removeClass('active');
+     var page=$(this).attr('page');
+     thisPage=page;
+     selPage=page;
+     filterpage('xx',true);
+
+    }
+
+    });
+    if(sheet=='MixingTeam'){
+    getSearchBoxData(selPage);
+    }else{
+    getSearchBoxData(sheet);
+    }
+  RUNFIRST();
+  function RUNFIRST(){
+  if(selPage!='QTY'&&selPage!='Shipping'&&selPage!='Inventory'&&selPage!='Locations'){
+  if(sheet!='MixingTeam'){
+
+  $('#mixingTabs').hide();
+  }
+  filterpage('xx',true);
+  }else{
+  $('.tab-links').hide();
+  populateSlSheetTable();
+  }
+  
+  }
+  
+ 
+ // populateSlSheetTable();
+  function populateSlSheetTable(){
+    if(sheet=='Orders'){
+     selPage='Orders';
+       filterpage('xx',true);
+         $('#selButton').css('display','block');
+          $('#ordersNav').css('display','block'); 
+   }else if(sheet=='MixingTeam'){
+      populateSLMixingTab();
+    }else if(selPage=='FlavourMixMixingTeam'){
+      populateFlavourMixMixingTeamTab();
+    }else if(selPage=='PremixColoring'){
+      populatePremixColoringTab();
+    }else if(sheet=='Production'){
+    
+     $('#mixingTabs').hide();
+      $('#btntext').html('Generate Batch Sheet');
+      $('#printPage').css('display','block');
+      $('#selButton').css('display','block');
+      populateSLProductionTab();
+    }else if(sheet=='Printing'){
+      populateSLPrintingTab();
+    }else if(sheet=='Labelling'){
+      populateSLLabellingTab();
+    }else if(sheet=='Packaging'){
+      $('#btntext').html('Generate Packing List');
+        $('#packNote').css('display','block');
+      $('#printPage').css('display','block');
+      $('#selButton').css('display','block');
+      populateSLPackagingTab();
+    }else if(sheet=='Shipping'){
+    
+    $('#paginationSelect').show();
+    $('#selectionShipping').show();
+     $('#getShippingCodes').show();
+        selPage='Shipping';
+       filterpage('xx',true); //populateShippingTab();
+    }else if(sheet=='Locations'){
+      populateLocationsTab();
+       $('#searchBox').css('display','none');
+          $('#searchDates').css('display','none');
+    }else if(sheet=='Inventory'){
+    
+      $('#newitem').css('display','block');
+      populateInventoryTab(); 
+      $('#searchBox').css('display','none');
+          $('#searchDates').css('display','none');
+    }else if(sheet=='QTY'){
+    
+    $('#searchBox').css('display','none');
+    $('#searchDates').css('display','none');
+    
+      $('#tab9').css('display','block');
+      populateQTYTab(qtySheet.substr(1,qtySheet.length));
+     // google.script.run.withSuccessHandler(splitPages).getQTY('Misc');
+    }
+    
+    
+}
+var pagesSplit=false;
+var lastPage='';
+
+function filterResult(rett){
+console.log(rett);
+var page=rett[0];
+var data=rett[1];
+data=getSearchDates(data);
+if(pagesSplit==false){
+ data=splitPages([data,page]);
+
+}
+
+
+lastPage=page;
+
+
+if (page == 'MixingTeam') {
+buildSLMixingTable(data);
+} else if (page == 'FlavourMixMixingTeam') {
+buildFlavourMixMixingTeamTable(data);
+}else if (page == 'PremixColoring') {
+buildPremixColoringTable(data);
+} else if (page == 'Production') {
+$('#btntext').html('Generate Batch Sheet');
+$('#printPage').css('display','block');
+$('#selButton').css('display','block');
+buildSLProductionTable(data);
+} else if (page == 'Printing') {
+buildSLPrintingTable(data);
+} else if (page == 'Labelling') {
+buildSLLabellingTable(data);
+} else if (page == 'Packaging') {
+$('#btntext').html('Generate Packing List');
+$('#packNote').css('display','block');
+$('#printPage').css('display','block');
+$('#selButton').css('display','block');
+buildSLPackagingTable(data);
+}else if (page == 'Shipping') {
+
+$('#selectionShipping').show();
+$('#getShippingCodes').show();
+
+buildShippingTable(data);
+}else if(page=='Orders'){
+   $('#selButton').css('display','block');
+   $('#ordersNav').css('display','block'); 
+buildOrders(data);
+}
+}
+
+
+function changeSplit(){
+pagesSplit=false;
+filterpage('xx',true);
+}
+ var splitPAGES;
+    var currPage;
+    function splitPages(rett){
+  
+    var data=rett[0];
+    var page=rett[1];
+
+   
+    currPage=page;
+    
+    if(data.length==0){
+    $("#updating").css("display", "none");
+    console.log('done');
+    $('#Pagination').html('');
+    $('#Pagination2').html('');
+    return false;}
+    var pages=[]; 
+    if(selPage=='QTY'){
+    var chunk = 500;
+    }else{
+    var splitcount=$('#splitcountselect').val();
+    if(splitcount!='all'){
+    var chunk = parseInt(splitcount,10);
+     }else{
+     var chunk = data.length;
+     }
+   }
+    var i,j,temparray;
+ 
+    for (i=0,j=data.length; i<j; i+=chunk) {
+    temparray = data.slice(i,i+chunk);
+    // do whatever
+    
+    pages.push(temparray);
+    }
+    splitPAGES=pages;
+    var toreturn=false;
+    if(selPage=='QTY'){
+    populateQTYTable(pages[0],page);
+    }else{
+    toreturn=true;
+     // pages[0];filterResult(selPage,pages[0])
+    }
+    var html2='';
+    
+    for(var k=0;k<pages.length;k++){
+    html2+='<button class="paginationButton" id="getPage'+k+'" onclick="switchPage(this)">'+k+'</button>';
+    }
+  
+   //  $('#Paginationtop').html(html2);
+    $('#Pagination').html(html2);
+    $('#Pagination2').html(html2);
+    if(toreturn){
+     
+    return pages[0];
+    }
+
+    }
+
+
+
+function switchPage(e){
+
+$(".paginationButton").css("background-color", "#f4f7f8");
+$(".paginationButton").css("color", "black");
+
+
+$(e).css("background-color", "#195685");
+$(e).css("color", "#FFF");
+ 
+
+var id=e.getAttribute('id');
+var index=id.substr(7,id.length);
+console.log(index);
+ pagesSplit=true;
+  if(selPage=='QTY'){
+   populateQTYTable(splitPAGES[index],currPage);
+    }else{
+  
+    filterResult([selPage ,splitPAGES[index]]);
+  
+    } 
+}
+
+function menuClick(event){
+var href=event.getAttribute('href');
+var page=event.getAttribute('page');
+console.log(href);
+if(href.substr(0,15)=='#EditItemMixing'){
+editMixingItem(href.substr(15,href.length));
+}else if(href.substr(0,25)=='#EditItemFlavourMixMixing'){
+editFlavourMixMixingItem(href.substr(25,href.length));
+}else if(href.substr(0,23)=='#EditItemPremixColoring'){
+editItemPage(href.substr(23,href.length),'PremixColoring');
+}else if(href.substr(0,19)=='#EditItemProduction'){
+editProductionItem(href.substr(19,href.length));
+}else if(href.substr(0,17)=='#EditItemPrinting'){
+editPrintingItem(href.substr(17,href.length));
+}else if(href.substr(0,18)=='#EditItemLabelling'){
+editLabellingItem(href.substr(18,href.length));
+}else if(href.substr(0,18)=='#EditItemPackaging'){
+editPackagingItem(href.substr(18,href.length));
+}else if(href.substr(0,8)=='#setBusy'){
+setBusyItem(href.substr(8,href.length),page);
+}else if(href.substr(0,8)=='#partial'){
+setPartial(href.substr(8,href.length),page);
+}else if(href.substr(0,5)=='#over'){
+setOver(href.substr(5,href.length),page);
+}else if (href.substr(0, 7) == '#select') {
+addToSelected(href.substr(7, href.length));
+} else if (href.substr(0, 10) == '#deleteInv') {
+removeFromInventory(href.substr(10, href.length), page);
+}  else if (href.substr(0, 9) == '#editItem') {
+editItem(href.substr(9, href.length), page);
+}
+
+return false;
+}
+
+
+    function buildOrders(data) {
+    
+           var machinesHTML='<option></option>';
+    google.script.run.withSuccessHandler(buildMachinesOptions).getMachines();
+    function buildMachinesOptions(rett){
+    var machines=rett[0];
+    
+    
+    
+    var takefrom=0;
+        console.log(data);
+        SelAllOrders=data;
+        thisData=data;
+        thisPage='Orders';
+        var html = '';
+        html += '<table class="table"><thead><tr><th>Row</th><th>Menu</th><th>Move</th><th>Order Date</th><th>Started</th><th>Production Machine</th><th>Labelling Machine</th><th>Batch</th><th>Order ID</th><th>Code</th><th>Description</th><th>Priority</th><th>Customer</th><th>Brand</th><th>Recipe</th><th>Flavour</th><th>Bottles</th><th>Stocking Amount (litre)</th><th>Bottle Type</th><th>Lid Type</th><th>Pack Type</th>';
+        html += '<th>QTY</th><th>Flavour Value</th><th>VG Value</th><th>AG Value</th><th>PG Value</th><th>Nicotine Value</th><th>Nicotine Salts Value</th><th>CBD Value</th><th>MCT Value</th><th>Backed by Mixing</th>';
+        html+='<th>Backed by Premixed</th><th>Backed by Unbranded</th><th>Backed by Branded</th><th>Backed By Branded Packaged</th><th>Mixing Status</th><th>Production Status</th><th>Printing Status</th><th>Labelling Status</th>';
+        html += '<th>Packaging Status</th><th>FINAL STATUS</th><th>Partial Production</th><th>Partial Packaging</th></tr>';
+        
+        html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>BOTTLES TOTAL</div><div id="bottlesTotal'+thisPage+'"></div></th><th><div>STOCKING TOTAL</div><div id="stockingTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th><div>QTY TOTAL</div><div id="qtyTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th>';
+        html += '<th></th><th></th><th></th><th><div>MIXING TOTAL</div><div id="mixingTotal'+thisPage+'"></div></th><th><div>PREMIX TOTAL</div><div id="premixTotal'+thisPage+'"></div></th><th><div>UNBRANDED TOTAL</div><div id="unbrandedTotal'+thisPage+'"></div></th><th><div>BRANDED TOTAL</div><div id="brandedTotal'+thisPage+'"></div></th><th><div>TUBES TOTAL</div><div id="tubesTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><tr>';
+      if(data){
+        var keys=['orderdate','runtime','machineP','machineL','batch','orderID','productcode','productdescription','priority','customer','brand','recipe.name','flavour.name','bottles','stocking','btype','lid','packagingType.name','QTY','flavvalue','VGval','AGval','PGval','Nico','Nicosalts','CBDvalue','MCTval','mixing','premixed',
+            'unbranded','branded','backtubed','mixing_status','production_status','printing_status','labeling_status','packaging_status','final_status','partialProduction','partialPackaging'];
+       var drpdowns='';
+        html += '<tr><th></th><th></th><th></th>';
+        console.log(keys);
+       for(var l=0;l<keys.length;l++){
+       drpdowns+=('<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>');
+       }
+       }
+       html+=drpdowns;
+       html+='</tr>';
+     html += ' </thead>';
+        html += '<tbody>';
+        if(data!=''){
+        var bottlesTotal=0;
+        var stockingTotal=0;
+        var qtyTotal=0;
+        var mixingTotal=0;
+        var premixTotal=0;
+        var unbrandedTotal=0;
+        var brandedTotal=0;
+        var tubesTotal=0;
+        var rowsTotal=0;
+        for (var i = 0; i < data.length; i++) {
+        if(data[i].recipe){
+        
+         if(data[i].wentNegative){
+         html +='<tr bgcolor="#FFC200" >';
+        }else if(data[i].final_status=='Completed'){
+         html +='<tr bgcolor="#1BEF5B">';
+        }else if(data[i].final_status=='started'){
+         html +='<tr bgcolor="#1BCFEF">';
+        }else{
+         html +='<tr>';
+        }
+        
+         if(!data[i].numLabelsBottles){
+         data[i].numLabelsBottles=0;
+         }
+         if(!data[i].numLabelsTubes){
+         data[i].numLabelsTubes=0;
+         }
+         if(!data[i].packagingType){
+         data[i].packagingType={
+         name:0,
+         };
+         }
+         if(!data[i].boxname){
+         data[i].boxname={
+         name:0,
+         };
+         }
+            html += '<td>'+i+'</td><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+           // if (data[i].final_status == 'started' || data[i].final_status == 'Completed') {
+              //  html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Order</a>';
+          //  } else {
+
+                html += '<a class="dropdown-item" onclick="return menuClick(this);" id="select'+data[i].batch+'" href="#select' + data[i].batch + '">Select</a>';
+                html += '<a class="dropdown-item" onclick="return menuClick(this);" style="display:none;" id="deselect'+data[i].batch+'" href="#select' + data[i].batch + '">Deselect</a>';
+
+
+         //   }
+
+            html += ' </div></div></td>';  
+            html += '<td></td>';
+             data[i].runtime=data[i].runtime ? data[i].runtime: ' ';
+            html += '<td>' + formatDateDisplay(data[i].orderdate) + '</td><td>' + formatDateDisplay2(data[i].runtime) + '</td>';
+                  if(data[i].machineP){
+            var machinePDisp='';
+            machines.map(function(item){
+            if(item.sku==data[i].machineP){
+            machinePDisp=item.name;
+            }
+            });
+            
+            html += '<td>' + machinePDisp + '</td>';
+            }else{
+            html += '<td></td>';
+            }
+            if(data[i].machineL){
+            html += '<td>' + data[i].machineL + '</td>';
+            }else{
+            html += '<td></td>';
+            }
+            
+          data[i].priority=data[i].priority ? data[i].priority: ' ';           
+        data[i].flavvalue=data[i].flavvalue ? data[i].flavvalue: ' ';
+        data[i].VGval=data[i].VGval ? data[i].VGval: ' ';
+        data[i].AGval=data[i].AGval ? data[i].AGval: ' ';
+        data[i].PGval=data[i].PGval ? data[i].PGval: ' ';
+        data[i].Nico=data[i].Nico ? data[i].Nico: ' ';
+        data[i].Nicosalts=data[i].Nicosalts ? data[i].Nicosalts: ' ';
+        data[i].CBDvalue=data[i].CBDvalue ? data[i].CBDvalue: ' ';
+        data[i].MCTval=data[i].MCTval ? data[i].MCTval: ' ';
+      
+            
+            html += '<td>' + data[i].batch + '</td><td>' + data[i].orderID + '</td><td>' + data[i].productcode + '</td><td>' + data[i].productdescription + '</td><td>' + data[i].priority + '</td><td>' + data[i].customer + '</td><td>' + data[i].brand + '</td>';
+            html += '<td>' + data[i].recipe.name + '</td><td>' + data[i].flavour.name + '</td><td>' + data[i].bottles + '</td><td>' + data[i].stocking + '</td><td>' + data[i].btype + '</td><td>' + data[i].lid + '</td>';
+            html += '<td>' + data[i].packagingType.name + '</td><td>' + data[i].QTY + '</td><td>' + data[i].flavvalue + '</td><td>' + data[i].VGval + '</td><td>' + data[i].AGval + '</td><td>' + data[i].PGval + '</td><td>' + data[i].Nico + '</td><td>' + data[i].Nicosalts + '</td><td>' + data[i].CBDvalue + '</td><td>' + data[i].MCTval + '</td>';
+            html += '<td>' + data[i].mixing + '</td><td>' + data[i].premixed + '</td><td>' + data[i].unbranded + '</td><td>' + data[i].branded + '</td><td>' + data[i].backtubed + '</td><td>' + data[i].mixing_status + '</td>';
+            html += '<td>' + data[i].production_status + '</td><td>' + data[i].printing_status + '</td><td>' + data[i].labeling_status + '</td><td>' + data[i].packaging_status + '</td><td>' + data[i].final_status + '</td>';
+            html += '<td>' + data[i].partialProduction + '</td><td>' + data[i].partialPackaging + '</td>';
+
+            html += '</tr>';
+        
+        bottlesTotal+=parseInt(data[i].bottles,10);
+        stockingTotal+=parseInt(data[i].stocking,10);
+        if(data[i].QTY){
+        qtyTotal+=data[i].QTY;
+        }
+        mixingTotal+=parseInt(data[i].mixing,10);
+        premixTotal+=parseInt(data[i].premixed,10);
+        unbrandedTotal+=parseInt(data[i].unbranded,10);
+        brandedTotal+=parseInt(data[i].branded,10);
+        tubesTotal+=parseInt(data[i].backtubed,10);
+        
+
+        }else{
+        takefrom++;
+        console.log(data[i]);}
+       
+        }
+        rowsTotal=i-takefrom;
+        
+        }
+        html += '</tbody></table>';
+
+        
+       $('#pageBody').html(html);
+         $('#bottlesTotal'+thisPage).html(bottlesTotal);
+         $('#stockingTotal'+thisPage).html(stockingTotal);
+         $('#qtyTotal'+thisPage).html(qtyTotal);
+         $('#mixingTotal'+thisPage).html(mixingTotal);
+         $('#premixTotal'+thisPage).html(premixTotal);
+         $('#unbrandedTotal'+thisPage).html(unbrandedTotal);
+         $('#brandedTotal'+thisPage).html(brandedTotal);
+         $('#tubesTotal'+thisPage).html(tubesTotal);
+          $('#rowsTotal'+thisPage).html(rowsTotal);
+
+    }
+}
+function populateSLMixingTab(){
+google.script.run.withSuccessHandler(buildSLMixingTable).getSheetData('MixingTeam');
+
+
+}
+var thisData;
+var thisPage;
+function buildSLMixingTable(data){
+   thisData=data;
+    thisPage='MixingTeam';
+var qtyTotal=0;
+var rowsTotal=0;
+var html='';
+html+='<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Completed</th><th>Priority</th><th>Date of Production</th><th>Batch</th><th>Customers</th><th>Order Ids</th><th>Mix Batch Code</th>';
+html+='<th>Recipe</th><th>Flavour</th><th>Order Date</th><th>QTY(Litres)</th><th>VG (MG)</th><th>AG (MG)</th><th>PG (MG)</th><th>Nicotine (MG)</th><th>Nicotine Salts (MG)</th><th>CBD (MG)</th><th>MCT (MG)</th>';
+html+='<th>Flavour (MG)</th><th>Notes - Mixing Dept</th><th>Factory</th><th>Location</th><th>Start Date</th><th>Completion Date</th><th>VG supplier batch </th><th>PG supplier batch </th><th>Nicotine supplier batch </th><th>Flavour supplier batch </th>';
+
+html += '</tr>';
+html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>QTY TOTAL</div><div id="qtyTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>';
+
+ if(data){
+         var keys=['Completed','priority','prodDate','batches','MIXNAME','RECIPE','FLAVOUR','orderDates','QTYTOTAL','VGval','AGval','PGval','Nico','Nicosalts','CBDvalue','MCTval','flavvalue','Notes','factory','Location','starttime','CompletionDate','vgSupplier','pgSupplier','nicSupplier','flavSupplier'];
+         var drpdowns='';
+         html += '<tr><th></th><th></th>';
+         console.log(keys);
+         for(var l=0;l<keys.length;l++){
+         drpdowns+=('<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>');
+         }
+         }
+         html+=drpdowns;
+         html+='</tr>';
+         html += '</thead>';
+html+='<tbody>';
+for(var i=0;i<data.length;i++){
+  if (data[i].movedtoNext == 0) {
+         html+='<tr>'
+         }else if (data[i].movedtoNext == 'Busy') {
+          html+='<tr bgcolor="#1BCFEF">'
+         }else{
+          html+='<tr bgcolor="#1BEF5B">'
+         }
+        
+            html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+
+if (data[i].movedtoNext == 0||data[i].movedtoNext == 'Busy'){    
+html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal" href="#EditItemMixing'+data[i].MIXNAME+'">Edit/Mark Complete</a>';
+
+html+='<a class="dropdown-item" onclick="return menuClick(this);" page="MixingTeam" href="#setBusy'+data[i].MIXNAME+'">Mark Busy</a>';
+}
+
+html+=' </div></div></td>';
+ var batches=[];
+            var orderDates=[];
+            var priorities=[];
+            var mixARR=[];
+            var customers=[];
+            var orderIDs=[];
+               var result = Object.keys(data[i].Batches).map(function(key) {
+                    return [Number(key), data[i].Batches[key]];
+                  });
+                  
+               
+                  for(var j=0;j<result.length;j++){
+                    mixARR.push(result[j][1]);
+                    
+                  }
+                  
+            for(var j=0;j<mixARR.length;j++){
+            try{
+            batches.push(mixARR[j].batch);
+            orderDates.push(formatDateDisplay(mixARR[j].orderdate));
+            priorities.push(mixARR[j].priority);
+            customers.push(mixARR[j].customer);
+            orderIDs.push(mixARR[j].orderID);
+            }catch(e){console.log(e.message);}
+            }
+   html += '<td></td>';
+
+        
+        data[i].flavvalue=data[i].flavvalue ? data[i].flavvalue: ' ';
+        data[i].VGval=data[i].VGval ? data[i].VGval: ' ';
+        data[i].AGval=data[i].AGval ? data[i].AGval: ' ';
+        data[i].PGval=data[i].PGval ? data[i].PGval: ' ';
+        data[i].Nico=data[i].Nico ? data[i].Nico: ' ';
+        data[i].Nicosalts=data[i].Nicosalts ? data[i].Nicosalts: ' ';
+        data[i].CBDvalue=data[i].CBDvalue ? data[i].CBDvalue: ' ';
+        data[i].MCTval=data[i].MCTval ? data[i].MCTval: ' ';
+      
+
+html+='<td>'+data[i].Completed+'</td><td>'+priorities.join()+'</td><td>'+formatDateDisplay2(data[i].prodDate)+'</td><td>'+batches.join()+'</td><td>' + customers.join() + '</td><td>' + orderIDs.join() + '</td><td>'+data[i].MIXNAME+'</td><td>'+data[i].RECIPE+'</td>';
+html+='<td>'+data[i].FLAVOUR+'</td><td>'+ orderDates.join()+'</td><td>'+data[i].QTYTOTAL+'</td><td>'+data[i].VGval+'</td><td>'+data[i].AGval+'</td><td>'+data[i].PGval+'</td><td>'+data[i].Nico+'</td><td>'+data[i].Nicosalts+'</td><td>'+data[i].CBDvalue+'</td><td>'+data[i].MCTval+'</td>';
+html+='<td>'+data[i].flavvalue+'</td><td>'+data[i].Notes+'</td><td>'+data[i].factory+'</td><td>'+data[i].Location+'</td><td>'+formatDateDisplay2(data[i].starttime)+'</td><td>'+formatDateDisplay2(data[i].CompletionDate)+'</td><td>'+data[i].vgSupplier+'</td><td>'+data[i].pgSupplier+'</td><td>'+data[i].nicSupplier+'</td><td>'+data[i].flavSupplier+'</td></tr>';
+
+qtyTotal+=parseInt(data[i].QTYTOTAL,10);
+
+}
+rowsTotal=i;
+
+ html+='</tbody></table>';
+
+
+$('#pageBody').html(html);
+$('#qtyTotal').html(qtyTotal);
+$('#rowsTotal').html(rowsTotal);
+
+}
+    function populateFlavourMixMixingTeamTab() {
+        google.script.run.withSuccessHandler(buildFlavourMixMixingTeamTable).getSheetData('FlavourMixMixingTeam');
+
+
+    }
+    function populatePremixColoringTab() {
+        google.script.run.withSuccessHandler(buildPremixColoringTable).getSheetData('PremixColoring');
+
+
+    }
+   function buildFlavourMixMixingTeamTable(data){
+       
+       
+        thisData=data;
+        thisPage='FlavourMixMixingTeam';
+        console.log(data);
+        var html = '';
+        var heads=['Row','Menu','Order Date','Started','Batch','Stocking','Mix','Status','Completion Date','Notes','Location'];
+        var keys=['row','menu','orderdate','starttime','batch','stocking','flavourmix.name','final_status','CompletionDate','Notes','Location']
+        html += '<table class="table"><thead><tr>';
+        for(var i=0;i<heads.length;i++){
+          html+= '<th>'+heads[i]+'</th>';
+        }
+        html += '</tr>';
+        
+        var drpdowns='';
+        html += '<tr><th></th><th></th>';
+        console.log(keys);
+        for(var l=2;l<keys.length;l++){
+        drpdowns+='<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>';
+        }
+     
+        html+=drpdowns;
+        html+='</tr>';
+        html+='</thead><tbody>';
+        for(var i=0;i<data.length;i++){
+            if(data[i].Completed=='Completed'){
+            html +='<tr bgcolor="#1BEF5B">';
+            }else if(data[i].movedtoNext=='Busy'){
+            html +='<tr bgcolor="#1BCFEF">';
+            }else{
+            html +='<tr>';
+            }
+            for(var j=0;j<keys.length;j++){
+            
+              if(keys[j]=='menu'){
+               
+               html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+             
+             if (data[i].movedtoNext == 0||data[i].movedtoNext == 'Busy'){    
+             html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal"  page="FlavourMixMixingTeam" href="#EditItemFlavourMixMixing'+data[i].batch+'">Edit/Mark Complete</a>';
+             
+             html+='<a class="dropdown-item" onclick="return menuClick(this);" page="FlavourMixMixingTeam" href="#setBusy'+data[i].batch+'">Mark Busy</a>';
+             }    
+             
+                html += '</div></div></td>';  
+                }else if(keys[j]=='flavourmix.name'){
+                html+= '<td>'+data[i].flavourmix.name+'</td>';
+                }else if(keys[j]=='row'){
+                html+= '<td>'+i+'</td>';
+                }else if(keys[j]=='orderdate'){
+                html+= '<td>'+formatDateDisplay(data[i][keys[j]])+'</td>';
+                }else if(keys[j]=='starttime'||keys[j]=='CompletionDate'){
+                html+= '<td>'+formatDateDisplay(data[i][keys[j]])+'</td>';
+                }else{
+                html+= '<td>'+data[i][keys[j]]+'</td>';
+                }
+              
+            }
+           html +='</tr>';
+          }
+      
+          
+         html+='</tbody></table>';
+       $('#pageBody').html(html);
+
+   
+   
+   }
+
+ function populateSLProductionTab(){
+ google.script.run.withSuccessHandler(buildSLProductionTable).getSheetData('Production');
+
+}
+   function buildPremixColoringTable(data){
+       
+        SelAllOrders=data;
+        thisData=data;
+        thisPage='PremixColoring';
+        console.log(data);
+        var html = '';
+     var heads=['Row','Menu','Batch','Order Date','Started','QTY','Color','Color SKU','Color %','Mix Batch Code','Uncolored Premix Description','Uncolored Premix SKU','Colored Premix Description','Colored Premix SKU','Status','Completion Date','Notes','Location'];
+        var keys=['row','menu','batch','orderdate','starttime','QTY','Color.name','Color.sku','Color.val','mix_batch_code','premixdescr','premixSKU','premixdescrColored','premixSKUColored','final_status','CompletionDate','Notes','Location']
+        html += '<table class="table"><thead><tr>';
+        for(var i=0;i<heads.length;i++){
+          html+= '<th>'+heads[i]+'</th>';
+        }
+        html += '</tr>';
+        
+        var drpdowns='';
+        html += '<tr><th></th><th></th>';
+        console.log(keys);
+        for(var l=2;l<keys.length;l++){
+        drpdowns+='<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>';
+        }
+     
+        html+=drpdowns;
+        html+='</tr>';
+        html+='</thead><tbody>';
+        for(var i=0;i<data.length;i++){
+          if(data[i].final_status=='Completed'){
+            html +='<tr bgcolor="#1BEF5B">';
+            }else if(data[i].final_status=='Busy'||data[i].final_status=='started'){
+            html +='<tr bgcolor="#1BCFEF">';
+            }else{
+            html +='<tr>';
+            }
+            for(var j=0;j<keys.length;j++){
+            
+              if(keys[j]=='menu'){
+                html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+                if (data[i].movedtoNext == 0||data[i].movedtoNext == 'Busy'){    
+                html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal"  page="PremixColoring" href="#EditItemPremixColoring'+data[i].batch+'">Edit/Mark Complete</a>';
+                
+                html+='<a class="dropdown-item" onclick="return menuClick(this);" page="PremixColoring" href="#setBusy'+data[i].batch+'">Mark Busy</a>';
+                }  
+                html += '</div></div></td>';  
+                }else if(keys[j]=='row'){
+                html+= '<td>'+i+'</td>';
+                }else if(keys[j]=='Color.name'){
+                html+= '<td>'+data[i].Color.name+'</td>';
+                }else if(keys[j]=='Color.sku'){
+                html+= '<td>'+data[i].Color.sku+'</td>';
+                }else if(keys[j]=='Color.val'){
+                html+= '<td>'+data[i].Color.val+'</td>';
+                }else if(keys[j]=='orderdate'){
+                html+= '<td>'+formatDateDisplay(data[i][keys[j]])+'</td>';
+                }else if(keys[j]=='starttime'||keys[j]=='CompletionDate'){
+                html+= '<td>'+formatDateDisplay2(data[i][keys[j]])+'</td>';
+                }else{
+                html+= '<td>'+data[i][keys[j]]+'</td>';
+                }
+              
+            }
+           html +='</tr>';
+          }
+      
+          
+         html+='</tbody></table>';
+        $('#pageBody').html(html);
+
+   
+   }
+function buildSLProductionTable(data){
+    google.script.run.withSuccessHandler(buildMachinesOptions).getMachines();
+    function buildMachinesOptions(rett){
+    var machines=rett[0];
+    
+var html='';
+   thisData=data;
+    thisPage='Production';
+var bottlesTotal=0;
+var rowsTotal=0;
+      var mixingTotal=0;
+        var premixTotal=0;
+        var unbrandedTotal=0;
+        var brandedTotal=0;
+var tubesTotal=0;
+html+='<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Mixing Completed</th><th>Order Date</th><th>Batch</th><th>Machine</th><th>Order ID</th><th>Priority</th><th>Description</th><th>Mix Batch Code</th><th>Brand</th><th>Recipe</th><th>Flavour</th>';
+html+='<th>Bottles</th><th>Bottle Type</th><th>Lid Type</th><th>Location</th>';
+html+='<th>Backed By Mixing</th><th>Backed By Premix</th><th>Backed By Unbranded</th><th>Backed By Branded</th><th>Backed By Branded Packaged</th>';
+html += '</tr>';
+html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>';
+html += '</th><th></th><th></th><th><div>BOTTLES TOTAL</div><div id="bottlesTotal"></div></th><th></th><th></th><th></th><th><div>MIXING TOTAL</div><div id="mixingTotal"></div></th><th><div>PREMIX TOTAL</div><div id="premixTotal"></div></th><th><div>UNBRANDED TOTAL</div><div id="unbrandedTotal"></div></th><th><div>BRANDED TOTAL</div><div id="brandedTotal"></div></th></th><th><div>TUBES TOTAL</div><div id="tubesTotal"></div></th></tr>';
+
+ if(data){
+         var keys=['mixing_status','orderdate','batch','machineP','orderID','priority','productdescription','mixbatch','brand','recipe.name','flavour.name','bottles','btype','lid','Location','mixing','premixed','unbranded','branded','backtubed'];
+         var drpdowns='';
+         html += '<tr><th></th><th></th>';
+         console.log(keys);
+         for(var l=0;l<keys.length;l++){
+         drpdowns+=('<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>');
+         }
+         }
+         html+=drpdowns;
+         html+='</tr>';
+         html += '</thead>';
+html+='<tbody>';
+for(var i=0;i<data.length;i++){
+if(!data[i].recipe){continue;}
+  if (data[i].movedtoNext == 0) {
+         html+='<tr>'
+          }else if (data[i].movedtoNext == 'Busy') {
+          html+='<tr bgcolor="#1BCFEF">'
+         }else{
+          html+='<tr bgcolor="#1BEF5B">'
+         }
+        if(!data[i].numLabelsBottles){
+         data[i].numLabelsBottles=0;
+         }
+         if(!data[i].numLabelsTubes){
+         data[i].numLabelsTubes=0;
+         }
+         if(!data[i].packagingType){
+         data[i].packagingType={
+         name:0,
+         };
+         }
+         if(!data[i].boxname){
+         data[i].boxname={
+         name:0,
+         };
+         }
+            html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+if (data[i].movedtoNext == 0||data[i].movedtoNext == 'Busy'){     
+html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal" href="#EditItemProduction'+data[i].batch+'">Edit/Mark Complete</a>';
+if(data[i].movedtoNext != 'Busy'){
+html+='<a class="dropdown-item" onclick="return menuClick(this);" page="Production" href="#setBusy'+data[i].batch+'">Mark Busy</a>';
+}
+html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#partial" page="Production" href="#partial'+data[i].batch+'">Mark Partial Production</a>';
+html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#overProd" page="Production" href="#over'+data[i].batch+'">Mark Over Production</a>';
+}
+
+   html += '<a class="dropdown-item" onclick="return menuClick(this);" id="select'+data[i].batch+'" href="#select' + data[i].batch + '">Select</a>';
+            html += '<a class="dropdown-item" onclick="return menuClick(this);" style="display:none;" id="deselect'+data[i].batch+'" href="#select' + data[i].batch + '">Deselect</a>';
+            
+html+=' </div></div></td>';
+   html += '<td></td>';
+
+     
+
+  data[i].priority=data[i].priority ? data[i].priority: ' ';
+
+html+='<td>'+data[i].mixing_status+'</td><td>'+formatDateDisplay(data[i].orderdate)+'</td><td>'+data[i].batch+'</td>';
+if(data[i].machineP){
+var machinePDisp='';
+
+for(var m=0;m<machines.length;m++){
+if(data[i].machineP==machines[m].sku){
+machinePDisp=machines[m].name;
+break;
+}
+}
+    
+      
+
+html += '<td>' + machinePDisp + '</td>';
+}else{
+html += '<td></td>';
+
+}
+
+html+='<td>' + data[i].orderID + '</td><td>' + data[i].priority + '</td><td>' + data[i].productdescription + '</td><td>'+data[i].mixbatch+'</td><td>'+data[i].brand+'</td><td>'+data[i].recipe.name+'</td>';
+html+='<td>'+data[i].flavour.name+'</td><td>'+data[i].bottles+'</td><td>'+data[i].btype+'</td><td>'+data[i].lid+'</td>';
+html+='<td>'+data[i].Location+'</td>';
+html+='<td>'+data[i].mixing+'</td><td>'+data[i].premixed+'</td><td>'+data[i].unbranded+'</td><td>'+data[i].branded+'</td><td>'+data[i].backtubed+'</td></tr>';
+bottlesTotal+=parseInt(data[i].bottles,10);
+        mixingTotal+=parseInt(data[i].mixing,10);
+        premixTotal+=parseInt(data[i].premixed,10);
+        unbrandedTotal+=parseInt(data[i].unbranded,10);
+        brandedTotal+=parseInt(data[i].branded,10);
+
+tubesTotal+=parseInt(data[i].backtubed,10);
+}
+rowsTotal=i;
+ html+='</tbody></table>';
+
+
+$('#pageBody').html(html);
+ $('#bottlesTotal').html(bottlesTotal);
+ $('#rowsTotal').html(rowsTotal);
+  $('#mixingTotal').html(mixingTotal);
+         $('#premixTotal').html(premixTotal);
+         $('#unbrandedTotal').html(unbrandedTotal);
+         $('#brandedTotal').html(brandedTotal);
+
+}
+}
+     
+ function   populateSLPrintingTab(){
+ google.script.run.withSuccessHandler(buildSLPrintingTable).getSheetData('Printing');
+
+}
+
+function buildSLPrintingTable(data){
+var html='';
+   thisData=data;
+    thisPage='Printing';
+       var mixingTotal=0;
+        var premixTotal=0;
+        var unbrandedTotal=0;
+        var brandedTotal=0;
+        var tubesTotal=0;
+  
+        var bottlesTotal=0;
+        var rowsTotal=0;
+ 
+      var botlabels=0;
+    var tubelabels=0;
+
+        html += '<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Production Status</th><th>Order Date</th><th>Batch</th><th>Priority</th><th>Bottle Labels QTY</th><th>Cylinder Labels QTY</th><th>Exp. Date</th><th>Label</th><th>Order ID</th><th>Description</th><th>Customer</th><th>Brand</th><th>Recipe</th><th>Flavour</th>';
+html+='<th>Bottles</th><th>Bottle Type</th><th>Pack Type</th><th>Location</th>';
+html += '</tr>';
+html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th><div>BOTTLE LABELS TOTAL</div><div id="numLabelsBottlesTotal"></div></th><th><div>PACK LABELS TOTAL</div><div id="numLabelsTubesTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>BOTTLES TOTAL</div><div id="bottlesTotal">';
+html += '</div></th><th></th><th></th></th></th></tr>';
+       if(data){
+         var keys=['production_status','orderdate','batch','priority','numLabelsBottles','numLabelsTubes','expDate','botlabel','orderID','productdescription','customer','brand','recipe.name','flavour.name','bottles','btype','packagingType.name','Location'];
+         var drpdowns='';
+         html += '<tr><th></th><th></th>';
+         console.log(keys);
+         for(var l=0;l<keys.length;l++){
+         drpdowns+=('<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>');
+         }
+         }
+         html+=drpdowns;
+         html+='</tr>';
+         html += '</thead>';
+         html+='<tbody>';
+         for(var i=0;i<data.length;i++){
+         if(!data[i].recipe){continue;}
+         if (data[i].movedtoNext == 0) {
+         html+='<tr>'
+         }else if (data[i].movedtoNext == 'Busy') {
+         html+='<tr bgcolor="#1BCFEF">'
+         }else{
+         html+='<tr bgcolor="#1BEF5B">'
+         }
+         if(!data[i].numLabelsBottles){
+         data[i].numLabelsBottles=0;
+         }
+         if(!data[i].numLabelsTubes){
+         data[i].numLabelsTubes=0;
+         }
+         if(!data[i].packagingType){
+         data[i].packagingType={
+         name:0,
+         };
+         }
+         if(!data[i].boxname){
+         data[i].boxname={
+         name:0,
+         };
+         }
+         html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+         if (data[i].movedtoNext == 0||data[i].movedtoNext == 'Busy'){    
+         html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal" href="#EditItemPrinting'+data[i].batch+'">Edit/Mark Complete</a>';
+         if(data[i].movedtoNext != 'Busy'){
+         html+='<a class="dropdown-item" onclick="return menuClick(this);" page="Printing" href="#setBusy'+data[i].batch+'">Mark Busy</a>';
+         }
+         }
+         
+         
+         
+         html+=' </div></div></td>';
+         
+         html += '<td><button page="Printing" batch="'+data[i].batch+'" onclick="moveUp(this)" id="moveUP"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>';
+         html += '<button onclick="moveDown(this)" page="Printing" batch="'+data[i].batch+'" id="moveDOWN"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>';
+ data[i].priority=data[i].priority ? data[i].priority: ' ';
+         html += '<td>' + data[i].ProductionCompleted + '</td><td>' + formatDateDisplay(data[i].orderdate) + '</td><td>' + data[i].batch + '</td><td>' + data[i].priority + '</td><td>' + data[i].numLabelsBottles + '</td><td>' + data[i].numLabelsTubes + '</td><td>' + data[i].expDate + '</td><td>'+data[i].botlabel+'</td><td>' + data[i].orderID + '</td><td>' + data[i].productdescription + '</td><td>' + data[i].customer + '</td><td>' + data[i].brand + '</td><td>' + data[i].recipe.name + '</td>';
+         
+         html+='<td>'+data[i].flavour.name+'</td><td>'+data[i].bottles+'</td><td>'+data[i].btype+'</td><td>'+data[i].packagingType.name+'</td>';
+         html+='<td>'+data[i].Location+'</td>';
+         html+='</tr>';
+         bottlesTotal+=parseInt(data[i].bottles,10);
+                  botlabels+=parseInt(data[i].numLabelsBottles,10);
+         tubelabels+=parseInt(data[i].numLabelsTubes,10);
+
+}
+rowsTotal=i;
+ html+='</tbody></table>';
+
+$('#pageBody').html(html);
+ $('#bottlesTotal').html(bottlesTotal);
+ $('#rowsTotal').html(rowsTotal);
+ $('#numLabelsBottlesTotal').html(botlabels);
+$('#numLabelsTubesTotal').html(tubelabels);
+
+}
+ function  populateSLLabellingTab(){
+ google.script.run.withSuccessHandler(buildSLLabellingTable).getSheetData('Labelling');
+
+}
+
+function buildSLLabellingTable(data){
+var html='';
+   thisData=data;
+    thisPage='Labelling';
+        var mixingTotal=0;
+        var premixTotal=0;
+        var unbrandedTotal=0;
+        var brandedTotal=0;
+        var tubesTotal=0;
+
+        var bottlesTotal=0;
+        var rowsTotal=0;
+
+
+html+='<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Production Status</th><th>Order Date</th><th>Batch</th><th>Order ID</th<th>Priority</th>><th>Code</th><th>Description</th><th>Customer</th><th>Brand</th><th>Recipe</th><th>Flavour</th>';
+html+='<th>Bottles</th><th>Bottle Type</th><th>Lid Type</th><th>Pack Type</th><th>Start Date</th><th>Completion Date</th><th>Production Completed</th><th>Location</th><th>Machine</th>';
+html+='<th>Backed By Mixing</th><th>Backed By Premix</th><th>Backed By Unbranded</th><th>Backed By Branded</th>';
+        html += '</tr>';
+        html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>BOTTLES TOTAL</div><div id="bottlesTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>MIXING TOTAL</div><div id="mixingTotal"></div></th><th><div>PREMIX TOTAL</div><div id="premixTotal"></div></th><th><div>UNBRANDED TOTAL</div><div id="unbrandedTotal"></div></th><th><div>BRANDED TOTAL</div><div id="brandedTotal"></div></th></th></th><th><div>TUBES TOTAL</div><div id="tubesTotal"></div></th></tr>';
+        
+               
+         if(data){
+         var keys=['production_status','orderdate','batch','orderID','priority','productcode','productdescription','customer','brand','recipe.name','flavour.name','bottles','btype','lid','packagingType.name','starttime','CompletionDate','Completed','Location','machineL','mixing','premixed','unbranded','branded','backtubed'];
+         var drpdowns='';
+         html += '<tr><th></th><th></th>';
+         console.log(keys);
+         for(var l=0;l<keys.length;l++){
+         drpdowns+=('<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>');
+         }
+         }
+         html+=drpdowns;
+         html+='</tr>';
+         html += '</thead>';
+html+='<tbody>';
+for(var i=0;i<data.length;i++){
+if(!data[i].recipe){continue;}
+  if (data[i].movedtoNext == 0) {
+         html+='<tr>'
+          }else if (data[i].movedtoNext == 'Busy') {
+          html+='<tr bgcolor="#1BCFEF">'
+         }else{
+          html+='<tr bgcolor="#1BEF5B">'
+         }
+        if(!data[i].numLabelsBottles){
+         data[i].numLabelsBottles=0;
+         }
+         if(!data[i].numLabelsTubes){
+         data[i].numLabelsTubes=0;
+         }
+         if(!data[i].packagingType){
+         data[i].packagingType={
+         name:0,
+         };
+         }
+         if(!data[i].boxname){
+         data[i].boxname={
+         name:0,
+         };
+         }
+            html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+if (data[i].movedtoNext == 0||data[i].movedtoNext == 'Busy'){      
+html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal" href="#EditItemLabelling'+data[i].batch+'">Edit/Mark Complete</a>';
+if(data[i].movedtoNext != 'Busy'){
+html+='<a class="dropdown-item" onclick="return menuClick(this);" page="Labelling" href="#setBusy'+data[i].batch+'">Mark Busy</a>';
+}
+}
+
+html+=' </div></div></td>';
+   html += '<td></td>';
+
+ data[i].priority=data[i].priority ? data[i].priority: ' ';
+
+html+='<td>'+data[i].ProductionCompleted+'</td><td>'+formatDateDisplay(data[i].orderdate)+'</td><td>'+data[i].batch+'</td><td>' + data[i].orderID + '</td><td>' + data[i].priority + '</td><td>' + data[i].productcode + '</td><td>' + data[i].productdescription + '</td><td>'+data[i].customer+'</td><td>'+data[i].brand+'</td><td>'+data[i].recipe.name+'</td>';
+html+='<td>'+data[i].flavour.name+'</td><td>'+data[i].bottles+'</td><td>'+data[i].btype+'</td><td>'+data[i].lid+'</td><td>'+data[i].packagingType.name+'</td><td>'+formatDateDisplay2(data[i].starttime)+'</td><td>'+formatDateDisplay2(data[i].CompletionDate)+'</td>';
+html+='<td>'+data[i].Completed+'</td><td>'+data[i].Location+'</td><td>' + data[i].machineL + '</td>';
+html+='<td>'+data[i].mixing+'</td><td>'+data[i].premixed+'</td><td>'+data[i].unbranded+'</td><td>'+data[i].branded+'</td><td>'+data[i].backtubed+'</td></tr>';
+ mixingTotal+=parseInt(data[i].mixing,10);
+        premixTotal+=parseInt(data[i].premixed,10);
+        unbrandedTotal+=parseInt(data[i].unbranded,10);
+        brandedTotal+=parseInt(data[i].branded,10);
+        tubesTotal+=parseInt(data[i].backtubed,10);
+
+bottlesTotal+=parseInt(data[i].bottles,10);
+       
+
+}
+rowsTotal=i;
+
+ html+='</tbody></table>';
+
+
+$('#pageBody').html(html);
+$('#mixingTotal').html(mixingTotal);
+         $('#premixTotal').html(premixTotal);
+         $('#unbrandedTotal').html(unbrandedTotal);
+         $('#brandedTotal').html(brandedTotal);
+         $('#tubesTotal').html(tubesTotal);
+
+$('#bottlesTotal').html(bottlesTotal);
+$('#rowsTotal').html(rowsTotal);
+
+}
+ function  populateSLPackagingTab(){
+ google.script.run.withSuccessHandler(buildSLPackagingTable).getSheetData('Packaging');
+
+}
+
+function buildSLPackagingTable(data){
+var html='';
+   thisData=data;
+    thisPage='Packaging';
+        var mixingTotal=0;
+        var premixTotal=0;
+        var unbrandedTotal=0;
+        var brandedTotal=0;
+        var tubesTotal=0;
+
+        var bottlesTotal=0;
+        var rowsTotal=0;
+
+html+='<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Production Status</th><th>Printing Status</th><th>Order Date</th><th>Batch</th><th>Order ID</th><th>Priority</th><th>Code</th><th>Description</th><th>Packaging Code</th><th>Customer</th><th>Brand</th><th>Recipe</th><th>Flavour</th>';
+html+='<th>Bottles</th><th>Bottle Type</th><th>Lid Type</th><th>Pack Type</th><th>Start Date</th><th>Completion Date</th><th>Packaging Completed</th><th>Location</th>';
+html+='<th>Backed By Mixing</th><th>Backed By Premix</th><th>Backed By Unbranded</th><th>Backed By Branded</th>';
+        html += '</tr>';
+        
+        html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>BOTTLES TOTAL</div><div id="bottlesTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>MIXING TOTAL</div><div id="mixingTotal"></div></th><th><div>PREMIX TOTAL</div><div id="premixTotal"></div></th><th><div>UNBRANDED TOTAL</div><div id="unbrandedTotal"></div></th><th><div>BRANDED TOTAL</div><div id="brandedTotal"></div></th></th></th><th><div>TUBES TOTAL</div><div id="tubesTotal"></div></th></tr>';
+                 if(data){
+         var keys=['production_status','printing_status','orderdate','batch','orderID','priority','productcode','productdescription','PRINTCODE','customer','brand','recipe.name','flavour.name','bottles','btype','lid','packagingType.name','starttime','CompletionDate','Completed','Location','mixing','premixed','unbranded','branded','backtubed'];
+         var drpdowns='';
+         html += '<tr><th></th><th></th>';
+         console.log(keys);
+         for(var l=0;l<keys.length;l++){
+         drpdowns+=('<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>');
+         }
+         }
+         html+=drpdowns;
+         html+='</tr>';
+         html += '</thead>';
+html+='<tbody>';
+for(var i=0;i<data.length;i++){
+if(!data[i].recipe){continue;}
+  if (data[i].movedtoNext == 0) {
+         html+='<tr>'
+         }else if (data[i].movedtoNext == 'Busy') {
+          html+='<tr bgcolor="#1BCFEF">'
+         }else{
+          html+='<tr bgcolor="#1BEF5B">'
+         }
+        if(!data[i].numLabelsBottles){
+         data[i].numLabelsBottles=0;
+         }
+         if(!data[i].numLabelsTubes){
+         data[i].numLabelsTubes=0;
+         }
+         if(!data[i].packagingType){
+         data[i].packagingType={
+         name:0,
+         };
+         }
+         if(!data[i].boxname){
+         data[i].boxname={
+         name:0,
+         };
+         }
+            html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+if (data[i].movedtoNext == 0||data[i].movedtoNext == 'Busy'){           
+html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal" href="#EditItemPackaging'+data[i].batch+'">Edit/Mark Complete</a>';
+if(data[i].movedtoNext != 'Busy'){
+html+='<a class="dropdown-item" onclick="return menuClick(this);" page="Packaging" href="#setBusy'+data[i].batch+'">Mark Busy</a>';
+}
+html+='<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#partial" page="Packaging" href="#partial'+data[i].batch+'">Mark Partial Packaging</a>';
+}
+
+   html += '<a class="dropdown-item" onclick="return menuClick(this);" id="select'+data[i].batch+'" href="#select' + data[i].batch + '">Select</a>';
+            html += '<a class="dropdown-item" onclick="return menuClick(this);" style="display:none;" id="deselect'+data[i].batch+'" href="#select' + data[i].batch + '">Deselect</a>';
+            
+html+=' </div></div></td>';
+   html += '<td></td>';
+
+ data[i].priority=data[i].priority ? data[i].priority: ' ';
+
+html+='<td>'+data[i].ProductionCompleted+'</td><td>'+data[i].PrintingCompleted+'</td><td>'+formatDateDisplay(data[i].orderdate)+'</td><td>'+data[i].batch+'</td><td>' + data[i].orderID + '</td><td>' + data[i].priority + '</td><td>' + data[i].productcode + '</td><td>' + data[i].productdescription + '</td><td>'+data[i].PRINTCODE+'</td><td>'+data[i].customer+'</td><td>'+data[i].brand+'</td><td>'+data[i].recipe.name+'</td>';
+html+='<td>'+data[i].flavour.name+'</td><td>'+data[i].bottles+'</td><td>'+data[i].btype+'</td><td>'+data[i].lid+'</td><td>'+data[i].packagingType.name+'</td><td>'+formatDateDisplay2(data[i].starttime)+'</td><td>'+formatDateDisplay2(data[i].CompletionDate)+'</td>';
+html+='<td>'+data[i].Completed+'</td><td>'+data[i].Location+'</td>';
+html+='<td>'+data[i].mixing+'</td><td>'+data[i].premixed+'</td><td>'+data[i].unbranded+'</td><td>'+data[i].branded+'</td><td>'+data[i].backtubed+'</td></tr>';
+mixingTotal+=parseInt(data[i].mixing,10);
+premixTotal+=parseInt(data[i].premixed,10);
+unbrandedTotal+=parseInt(data[i].unbranded,10);
+brandedTotal+=parseInt(data[i].branded,10);
+tubesTotal+=parseInt(data[i].backtubed,10);
+
+bottlesTotal+=parseInt(data[i].bottles,10);
+
+}
+rowsTotal=i;
+ html+='</tbody></table>';
+
+
+$('#pageBody').html(html);
+$('#mixingTotal').html(mixingTotal);
+$('#premixTotal').html(premixTotal);
+$('#unbrandedTotal').html(unbrandedTotal);
+$('#brandedTotal').html(brandedTotal);
+$('#tubesTotal').html(tubesTotal);
+
+$('#bottlesTotal').html(bottlesTotal);
+$('#rowsTotal').html(rowsTotal);
+
+}
+  
+
+
+
+
+function editMixingItem(batch){
+
+ google.script.run.withSuccessHandler(buildform).getMixingItemData(batch);
+
+}
+function editItemPage(batch,page){
+console.log('batch',batch);
+google.script.run.withSuccessHandler(buildform).getItemPage(batch,page);
+
+}
+function editFlavourMixMixingItem(batch){
+console.log('batch',batch);
+ google.script.run.withSuccessHandler(buildform).getFlavourMixMixingItemData(batch);
+
+}
+function editProductionItem(batch){
+console.log(batch);
+ google.script.run.withSuccessHandler(buildform).getProductionItemData(batch);
+}
+
+function editPrintingItem(batch){
+ google.script.run.withSuccessHandler(buildform).getPrintingItemData(batch);
+
+}
+function editLabellingItem(batch){
+ google.script.run.withSuccessHandler(buildform).getLabellingItemData(batch);
+
+}
+function editPackagingItem(batch){
+ google.script.run.withSuccessHandler(buildform).getPackagingItemData(batch);
+}
+
+
+function buildform(data){
+console.log(data);
+ if(thisPage=='MixingTeam'){
+ var html='';
+ html+='<table class="form_table">';
+ html+='<tr><td><h4>Completed</h4></td><td><h4>Production Date</h4></td><td><h4>Notes</h4></td><td><h4>Location</h4></td><td><h4>VG supplier batch</h4></td><td><h4>PG supplier batch</h4></td><td><h4>Nicotine supplier batch</h4></td><td><h4>Flavour supplier batch</h4></td><tr>';
+ 
+ var opt='';
+ opt+='<option batch="'+data.MIXNAME+'" value="Not Completed" selected id="Completed">Not Completed<option>';
+ opt+='<option batch="'+data.MIXNAME+'" value="Completed" id="Completed">Completed<option>';
+
+ 
+ 
+ html+='<tr><td><select  batch="'+data.MIXNAME+'"  class="form-control" id="completed">'+opt+'</select></td><td><div class="input-group"><input type="date" id="prodDate" disabled class="form-control" placeholder="Production Date" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Notes" class="form-control" placeholder="Notes" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Location" class="form-control" placeholder="Location" aria-describedby="sizing-addon2"></div></td>';
+ 
+ html+='<td><div class="input-group"><input type="text" id="vgSupplier" class="form-control" placeholder="" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="pgSupplier" class="form-control" placeholder="" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="nicSupplier" class="form-control" placeholder="" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="flavSupplier" class="form-control" placeholder="" aria-describedby="sizing-addon2"></div></td>';
+ 
+    
+ html+='</tr>';
+     $('.modal-body').html(html);
+$('#Notes').val(data.Notes);
+$('#CompletionDate').val(data.CompletionDate);
+$('#Location').val(data.Location);
+
+
+$('#vgSupplier').val(data.vgSupplier);
+$('#pgSupplier').val(data.pgSupplier);
+$('#nicSupplier').val(data.nicSupplier);
+$('#flavSupplier').val(data.flavSupplier);
+
+   }else if(thisPage=='FlavourMixMixingTeam'){
+ var html='';
+ html+='<table class="form_table">';
+ html+='<tr><td><h4>Completed</h4></td><td><h4>Production Date</h4></td><td><h4>Notes</h4></td><td><h4>Location</h4></td><tr>';
+ 
+ var opt='';
+ opt+='<option batch="'+data.batch+'" value="Not Completed" selected id="Completed">Not Completed<option>';
+ opt+='<option batch="'+data.batch+'" value="Completed" id="Completed">Completed<option>';
+
+ 
+ 
+ html+='<tr><td><select  batch="'+data.batch+'"  class="form-control" id="completed">'+opt+'</select></td><td><div class="input-group"><input type="date" id="prodDate" disabled class="form-control" placeholder="Production Date" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Notes" class="form-control" placeholder="Notes" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Location" class="form-control" placeholder="Location" aria-describedby="sizing-addon2"></div></td>';
+ 
+ 
+    
+ html+='</tr>';
+ $('.modal-body').html(html);
+ $('#Notes').val(data.Notes);
+ $('#CompletionDate').val(data.CompletionDate);
+ $('#Location').val(data.Location);
+
+
+   }else if(thisPage=='PremixColoring'){
+ var html='';
+ html+='<table class="form_table">';
+ html+='<tr><td><h4>Completed</h4></td><td><h4>Production Date</h4></td><td><h4>Notes</h4></td><td><h4>Location</h4></td><tr>';
+ 
+ var opt='';
+ opt+='<option batch="'+data.batch+'" value="Not Completed" selected id="Completed">Not Completed<option>';
+ opt+='<option batch="'+data.batch+'" value="Completed" id="Completed">Completed<option>';
+
+ 
+ 
+ html+='<tr><td><select  batch="'+data.batch+'"  class="form-control" id="completed">'+opt+'</select></td><td><div class="input-group"><input type="date" id="prodDate" disabled class="form-control" placeholder="Production Date" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Notes" class="form-control" placeholder="Notes" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Location" class="form-control" placeholder="Location" aria-describedby="sizing-addon2"></div></td>';
+ 
+ 
+    
+ html+='</tr>';
+ $('.modal-body').html(html);
+ $('#Notes').val(data.Notes);
+ $('#CompletionDate').val(data.CompletionDate);
+ $('#Location').val(data.Location);
+
+
+   }else if(sheet=='Production'){
+    var html='';
+ html+='<table class="form_table">';
+ html+='<tr><td><h4>Production Completed</h4></td><td><h4>Completion Date</h4></td><td><h4>Location</h4></td><td><h4>Mix Batch Code</h4></td></tr>';
+ 
+ var opt='';
+ opt+='<option batch="'+data.batch+'" value="Not Completed" selected id="Completed">Not Completed<option>';
+ opt+='<option batch="'+data.batch+'" value="Completed" id="Completed">Completed<option>';
+ opt+='<option batch="'+data.batch+'" value="Completed and Labelled" id="Completed">Completed and Labelled<option>';
+ 
+ 
+ html+='<tr><td><select  batch="'+data.batch+'" class="form-control" id="completed">'+opt+'</select></td><td><div class="input-group"><input type="date" id="CompletionDate" disabled class="form-control" placeholder="Completion Date" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Location" class="form-control" placeholder="Location" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="mixbatch" class="form-control" placeholder="" aria-describedby="sizing-addon2"></div></td></tr>';
+ $('.modal-body').html(html);
+ $('#Location').val(data.Location);
+ $('#CompletionDate').val(data.CompletionDate);
+ $('#mixbatch').val(data.mixbatch);
+ 
+ 
+      }else if(sheet=='Printing'){
+      
+          var html='';
+ html+='<table class="form_table">';
+ html+='<tr><td><h4>Printing Completed</h4></td><td><h4>Completion Date</h4></td><td><h4>Location</h4></td></tr>';
+ 
+ var opt='';
+ opt+='<option batch="'+data.batch+'" value="Not Completed" selected id="Completed">Not Completed<option>';
+ opt+='<option batch="'+data.batch+'" value="Completed" id="Completed">Completed<option>';
+
+ 
+ 
+ html+='<tr><td><select batch="'+data.batch+'"  class="form-control" id="completed">'+opt+'</select></td><td><div class="input-group"><input type="date" id="CompletionDate" disabled class="form-control" placeholder="Completion Date" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Location" class="form-control" placeholder="Location" aria-describedby="sizing-addon2"></div></td></tr>';
+     $('.modal-body').html(html);
+$('#Location').val(data.Location);
+$('#CompletionDate').val(data.CompletionDate);
+
+      
+
+      
+  
+      }else if(sheet=='Labelling'){
+  
+            var html='';
+ html+='<table class="form_table">';
+ html+='<tr><td><h4>Labelling Completed</h4></td><td><h4>Completion Date</h4></td><td><h4>Location</h4></td></tr>';
+ 
+ var opt='';
+ opt+='<option batch="'+data.batch+'" value="Not Completed" selected id="Completed">Not Completed<option>';
+ opt+='<option batch="'+data.batch+'" value="Completed" id="Completed">Completed<option>';
+
+ 
+ 
+ html+='<tr><td><select  batch="'+data.batch+'"  class="form-control" id="completed">'+opt+'</select></td><td><div class="input-group"><input type="date" id="CompletionDate" disabled class="form-control" placeholder="Completion Date" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Location" class="form-control" placeholder="Location" aria-describedby="sizing-addon2"></div></td></tr>';
+     $('.modal-body').html(html);
+$('#Location').val(data.Location);
+$('#CompletionDate').val(data.CompletionDate);
+
+
+      
+  
+
+  
+      }else if(sheet=='Packaging'){
+ 
+             var html='';
+ html+='<table class="form_table">';
+ html+='<tr><td><h4>Completion Date</h4></td><td><h4>Packaging Completed</h4></td><td><h4>Location</h4></td></tr>';
+ 
+ var opt='';
+ opt+='<option batch="'+data.batch+'" value="Not Completed" selected id="Completed">Not Completed<option>';
+ opt+='<option batch="'+data.batch+'" value="Completed" id="Completed">Completed<option>';
+
+ 
+ 
+ html+='<tr><td><select batch="'+data.batch+'"  class="form-control" id="completed">'+opt+'</select></td><td><div class="input-group"><input type="date" id="CompletionDate" disabled class="form-control" placeholder="Completion Date" aria-describedby="sizing-addon2"></div></td>';
+ html+='<td><div class="input-group"><input type="text" id="Location" class="form-control" placeholder="Location" aria-describedby="sizing-addon2"></div></td></tr>';
+     $('.modal-body').html(html);
+$('#Location').val(data.Location);
+$('#CompletionDate').val(data.CompletionDate);
+
+
+
+ 
+ 
+   }
+
+  
+   
+}
+
+
+$('#subModalForm').on('click',function(e){
+
+ if(thisPage=='MixingTeam'){
+ var Location=$('#Location').val();
+ var Notes=$('#Notes').val();
+ var prodDate=$('#prodDate').val();
+ var Completed=$('#completed').val();
+ var batch=$('#completed').attr('batch');
+ 
+ var vgSupplier=$('#vgSupplier').val();
+ var pgSupplier=$('#pgSupplier').val();
+ var nicSupplier=$('#nicSupplier').val();
+  var flavSupplier=$('#flavSupplier').val();
+
+ var obj={
+Notes:Notes,
+prodDate:prodDate,
+Completed:Completed,
+batch:batch,
+Location:Location,
+
+vgSupplier:vgSupplier,
+pgSupplier:pgSupplier,
+nicSupplier:nicSupplier,
+flavSupplier:flavSupplier,
+
+};
+
+   } else if(thisPage=='FlavourMixMixingTeam'||thisPage=='PremixColoring'){
+ var Location=$('#Location').val();
+ var Notes=$('#Notes').val();
+ var prodDate=$('#prodDate').val();
+ var Completed=$('#completed').val();
+ var batch=$('#completed').attr('batch');
+
+ var obj={
+Notes:Notes,
+prodDate:prodDate,
+Completed:Completed,
+batch:batch,
+Location:Location,
+
+};
+
+   }else if(sheet=='Production'){
+   
+    var Location=$('#Location').val();
+ var CompletionDate=$('#CompletionDate').val();
+ var Completed=$('#completed').val();
+ 
+ var mixbatch= $('#mixbatch').val();
+ var batch=$('#completed').attr('batch');
+ 
+ var obj={
+Location:Location,
+CompletionDate:CompletionDate,
+Completed:Completed,
+batch:batch,
+mixbatch:mixbatch
+};
+   
+      }else if(sheet=='Printing'){
+   
+      var Location=$('#Location').val();
+ var CompletionDate=$('#CompletionDate').val();
+ var Completed=$('#completed').val();
+ var batch=$('#completed').attr('batch');
+ var obj={
+Location:Location,
+CompletionDate:CompletionDate,
+Completed:Completed,
+batch:batch
+
+};
+   
+   
+      }else if(sheet=='Labelling'){
+      
+         var Location=$('#Location').val();
+ var CompletionDate=$('#CompletionDate').val();
+ var Completed=$('#completed').val();
+ var batch=$('#completed').attr('batch');
+ var obj={
+Location:Location,
+CompletionDate:CompletionDate,
+Completed:Completed,
+batch:batch
+
+};
+      
+      
+      }else if(sheet=='Packaging'){
+
+  var Location=$('#Location').val();
+ var CompletionDate=$('#CompletionDate').val();
+ var Completed=$('#completed').val();
+ var batch=$('#completed').attr('batch').toString();
+ var obj={
+Location:Location,
+CompletionDate:CompletionDate,
+Completed:Completed,
+batch:batch
+
+};
+
+
+}
+console.log('obj',obj);
+console.log('sheet',thisPage);
+google.script.run.withSuccessHandler(newItemSuccess).saveItemSL(obj,thisPage);
+
+
+
+
+});
+function newItemSuccess(e){
+
+alert(e);
+ google.script.run.withSuccessHandler(filterResult).searchFor(LASTSEARCH);
+// populateSlSheetTable();
+}
+
+
+
+
+
+function setBusyItem(batch,page){
+
+google.script.run.withSuccessHandler(newItemSuccess).runBusy(batch,page);
+
+
+
+}
+
+
+    function populateShippingTab() {
+        google.script.run.withSuccessHandler(buildShippingTable).getShippingData();
+
+
+    }
+ function buildShippingTable(data) {
+ var html = '';
+    thisData=data;
+    thisPage='Shipping';
+ var bottlesTotal=0;
+ var rowsTotal=0;
+       html += '<table class="table table-striped"><thead><tr><th>Menu</th><th>Order Date</th><th>Batch</th><th>Order ID</th><th>Code</th><th>Description</th><th>Priority</th><th>Customer</th><th>Brand</th><th>Recipe</th><th>Packaging Code</th><th>Flavour</th><th>Bottles</th><th>Bottle Type</th><th>Lid Type</th><th>Pack Type</th>';
+        html += '<th>Status</th><th>Shipping Status</th><th>Shipping Code</th><th>Date Shipped</th><th>Tracking No.</th><th>Date Delivered</th><th>Location</th></tr>';
+       html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>BOTTLES TOTAL</div><div id="bottlesTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>';
+       if(data){
+        var keys=['orderdate','batch','orderID','productcode','productdescription','priority','PRINTCODE','customer','brand','recipe.name','flavour.name','bottles','btype','lid','packagingType.name','final_status','shipping_status','SHIPPINGCODE','dateshipped','trackingNo','datedelivered', 'Location'];
+        var drpdowns='';
+        html += '<tr><th></th>';
+        console.log(keys);
+        for(var l=0;l<keys.length;l++){
+        drpdowns+=('<th><div class="dropdown"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#'+keys[l]+'" sorttype="HL" onclick="return sortClick(this);">High - Low/Z - A</a></li><li><a sorttype="LH" href="#'+keys[l]+'" onclick="return sortClick(this);">Low - High/A - Z</a></li></ul></div></th>');
+        }
+        }
+        html+=drpdowns;
+        html+='</tr>';
+        html += '</thead>';
+       html += '<tbody>';
+        if(data!=''){
+        for (var i = 0; i < data.length; i++) {
+        if(!data[i].numLabelsBottles){
+         data[i].numLabelsBottles=0;
+         }
+         if(!data[i].numLabelsTubes){
+         data[i].numLabelsTubes=0;
+         }
+         if(!data[i].packagingType){
+         data[i].packagingType={
+         name:0,
+         };
+         }
+         if(!data[i].boxname){
+         data[i].boxname={
+         name:0,
+         };
+         }
+            html += '<tr><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+
+
+            html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteShipping' + data[i].batch + '">Delete Order</a>';
+            html += '<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal3" href="#editShipping' + data[i].batch + '">Edit</a>';
+
+            html += ' </div></div></td>';
+            
+             data[i].priority=data[i].priority ? data[i].priority: ' ';
+            html += '<td>' + formatDateDisplay(data[i].orderdate) + '</td><td>' + data[i].batch + '</td><td>' + data[i].orderID + '</td><td>' + data[i].productcode + '</td><td>' + data[i].productdescription + '</td><td>' + data[i].priority + '</td><td>' + data[i].customer + '</td><td>' + data[i].brand + '</td>';
+            html += '<td>' + data[i].recipe.name + '</td><td>' + data[i].PRINTCODE + '</td><td>' + data[i].flavour.name + '</td><td>' + data[i].bottles + '</td><td>' + data[i].btype + '</td><td>' + data[i].lid + '</td>';
+            html += '<td>' + data[i].packagingType.name + '</td><td>' + data[i].final_status + '</td><td>' + data[i].shipping_status + '</td><td>' + data[i].SHIPPINGCODE + '</td><td>' + data[i].dateshipped + '</td><td>' + data[i].trackingNo + '</td>';
+            html += '<td>' + data[i].datedelivered + '</td><td>' + data[i].Location + '</td></tr>';
+
+        bottlesTotal+=parseInt(data[i].bottles,10);
+        }
+        rowsTotal=i;
+        
+        }
+        html += '</tbody></table>';
+
+
+        $('#pageBody').html(html);
+$('#bottlesTotal').html(bottlesTotal);
+$('#rowsTotal').html(rowsTotal);
+
+    }
+
+    function editShipping(batch) {
+    console.log(batch);
+        google.script.run.withSuccessHandler(buildShippingFormFromExisting).getSingleShippingData(batch);
+    }
+
+    function buildShippingFormFromExisting(data) {
+        console.log(data);
+        var html = '';
+
+        html += '<table class="form_table">';
+        html += '<tr><td><h3>Batch</h3></td><td><h3>Order ID</h3></td><td><h3>Shipping Status</h3></td><td><h3>Date Shipped</h3></td><td><h3>Tracking No.</h3></td><td><h3>Date Delivered</h3></td><td><h3>Location</h3></td></tr>';
+        html += '<tr><td><div class="input-group"><input type="text" id="shippingbatch" class="form-control" value="'+data.batch+'" placeholder="' + data.batch + '" disabled aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="text" id="orderID" class="form-control" placeholder="Order ID" aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="text" id="shipping_status" class="form-control" placeholder="Shipping Status" aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="date" id="dateshipped" class="form-control" placeholder="Date Shipped" aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="text" id="trackingNo" class="form-control" placeholder="Tracking No." aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="date" id="datedelivered" class="form-control" placeholder="Date Delivered" aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="text" id="shippinglocation" class="form-control" placeholder="Location" aria-describedby="sizing-addon2"></div></td>';
+        html += '</tr></table>'
+
+        $('.modal-body3').html(html);
+
+        $('#orderID').val(data.orderID);
+        $('#shipping_status').val(data.shipping_status);
+        $('#dateshipped').val(data.dateshipped);
+        $('#trackingNo').val(data.trackingNo);
+        $('#datedelivered').val(data.datedelivered);
+        $('#shippinglocation').val(data.Location);
+
+
+    }
+
+
+    $('#subModalForm3').on('click', function(e) {
+        var batch = $('#shippingbatch').val();
+        var orderID = $('#orderID').val();
+        var shipping_status = $('#shipping_status').val();
+        var dateshipped = $('#dateshipped').val();
+        var trackingNo = $('#trackingNo').val();
+        var datedelivered = $('#datedelivered').val();
+        var Location = $('#shippinglocation').val();
+        var obj = {
+            orderID: orderID,
+            shipping_status: shipping_status,
+            dateshipped: dateshipped,
+            trackingNo: trackingNo,
+            datedelivered: datedelivered,
+            Location: Location
+        };
+        console.log(batch);
+        console.log(obj);
+        google.script.run.withSuccessHandler(refreshShipping).updateShippingItem(batch, obj);
+
+    });
+
+    function refreshShipping() {
+        populateShippingTab();
+    }
+
+
+function populateLocationsTab() {
+        google.script.run.withSuccessHandler(refreshLocations).getLocations();
+
+    }
+
+
+    function refreshLocations(fulldata) {
+    
+        var mixingSheet = fulldata[5];
+        var Production = fulldata[4];
+        var Printing = fulldata[3];
+        var Labelling = fulldata[2];
+        var Packaging = fulldata[1];
+        var shipping = fulldata[0];
+      console.log(fulldata);
+        var html = '';
+        html += '<table class="table table-striped"><thead><tr><th>Mixing Team</th><th>Production</th><th>Printing</th><th>Labelling</th><th>Packaging</th><th>Shipping</th></tr></thead>';
+        html += '<tr><td><table class="table table-striped">';
+
+        html += '<thead><tr><th>Batch</th><th>Recipe</th><th>Flavour</th><th>Location</th></tr></thead>';
+        html += '<tbody>';
+        for (var i = 0; i < mixingSheet.length; i++) {
+            html += '<tr><th>' + mixingSheet[i].MIXNAME + '</th><th>' + mixingSheet[i].RECIPE + '</th><th>' + mixingSheet[i].FLAVOUR + '</th><th>' + mixingSheet[i].Location + '</th></tr>'
+
+        }
+        html += '</tbody></table></td>';
+
+
+        html += '<td><table class="table table-striped">';
+        html += '<thead><tr><th>Batch</th><th>Recipe</th><th>Flavour</th><th>Location</th></tr></thead>';
+        html += '<tbody>';
+        for (var i = 0; i < Production.length; i++) {
+            html += '<tr><th>' + Production[i].batch + '</th><th>' + Production[i].recipe.name + '</th><th>' + Production[i].flavour.name + '</th><th>' + Production[i].Location + '</th></tr>'
+
+        }
+        html += '</tbody></table></td>';
+
+
+
+        html += '<td><table class="table table-striped">';
+        html += '<thead><tr><th>Batch</th><th>Recipe</th><th>Flavour</th><th>Location</th></tr></thead>';
+        html += '<tbody>';
+        for (var i = 0; i < Printing.length; i++) {
+            html += '<tr><th>' + Printing[i].batch + '</th><th>' + Printing[i].recipe.name + '</th><th>' + Printing[i].flavour.name + '</th><th>' + Printing[i].Location + '</th></tr>'
+
+        }
+        html += '</tbody></table></td>';
+
+
+        html += '<td><table class="table table-striped">';
+        html += '<thead><tr><th>Batch</th><th>Recipe</th><th>Flavour</th><th>Location</th></tr></thead>';
+        html += '<tbody>';
+        for (var i = 0; i < Labelling.length; i++) {
+            html += '<tr><th>' + Labelling[i].batch + '</th><th>' + Labelling[i].recipe.name + '</th><th>' + Labelling[i].flavour.name + '</th><th>' + Labelling[i].Location + '</th></tr>'
+
+        }
+        html += '</tbody></table></td>';
+
+
+        html += '<td><table class="table table-striped">';
+        html += '<thead><tr><th>Batch</th><th>Recipe</th><th>Flavour</th><th>Location</th></tr></thead>';
+        html += '<tbody>';
+        for (var i = 0; i < Packaging.length; i++) {
+            html += '<tr><th>' + Packaging[i].batch + '</th><th>' + Packaging[i].recipe.name + '</th><th>' + Packaging[i].flavour.name + '</th><th>' + Packaging[i].Location + '</th></tr>'
+
+        }
+        html += '</tbody></table></td>';
+
+        html += '<td><table class="table table-striped">';
+        html += '<thead><tr><th>Batch</th><th>Recipe</th><th>Flavour</th><th>Location</th></tr></thead>';
+        html += '<tbody>';
+        for (var i = 0; i < shipping.length; i++) {
+            html += '<tr><th>' + shipping[i].batch + '</th><th>' + shipping[i].recipe.name + '</th><th>' + shipping[i].flavour.name + '</th><th>' + shipping[i].Location + '</th></tr>'
+
+        }
+        html += '</tbody></table></td></tr></tbody></table>';
+
+        $('#pageBody').html(html);
+
+
+
+
+    }
+
+
+
+    function populateInventoryTab() {
+        google.script.run.withSuccessHandler(buildInventory).getInventoryData();
+    }
+
+      function buildInventory(data) {
+        var html = '';
+        
+        html += '<table class="table table-striped"><thead><tr><th>Menu</th><th>Row</th><th>Description</th><th>Order Date</th><th>Delivery Date</th><th>Paid Date</th><th>ETA / Days</th><th>Order Quantity</th>';
+        html += '<th>Note</th></tr></thead>';
+        html += '<tbody>';
+        if(data!=''){
+        for (var i = 0; i < data.length; i++) {
+            html += '<tr><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+           if(data[i].quantity){
+      var quant=data[i].quantity;
+      }else{var quant='null';} 
+                html += '<a class="dropdown-item" onclick="return menuClick(this);" page="' + data[i].page + '" data-toggle="modal" data-target="#myModal2" href="#editItem' + data[i].key +  '">Edit</a>';
+          
+    
+            html += '<a class="dropdown-item" onclick="return menuClick(this);" page="' + data[i].page + '" href="#deleteInv' + data[i].key + '">Delete Item</a>';
+            html += ' </div></div></td>';
+            html += '<td>'+data[i].row+'</td>';
+            html += '<td>' + data[i].desc + '</td><td>' + data[i].orderdate + '</td><td>' + data[i].delivdate + '</td><td>' + data[i].paiddate + '</td><td>' + data[i].eta + '</td><td>' + quant + '</td><td>' + data[i].note + '</td></tr>';
+
+        }}
+        html += '</tbody></table>';
+
+
+        $('#pageBody').html(html);
+
+
+
+
+    }
+
+
+
+    $('#newitem').on('click', function(e) {
+       
+        google.script.run.withSuccessHandler(buildItemForm).getInventoryDescription();
+    });
+
+    function buildItemForm(data) {
+     console.log('here2');
+        var html = '';
+        html += '<table class="form_table">';
+        html += '<tr><td><h4>Description</h4></td><td><h4>Order Date</h4></td><td><h4>Delivery Date</h4></td></tr>';
+
+        var opt = '';
+        for (var i = 0; i < data.length; i++) {
+            opt += '<option  page="' + data[i].page + '" id="' + data[i].name + '">' + data[i].name + '<option>';
+        }
+        html += '<tr><td><select class="form-control" id="description">' + opt + '</select></td><td><div class="input-group"><input type="date" id="orderDate1" class="form-control" placeholder="Order Date" aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="date" id="deliveryDate" class="form-control" placeholder="Delivery Date" aria-describedby="sizing-addon2"></div></td></tr>';
+        html += '<tr><td><h4>ETA / Days</h4></td><td><h4>Order Quantity</h4></td><td><h4>Note</h4></td></tr>';
+        html += '<tr><td><div class="input-group"><input type="text" id="eta" class="form-control" placeholder="ETA / Days" aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="text" id="quantity" class="form-control" placeholder="Order Quantity (ml -ink,vg,pg,nicotine else Litres/Bottles)" aria-describedby="sizing-addon2"></div></td>';
+        html += '<td><div class="input-group"><input type="text" id="note" class="form-control" placeholder="Note" aria-describedby="sizing-addon2"></div></td></tr>';
+        $('.modal-body2').html(html);
+    }
+
+      $('#newitem').on('click', function(e) {
+
+        google.script.run.withSuccessHandler(buildItemForm).getInventoryDescription();
+    });
+
+  function buildItemForm(data) {
+  INPDATA=data;
+
+    }
+    
+        
+    function removeFromInventory(item, page) {
+        console.log(item);
+        google.script.run.withSuccessHandler(InventoryItemSuccess).removefromInventory(item, page);
+
+    }
+
+
+
+
+    function InventoryItemSuccess(msg) {
+        alert(msg);
+        google.script.run.withSuccessHandler(buildInventory).getInventoryData();
+
+    }
+    function editItem(item, page) {
+        google.script.run.withSuccessHandler(buildItemFormFromExisting).getItemData(item, page);
+    }
+
+   function buildItemFormFromExisting(retval) {
+        console.log(retval);
+       INPDATA = retval[0];
+        var dataold = retval[1];
+    
+       $('#description').val(dataold.desc);
+       $('#description2').val(dataold.key);
+        $('#orderDate1').val(dataold.orderdate);
+        $('#paiddate').val(dataold.paiddate);
+        $('#deliveryDate').val(dataold.delivdate);
+        $('#eta').val(dataold.eta);
+        $('#quantity').val(dataold.quantity);
+        $('#note').val(dataold.note);
+       $("#descriptionsku").val(dataold.sku);
+       $("#descriptionpage").val(dataold.page);
+
+    }
+
+
+
+
+
+    $('#subModalForm2').on('click', function(e) {
+        var orderdate = $('#orderDate1').val();
+        var delivdate = $('#deliveryDate').val();
+        var paiddate = $('#paiddate').val();
+        var eta = $('#eta').val();
+        var desc = $('#description').val();
+         var key = $('#description2').val();
+        var sku = $("#descriptionsku").val();
+        var page = $("#descriptionpage").val();
+        var quantity = parseInt($('#quantity').val(), 10);
+        var note = $('#note').val();
+        
+        var obj = {
+        paiddate:paiddate,
+            orderdate: orderdate,
+            delivdate: delivdate,
+            eta: eta,
+            desc: desc,
+           
+            quantity: quantity,
+            note: note,
+            page: page,
+            sku:sku
+        };
+        console.log(obj);
+        google.script.run.withSuccessHandler(newItemSuccess2).saveItem(obj);
+   
+  $('#orderDate1').val('');
+       $('#deliveryDate').val('');
+       $('#paiddate').val('');
+       $('#eta').val('');
+       $('#description').val('');
+       $("#descriptionsku").val('');
+       $("#descriptionpage").val('');
+       $("#description2").val('');
+       $('#quantity').val('');
+       $('#note').val('');
+
+    });
+
+//EDIT PCD
+var INPDATA;
+var input3 = document.getElementById('description');
+
+var optionsVal3 = document.getElementById('list4');
+
+input3.addEventListener('keyup', show4);
+
+RegExp.escape = function (s) {
+    return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};
+function show4() {
+  if (this.keyCode == 13) {return false;}
+//document.getElementById('list1').style.display = 'block';
+    var dropdown = document.getElementById('dropdown4');
+    dropdown.style.display = 'none';
+
+    optionsVal3.options.length = 0;
+
+    if (input3.value) {
+        dropdown.style.display = 'block';
+        optionsVal3.size = 3;
+        var textCountry = input3.value;
+
+        for (var i = 0; i < INPDATA.length; i++) {
+            var testableRegExp = new RegExp(RegExp.escape(textCountry), "i");
+             if(INPDATA[i].name){
+            if (INPDATA[i].name.match(testableRegExp)) {
+           
+                addValue4(INPDATA[i].name, INPDATA[i].name, INPDATA[i].sku, INPDATA[i].page,INPDATA[i].key);
+
+            }
+            }
+        }
+        
+        var size = dropdown.children[0].children;
+        if (size.length > 0)
+        {
+           var defaultSize = 16;
+           if (size.length < 10)
+           {
+              defaultSize *= size.length;
+           }
+           else
+           {
+              defaultSize *= 10;
+           }
+           dropdown.children[0].style.height = defaultSize + "px";
+        }
+        
+    }
+}
+
+function addValue4(text, val,sku,page,key) {
+//console.log('here');
+    var createOptions = document.createElement('option');
+    optionsVal3.appendChild(createOptions);
+    createOptions.text = text;
+    createOptions.value = val;
+    createOptions.setAttribute('sku',sku);
+     createOptions.setAttribute('page',page);
+      createOptions.setAttribute('key',key);
+}
+
+//Settin the value in the box by firing the click event
+function setVal4(selectedVal) {
+$('#description').val($(selectedVal).val());
+console.log(selectedVal.options[selectedVal.selectedIndex].getAttribute('page'),selectedVal.options[selectedVal.selectedIndex].getAttribute('sku'))
+$('#descriptionsku').val(selectedVal.options[selectedVal.selectedIndex].getAttribute('sku'));
+$('#descriptionpage').val(selectedVal.options[selectedVal.selectedIndex].getAttribute('page'));
+$('#description2').val(selectedVal.options[selectedVal.selectedIndex].getAttribute('key'));
+
+    document.getElementById('dropdown4').style.display = 'none';
+}
+    function newItemSuccess2(e) {
+        google.script.run.withSuccessHandler(buildInventory).getInventoryData();
+        alert(e);
+
+    }
+
+    function populateInventoryTab() {
+        google.script.run.withSuccessHandler(buildInventory).getInventoryData();
+    }
+
+
+//QTY///////////
+    var qtySheet="#Misc";
+    $('.tabs2 .tab-links2 a').on('click', function(e) {
+
+        var currentAttrValue2 = $(this).attr('href');
+        qtySheet=currentAttrValue2;
+        // Show/Hide Tabs
+        //  $('.tabs2 ' + currentAttrValue).show().siblings().hide();
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+        e.preventDefault();
+        
+        e.stopPropagation();
+        console.log(qtySheet);
+        populateQTYTab(qtySheet.substr(1, qtySheet.length));
+        // Change/remove current tab to active
+
+
+
+
+
+    });
+    function populateQTYTab(page) {
+        $("#updating").css("display", "block");
+        console.log('started');
+         console.log('page',page);
+        google.script.run.withSuccessHandler(splitPages).getQTY(page);
+    }
+
+    function populateQTYTable(data,page) {
+  
+       
+        var html = '';
+    
+        html += '<table class="table"><thead><tr><th>Row</th><th>SKU</th><th>Name</th><th>Running</th><th>Reserved</th><th>Completed</th><th>Stock on Order</th></tr></thead>';
+        html += '<tbody>';
+        for (var i = 0; i < data.length; i++) {
+            if (data[i] == null) {
+                continue;
+            }
+            html += '<tr>';
+            html += '<td>' + i + '</td>';
+            html += '<td>' + data[i].sku + '</td>';
+         
+         
+                
+           
+            
+            if(page=='Flavours'||page=='PremixesTypes'){
+            html += '<td>' + data[i].name + '</td><td>' + data[i].Running.toFixed(2) + '</td><td>' + data[i].Reserved.toFixed(2) + '</td><td>' + data[i].Completed.toFixed(2) + '</td>';
+            }else{
+            html += '<td>' + data[i].name + '</td><td>' + data[i].Running + '</td><td>' + data[i].Reserved + '</td><td>' + data[i].Completed + '</td>';
+            
+            }
+            if(data[i].Stock){
+            html+='<td>' + data[i].Stock + '</td></tr>';
+            }else{html+='<td>0</td></tr>';}
+            
+
+        }
+        html += '</tbody></table>';
+        $("#updating").css("display", "none");
+        console.log('done');
+        $('#QTYbody').html(html);
+        
+
+
+
+    }
+
+var editpage;
+
+
+
+function refreshQTY(page) {
+populateQTYTab(pa);
+}
+$('#searchQTY').on('click', function(e) {
+var page=qtySheet.substr(1,qtySheet.length);
+var word=$('#searchword').val();
+
+ google.script.run.withSuccessHandler(splitPages).searchforWord(page,word);
+
+
+});
+  
+
+
+
+  function setPartial(batch, page){
+  console.log([batch,page]);
+  var html='';
+  if(page=='Production'){
+  html+='<table><thead><tr><th>Batch</th><th>Produced Bottles</th></tr></thead>';
+  }else{
+   html+='<table><thead><tr><th>Batch</th><th>Packaged Bottles</th></tr></thead>';
+  }
+   html+='<tbody><tr><td><div class="input-group"><input type="text" id="batchNO"  value="'+batch+'" class="form-control" placeholder="'+batch+'"  disabled aria-describedby="sizing-addon2"></div></td>';
+   html+='<td><div class="input-group"><input type="text" id="prodNO" class="form-control" aria-describedby="sizing-addon2"></div></td></tr></tbody></table>';
+
+
+  $('#pratialBody').html(html);
+     $('#batchNO').val(batch);
+  }
+  
+  $('#subpartial').on('click',function(){
+  var batch=$('#batchNO').val();
+  var newBottles=$('#prodNO').val();
+  google.script.run.withSuccessHandler(populateSlSheetTable).filter(batch, newBottles,sheet);
+  
+  })
+
+  function setOver(batch, page){
+  console.log([batch,page]);
+  var html='';
+  if(page=='Production'){
+  html+='<table><thead><tr><th>Batch</th><th>Produced Bottles</th></tr></thead>';
+  }else{
+   html+='<table><thead><tr><th>Batch</th><th>Packaged Bottles</th></tr></thead>';
+  }
+   html+='<tbody><tr><td><div class="input-group"><input type="text" id="batchNO2" value="'+batch+'"  class="form-control" placeholder="'+batch+'"  disabled aria-describedby="sizing-addon2"></div></td>';
+   html+='<td><div class="input-group"><input type="text" id="prodNO2" class="form-control" aria-describedby="sizing-addon2"></div></td></tr></tbody></table>';
+
+
+  $('#overProdBody').html(html);
+     $('#batchNO2').val(batch);
+  }
+  
+  $('#suboverProd').on('click',function(){
+  var batch=$('#batchNO2').val();
+  var newBottles=$('#prodNO2').val();
+  google.script.run.withSuccessHandler(populateSlSheetTable).overProd(batch, newBottles,sheet);
+  
+  })
+
+var selPage=sheet;
+ function deselect(event){
+  
+  var batch=event.getAttribute('page');
+  addToSelected(batch);
+  }
+    var SELECTED=[];
+    function addToSelected(batch){
+    console.log(SELECTED);
+    var check=SELECTED.indexOf(batch);
+     console.log(check);
+     
+    if(check==-1){
+      SELECTED.push(batch);
+        $('#deselect'+batch).css('display','block');
+        $('#select'+batch).css('display','none');
+      
+       
+      displaySelected(SELECTED);
+      }else{
+     $('#deselect'+batch).css('display','none');
+        $('#select'+batch).css('display','block');
+      SELECTED.splice(check, 1);
+      displaySelected(SELECTED);
+      }
+    }
+    function displaySelected(SELECTED){
+    var html='<p>Selected:</p>';
+    html+='<p>';
+    for(var i=0;i<SELECTED.length;i++){
+    html+='<button class="selVal" page="'+SELECTED[i]+'" onclick="deselect(this)" >'+SELECTED[i]+'<span class="glyphicon glyphicon-remove"></span></button>';
+    
+    }
+    html+='</p>';
+  
+    $('#selection').html(html);
+   
+    
+    }
+    
+    function printOrders(){
+    google.script.run.withSuccessHandler(stockCheck).printOrdersBatches(SELECTED);
+    
+    }  
+var SelAllOrders;
+function selectAll(){
+for(var i=0;i<SelAllOrders.length;i++){
+    
+    
+     addToSelected(SelAllOrders[i].batch);
+    
+  }
+
+}
+ function printP(){
+ if(sheet=='Production'){
+     google.script.run.withSuccessHandler(stockCheck).printProductionBatches(SELECTED);
+    }else{
+     google.script.run.withSuccessHandler(buildhtmlmodal).printPackagingBatches(SELECTED,false);
+    }
+    }
+  
+     function printProduction(){
+     google.script.run.withSuccessHandler(stockCheck).printProductionBatches(SELECTED);
+    }
+      function printPackaging(){
+     google.script.run.withSuccessHandler(stockCheck).printPackagingBatches(SELECTED,false);
+    }
+    function printSuccess(msg){
+    alert(msg);
+    }
+    
+    
+    
+    
+    ///SEARCH///
+    
+    
+
+
+
+var MAXSEARCHNUM=5;
+
+function getSearchBoxData(page){
+SEARCHNUM=0;
+      google.script.run.withSuccessHandler(populateSearchBox).getSearchBoxKeys(page);
+
+}
+function addSearchOption(event){
+var page=$(event).attr('page');
+	
+$(event).remove();
+
+console.log('here');
+console.log(page);
+if(SEARCHNUM<MAXSEARCHNUM){
+$('#pageSearch').remove();
+SEARCHNUM++;
+ google.script.run.withSuccessHandler(populateSearchBox).getSearchBoxKeys(page);
+
+ }else{
+ 
+ }
+}
+
+function populateSearchBox(rett){
+//console.log(rett);
+var data=rett[0];
+var page=rett[1];
+var html = '<div class="searchItem" id="searchItem'+SEARCHNUM+'"';
+
+    
+    html += '<table class="form_table">';
+    html+='<thead><tr><th>Search By:</th><tr></thead><tbody>';
+    html += '<tr><td><select class="form-control"  page="'+page+'" id="sarchKey'+page+SEARCHNUM+'" num="'+SEARCHNUM+'" onchange="getSearchValues(this);">';
+    
+    var keySELECT = '<option value=""><option>';
+    for (var i = 0; i < data.length; i++) {
+    keySELECT += '<option key="'+data[i][2]+'" value="' + data[i][0] + '">' + data[i][1] + '<option>';
+    }
+    html+=keySELECT;
+    html += ' </select></td></tr></tbody></table>';
+      html +='</div>';
+    
+    $('.searchBox'+page).append(html);
+}
+
+
+
+function getSearchValues(event){
+console.log('here');
+var page=$(event).attr('page');
+var num=$(event).attr('num');
+var DBpage= $('#sarchKey'+page+num).val();
+var key = $('option:selected', event).attr('key');
+  console.log(page,DBpage,key);
+if(DBpage){
+
+  google.script.run.withSuccessHandler(populateSearchValues).getSearchValues(page,DBpage,key,num);
+}
+}
+
+
+
+function populateSearchValues(data){
+
+
+console.log(data);
+var page=data[0];
+var list=data[1];
+var key=data[2];
+var num=data[3];
+$('#searchVALDIV'+page+num).remove();
+if(key=='word'||key=='priority'){
+var html='<input class="form-control" id="searchVAL'+page+num+'" num="'+num+'" type="text"/>';
+
+
+}else{
+var html='<select  class="form-control" id="searchVAL'+page+num+'" num="'+num+'">';
+for(var i=0;i<list.length;i++){
+if(list[i].name){
+html+='<option value="'+list[i].name+'">'+list[i].name+'</option>';
+}
+}
+html+='</select>';
+
+
+}
+if(num==SEARCHNUM){
+    var button = '<button class="btn btn-primary" id="pageSearch" page="'+page+'" onclick="filterpage(this);">Search</button>';
+    var button2 = '<button class="btn btn-default" id="addSearchOption" page="'+page+'" onclick="addSearchOption(this);">+</button>';
+    }else{
+    var button='';
+    var button2='';
+    }
+
+var table='<table><thead><tr><th>Value</th><th></th><th></th></tr></thead>';
+table+='<tbody><tr><td>'+html+'</td><td>'+button2+'</td><td>'+button+'</td></tr></tbody>';
+var div="<div id='searchVALDIV"+page+num+"'>"+table+"</div>";
+  $('#searchItem'+num).append(div);
+}
+var LASTSEARCH;
+function filterpage(event,skip){
+var searchItems=[];
+if(!skip){
+for(var i=0;i<=SEARCHNUM;i++){
+var page=event.getAttribute('page');
+var val=$('#searchVAL'+page+i).val();
+var key=$('option:selected', '#sarchKey'+page+i).attr('key');
+var params={
+orderBy : [key],
+equalTo: val
+
+};
+console.log(searchItems);
+searchItems.push([page,params]);
+
+}
+}
+console.log('selPage,BASEPARAM');
+console.log(selPage,BASEPARAM);
+searchItems.push([selPage,BASEPARAM]);
+LASTSEARCH=searchItems;
+console.log(searchItems);
+ google.script.run.withSuccessHandler(filterResult).searchFor(searchItems);
+
+
+
+}
+
+
+
+
+function sortClick(event){
+var href = event.getAttribute('href');
+href=href.slice(1, href.length);
+var sorttype = event.getAttribute('sorttype');
+
+
+google.script.run.withSuccessHandler(filterResult).sortBY(thisData,sorttype,href,thisPage);
+return false;
+}
+
+
+
+
+
+
+function moveItems(origin, dest) {
+var child=$(origin).find(':selected');
+    $(origin).find(':selected').appendTo(dest);
+//    if(xero_NOTE){
+//    if(child.length){
+//   var  childs=child;
+//   for(var i=0;i<childs.length;i++){
+//   if(origin=='#xrOne'){
+//   orderIDsDATABottom.push([$(childs[i]).attr('date'),$(childs[i]).val()]);
+//   orderIDsDATATop.splice(getIndex2($(childs[i]).val(),orderIDsDATATop), 1)
+//   
+//   }else{
+//   orderIDsDATATop.push([$(childs[i]).attr('date'),$(childs[i]).val()]);
+//   orderIDsDATABottom.splice(getIndex2($(childs[i]).val(),orderIDsDATABottom), 1)
+//   
+//   }
+//   }
+//    }else{
+//    if(origin=='#xrOne'){
+//    orderIDsDATABottom.push([$(child).attr('date'),$(child).val()]);
+//    orderIDsDATATop.splice(getIndex2($(child).val(),orderIDsDATATop), 1)
+//    
+//    }else{
+//    orderIDsDATATop.push([$(child).attr('date'),$(child).val()]);
+//    orderIDsDATABottom.splice(getIndex2($(child).val(),orderIDsDATABottom), 1)
+//    
+//    }
+//    }
+//        console.log('top',orderIDsDATATop)
+//     console.log('bottom',orderIDsDATABottom)
+//    }
+
+}
+ 
+function moveAllItems(origin, dest) {
+   var childs=$(origin).children();
+    $(origin).children().appendTo(dest);
+    console.log(childs);
+//    if(xero_NOTE){
+//    
+//     for(var i=0;i<childs.length;i++){
+//     if(origin=='#xrOne'){
+//     orderIDsDATABottom.push([$(childs[i]).attr('date'),$(childs[i]).val()]);
+//     orderIDsDATATop.splice(getIndex2($(childs[i]).val(),orderIDsDATATop), 1)
+//     
+//     }else{
+//     orderIDsDATATop.push([$(childs[i]).attr('date'),$(childs[i]).val()]);
+//     orderIDsDATABottom.splice(getIndex2($(childs[i]).val(),orderIDsDATABottom), 1)
+//     
+//     }
+//     }
+//         console.log('top',orderIDsDATATop)
+//     console.log('bottom',orderIDsDATABottom)
+//    }
+}
+var SHIPPING_NOTE=false;
+var xero_NOTE=false;
+var statusCheck=false;
+$('#getShippingCodes').click(function () {
+SHIPPING_NOTE=true;
+xero_NOTE=false;
+statusCheck=false;
+    google.script.run.withSuccessHandler(populatePackCodes).getPackCodes();
+
+});
+
+$('#getOrderIDs').click(function () {
+SHIPPING_NOTE=false;
+statusCheck=false;
+xero_NOTE=true;
+    google.script.run.withSuccessHandler(populateOrderIDs).getOrderIDs('xero');
+
+});
+
+$('#getOrderIDs2').click(function () {
+statusCheck=true;
+SHIPPING_NOTE=false;
+xero_NOTE=false;
+    google.script.run.withSuccessHandler(populateOrderIDs).getOrderIDs('xero');
+
+});
+function populatePackCodes(list){
+console.log(list);
+var html='';
+for(var i=0;i<list.length;i++){
+html+='<option value="'+list[i]+'">'+list[i]+'</option>';
+}
+
+$('#sbOne').html(html);
+}
+
+function populateOrderIDs(list){
+
+//console.log(list);
+var html='';
+for(var i=0;i<list.length;i++){
+html+='<option  date="'+list[i][0]+'" value="'+list[i][1]+'">'+formatDateDisplay(list[i][0])+' '+list[i][1]+' '+list[i][3]+'</option>';
+}
+//console.log(html);
+if(statusCheck){
+
+$('#statusOne').html(html);
+}else{
+$('#xrOne').html(html);
+}
+//console.log('orderIDsDATATop',orderIDsDATATop)
+}
+$('#printShipping').click(function () {
+var arr=[];
+var myOpts = document.getElementById('sbTwo').options;
+for(var i=0;i<myOpts.length;i++){
+arr.push(myOpts[i].value);
+}
+console.log(arr);
+if(arr.length>0){
+google.script.run.withSuccessHandler(stockCheck).printShippingNote(arr, 1);
+}else{
+alert('No codes selected.');
+}
+});
+$('#printShipping2').click(function () {
+var arr=[];
+var myOpts = document.getElementById('sbTwo').options;
+for(var i=0;i<myOpts.length;i++){
+arr.push(myOpts[i].value);
+}
+console.log(arr);
+if(arr.length>0){
+google.script.run.withSuccessHandler(stockCheck).printShippingNote(arr, 2);
+}else{
+alert('No codes selected.');
+}
+});
+
+$('#printxero').click(function () {
+var arr=[];
+var myOpts = document.getElementById('xrTwo').options;
+for(var i=0;i<myOpts.length;i++){
+arr.push(myOpts[i].value);
+}
+if(arr.length>0){
+google.script.run.withSuccessHandler(stockCheck).printxero(arr);
+}else{
+alert('No codes selected.');
+}
+$('#xrTwo').html('');
+});
+$('#statuscheck').click(function () {
+var arr=[];
+var myOpts = document.getElementById('statusTwo').options;
+for(var i=0;i<myOpts.length;i++){
+arr.push(myOpts[i].value);
+}
+if(arr.length>0){
+$("#updating").css("display", "block");
+console.log(arr);
+google.script.run.withSuccessHandler(buildhtmlmodal).checkStatus(arr);
+
+}else{
+alert('No codes selected.');
+}
+$("statusTwo").html('');
+});
+$('.left').click(function () {
+if(SHIPPING_NOTE){
+moveItems('#sbTwo', '#sbOne');
+}else if(xero_NOTE){
+moveItems('#xrTwo', '#xrOne');
+}else{
+moveItems('#statusTwo', '#statusOne');
+}
+});
+ 
+$('.right').on('click', function () {
+ 
+    if(SHIPPING_NOTE){
+moveItems('#sbOne', '#sbTwo');
+}else if(xero_NOTE){
+moveItems('#xrOne', '#xrTwo');
+}else{
+moveItems('#statusOne', '#statusTwo');
+}
+});
+ 
+ $('.leftall').on('click', function () {
+ 
+ if(SHIPPING_NOTE){
+ moveAllItems('#sbTwo', '#sbOne');
+ }else if(xero_NOTE){
+ moveAllItems('#xrTwo', '#xrOne');
+ }else{
+ moveAllItems('#statusTwo', '#statusOne');
+ }
+ });
+ 
+$('.rightall').on('click', function () {
+
+    if(SHIPPING_NOTE){
+moveAllItems('#sbOne', '#sbTwo');
+}else if(xero_NOTE){
+
+moveAllItems('#xrOne', '#xrTwo');
+}else{
+moveAllItems('#statusOne', '#statusTwo');
+}   
+});
+
+function getIndex2 (searchValue, array) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][1] == searchValue) {
+            return i
+            break;
+        }
+
+    }
+    return -1;
+
+}
+
+
+function getOrderIDsTop(){
+var childs=$('#xrOne').children();
+var ret=[];
+for(var i=0;i<childs.length;i++){
+ ret.push([$(childs[i]).attr('date'),$(childs[i]).val()])
+}
+console.log('ret',ret);
+return ret;
+}
+function getOrderIDsPrioriies(){
+var childs=$('.priorityBody').children();
+var ret=[];
+for(var i=0;i<childs.length;i++){
+console.log(childs[i]);
+ ret.push([$(childs[i]).attr('date'),$(childs[i]).attr('orderID'),$(childs[i]).attr('priority')])
+}
+console.log('ret',ret);
+return ret;
+}
+function filterxero(event){
+var modal=$(event).attr('page');
+
+var dates={
+
+'startDate':$('#'+modal+' #startSearchOrderIDs').val(),
+'endDate':$('#'+modal+' #endSearchOrderIDs').val(),
+'keyword':$('#'+modal+' #keyword').val(),
+};
+if(modal=='xeroModal'){
+var data=getOrderIDsTop();
+}else if(modal=='statusModal'){
+var data=getOrderIDsTop();
+}else{
+var data=getOrderIDsPrioriies();
+}
+  if(dates.startDate){
+    var start=new Date(dates.startDate);
+  }else{
+    
+      var start=new Date('01-01-1970');
+  }
+  if(dates.endDate){
+    var end=new Date(dates.endDate);
+  }else{
+    
+    var end=new Date('01-01-2040');
+  }
+  var ret=[];
+  console.log('start',start);
+ for(var i=0;i<data.length;i++){
+
+ var arrtime=parseInt(data[i][0],10);
+
+
+    if(start.getTime()<=arrtime && end.getTime()>=arrtime){
+      if(dates.keyword==''){
+          ret.push(data[i]);
+      }else{
+       if(JSON.stringify(data[i]).toLowerCase().match(dates.keyword.toLowerCase())){
+       ret.push(data[i]);
+       }
+      }
+      
+    }else{
+  //  console.log('logitem',arrtime);
+  //   console.log('start',start);
+    }
+    
+ }
+ if(modal=='xeroModal'){
+   var childs=$('#xrOne').children();
+     for(var i=0;i<childs.length;i++){
+       $(childs[i]).hide();
+     }
+     for(var i=0;i<childs.length;i++){
+       for(var j=0;j<ret.length;j++){
+         if($(childs[i]).val()==ret[j][1]){
+           $(childs[i]).show();
+         break;
+       }
+     }
+   }
+ }else if(modal=='statusModal'){
+   var childs=$('#statusOne').children();
+     for(var i=0;i<childs.length;i++){
+       $(childs[i]).hide();
+     }
+     for(var i=0;i<childs.length;i++){
+       for(var j=0;j<ret.length;j++){
+         if($(childs[i]).val()==ret[j][1]){
+           $(childs[i]).show();
+         break;
+       }
+     }
+   }
+ }else{
+ 
+  var childs=$('.priorityBody').children();
+     for(var i=0;i<childs.length;i++){
+       $(childs[i]).hide();
+     }
+     for(var i=0;i<childs.length;i++){
+       for(var j=0;j<ret.length;j++){
+         if($(childs[i]).attr('id')==ret[j][1]){
+           $(childs[i]).show();
+         break;
+       }
+     }
+   }
+ 
+ 
+ }
+//return ret;
+}
+
+
+
+
+
+
+function exportSuccess(msg){
+ $("#updating").css("display", "none");
+alert(msg);
+}
+
+
+function stockCheck(msg){
+$("#updating").css("display", "none");
+$('#checkBatches').modal('show');
+var html='<p >'+msg+'</p>';
+$('#checkBatchesBody').html(html); 
+// alert(msg);
+}
+
+
+
+
+
+function getSearchDates(data){
+
+var page=selPage;
+if(page=='Mixing'){
+console.log('page');
+console.log(page);
+$('#searchDates').show();
+$('#searchDatesMixingTeam').hide();
+}else if(page=='MixingTeam'||page=='FlavourMixMixingTeam'||page=='PremixColoring'){
+console.log('page');
+console.log(page);
+$('#searchDatesMixing').hide();
+$('#searchDatesMixingTeam').show();
+
+}
+var dates={
+
+'startDate':$('#searchDates #startSearch').val(),
+'endDate':$('#searchDates #endSearch').val(),
+'search':$('#searchDates #filterdates').val(),
+};
+
+  if(dates.startDate){
+    var start=new Date(dates.startDate);
+  }else{
+    
+      var start=new Date('01-01-1970');
+  }
+  if(dates.endDate){
+    var end=new Date(dates.endDate);
+  }else{
+    
+    var end=new Date('01-01-2040');
+  }
+  var ret=[];
+ for(var i=0;i<data.length;i++){
+ if(!data[i][dates.search]){
+ // ret.push(data[i]);
+  continue;
+ }
+ var logitem=new Date(data[i][dates.search]);
+ if(logitem.getTime()){}else{
+ var from=data[i][dates.search].replace(/\//g,'-').split("-");
+    logitem= new Date(from[2], from[1] , from[0]);
+
+   
+ 
+ 
+ }
+console.log(logitem.getTime(),start.getTime(),end.getTime(),dates.search);
+
+    if(start.getTime()<=logitem.getTime() && end.getTime()>=logitem.getTime()){
+          ret.push(data[i]);
+      
+    }else{
+    console.log('skipped', data[i].batch, data[i][dates.search]);
+    }
+    
+ }
+  
+return ret;
+}
+
+function datesearch(){
+
+
+   google.script.run.withSuccessHandler(filterResult).searchFor(LASTSEARCH);
+
+}
+
+
+
+var htmlModalType;
+function buildhtmlmodal(rett){
+var data=rett[0];
+var type=rett[1];
+htmlModalType=type;
+var built='';
+switch (type){
+    case 'deleteandreverse':
+    built= buildDeleteAndReverse(data);
+    break;
+    case 'statuscheck':
+    built= buildCheckStock(data);
+    break;
+    case 'PackagePrint':
+    built= buildPackagePrint(data);
+    break;
+  default:
+
+  break;
+}
+$('.htmlMSGmodalbody').html(built);
+$('#htmlMSGmodal').modal('show');
+$("#updating").css("display", "none");
+}
+
+var DELandREVData=[];
+function buildDeleteAndReverse(list){
+DELandREVData=list;
+console.log(list);
+var html='';
+html+='<h2>Status of orders</h2>';
+html+='<table class="table"><thead><tr><th>Batch</th><th>Orders</th><th>Mixing</th><th>Production</th><th>Printing</th><th>Labelling</th><th>Packaging</th><th>Delete Status</th></tr></thead>';
+html+='<tbody>';
+for(var i=0;i<list.length;i++){
+html+='<tr>';
+
+for(var j=0;j<list[i].length;j++){
+if(j==0){
+html+='<td>'+list[i][j]+'</td>';
+}else{
+
+  if(list[i][j][0]=='Completed'){
+  html+='<td bgcolor="#1BEF5B">';
+  }else if(list[i][j][0]=='Busy'||list[i][j][0]=='started'){
+   html+='<td bgcolor="#1BCFEF">';
+  }else{
+   html+='<td>';
+  }
+
+html+=list[i][j][0]+'</td>';
+}
+}
+html+='<td><input class="deletereversecheckbox" type="checkbox" value="'+list[i][0]+'" checked></td>';
+html+='</tr>';
+}
+html+='</tbody></table>';
+html+='<br />';
+html+='<br />';
+html+='<button class="btn btn-success" style="margin:20px;" onclick="deleteandreverseTHESE()">Delete Checked</buttno></div>';
+
+return html;
+}
+function buildCheckStock(list){
+DELandREVData=list;
+console.log(list);
+var html='';
+html+='<h2>Status of orders</h2>';
+html+='<table class="table"><thead><tr><th>Batch</th><th>Order ID</th><th>Start Time</th><th>Customer</th><th>Orders</th><th>Mixing</th><th>Production</th><th>Printing</th><th>Labelling</th><th>Packaging</th><th>Date Shipped</th><th>Shipping Code</th></tr></thead>';
+html+='<tbody>';
+for(var i=0;i<list.length;i++){
+html+='<tr>';
+var skipRows=[0,1,2,3,4,5];
+for(var j=0;j<list[i].length;j++){
+if(j==4||j==5){
+continue;
+}
+if(j==0||j==1||j==2||j==3||j==4||j==5){
+html+='<td>'+list[i][j]+'</td>';
+}else{
+  if(list[i][j][0]=='Completed'){
+  html+='<td bgcolor="#1BEF5B">';
+  }else if(list[i][j][0]=='Busy'||list[i][j][0]=='started'){
+   html+='<td bgcolor="#1BCFEF">';
+  }else{
+   html+='<td>';
+  }
+
+html+=list[i][j][0]+'</td>';
+}
+}
+html+='<td>'+list[i][4]+'</td>';
+html+='<td>'+list[i][5]+'</td>';
+html+='</tr>';
+}
+html+='</tbody></table>';
+html+='<br />';
+html+='<br />';
+html+='</div>';
+
+return html;
+}
+
+function setScheduleDropdown(data){
+var html='';
+if(data){
+for(var i=0;i<data.length;i++){
+html+='<option value="'+data[i][0]+'">'+data[i][1]+'</option>';
+
+}
+}
+$('#scheduleSelect').html(html);
+$("#updating").css("display", "block");
+console.log('selPage setScheduleDropdown',selPage);
+google.script.run.withSuccessHandler(filterResult).getScheduleDataNearest(selPage);
+
+}
+
+function buildPackagePrint(msg){
+var html='<div>\
+<h3>Packaging:</h3>\
+<p>'+msg+'</p>\
+<br/>';
+
+
+html+='</div>';
+return html;
+}
+</script>
+
+<?!= include('moveTableRow'); ?>
+</html>
+
+

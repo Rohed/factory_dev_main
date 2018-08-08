@@ -2,7 +2,7 @@ function deleteItems(){
 var id = '1yv7HQDGvNuLwDUgfMHOMuqLJdUoN7s_nz-09LvrF7V0';
 var sheets = SpreadsheetApp.openById(id).getSheets();
 var batchRow = [3,3,3,3,4,2];
-for(var i =2;i<3;i++){
+for(var i =4;i<5;i++){
 var name = sheets[i].getName();
  
 var data = sheets[i].getDataRange().getValues();

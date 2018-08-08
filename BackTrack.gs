@@ -111,15 +111,21 @@ function fromProduction(batch, bottles) {
     if (printData) {
         if (printData.movedtoNext == 0) {
             var label = order.botlabelsku;
-            printData.bottles = printData.bottles - removeFromProduction;
-            LOGARR.push(['New in Printing: ', printData.bottles]);
-            base.updateData('Printing/' + batch, printData);
+       
             var packData = getPackagingData(printData.packagingType, removeFromProduction, order.boxname.sku)
             var packink = packData.ink;
             var tube = packData.botperPack;
             var boxname = order.boxname.sku;
             var tubes = removeFromProduction / tube;
             var box = tubes / packData.divTubesForBox;
+            
+            printData.numLabelsBottles = printData.numLabelsBottles - removeFromProduction;
+            printData.numLabelsTubes = printData.numLabelsTubes - (removeFromProduction/tube);
+            printData.bottles = printData.bottles - removeFromProduction;
+            
+            LOGARR.push(['New in Printing: ', printData.bottles]);
+            base.updateData('Printing/' + batch, printData);
+            
             if (!isFinite(box)) {
                 box = 0;
             }

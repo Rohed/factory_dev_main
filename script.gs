@@ -775,7 +775,7 @@ function MoveItem(batch, sheet) {
 
 function moveMain(item) {
     var LOGARR = [];
-    try {
+    
         var order = base.getData('Orders/' + item.batch);
         var sheet_name = item.current;
         var next_sheet = sheets[sheets.indexOf(sheet_name) + 1];
@@ -1224,9 +1224,5 @@ function moveMain(item) {
             LOGARR.push(["Wrong Sheet", '']);
         }
         return LOGARR;
-    } catch (e) {
-        Logger.log(e.message);
-        LOGARR.push(['FAILED:', e.message]);
-        return LOGARR;
-    }
+    
 }

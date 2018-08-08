@@ -894,6 +894,7 @@ var SEARCHNUM=0;
          $('#selButton').css('display','block');
           $('#ordersNav').css('display','block'); 
    }else if(sheet=='MixingTeam'){
+   
       populateSLMixingTab();
     }else if(selPage=='FlavourMixMixingTeam'){
       populateFlavourMixMixingTeamTab();
@@ -905,17 +906,21 @@ var SEARCHNUM=0;
       $('#btntext').html('Generate Batch Sheet');
       $('#printPage').css('display','block');
       $('#selButton').css('display','block');
-      populateSLProductionTab();
+       filterpage('xx',true);
+     // populateSLProductionTab();
     }else if(sheet=='Printing'){
-      populateSLPrintingTab();
+       filterpage('xx',true);
+      //populateSLPrintingTab();
     }else if(sheet=='Labelling'){
-      populateSLLabellingTab();
+      filterpage('xx',true);
+     // populateSLLabellingTab();
     }else if(sheet=='Packaging'){
       $('#btntext').html('Generate Packing List');
         $('#packNote').css('display','block');
       $('#printPage').css('display','block');
       $('#selButton').css('display','block');
-      populateSLPackagingTab();
+       filterpage('xx',true);
+     // populateSLPackagingTab();
     }else if(sheet=='Shipping'){
     
     $('#paginationSelect').show();

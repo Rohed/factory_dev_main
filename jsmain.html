@@ -983,7 +983,7 @@ edit_flavour_mix_order=true;
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" style="display:none;" id="deselect'+data[i].batch+'" href="#select' + data[i].batch + '">Deselect</a>';
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Order</a>';
                 html += '<a class="dropdown-item" onclick="return deleteandreverseSingle(this);" batch="' + data[i].batch + '">Delete and Reverse Order</a>';
-
+               html += '<a class="dropdown-item" onclick="return reverseSingle(this);" batch="' + data[i].batch + '">Reverse Order</a>';
 
 
          //   }
@@ -5393,7 +5393,29 @@ if (r == true) {
 }
 return false;
 }
+function reverseSelected(){
 
+var ms="WARNING! You are about to reverse all the selected orders.All their stock allocations will be reversed. \n Do you wish to proceed?";
+var r = confirm(ms);
+if (r == true) {
+    $("#updating").css("display", "block");
+ google.script.run.withSuccessHandler(buildhtmlmodal).getBatchInfo(SELECTED,'reverse');
+
+}
+
+}
+
+function reverseSingle(event){
+
+var ms="WARNING! You are about to reverse the selected order. All the stock allocations will be reversed. \n Do you wish to proceed?";
+var r = confirm(ms);
+if (r == true) {
+    $("#updating").css("display", "block");
+ google.script.run.withSuccessHandler(buildhtmlmodal).getBatchInfo([$(event).attr('batch')],'reverse');
+
+}
+return false;
+}
 var htmlModalType;
 var modalclosed=true;
 var loopTimeout=0;
@@ -5408,6 +5430,9 @@ var built='';
 switch (type){
     case 'deleteandreverse':
     built= buildDeleteAndReverse(data);
+    break;
+    case 'reverse':
+    built= buildReverse(data);
     break;
     case 'statuscheck':
     built= buildCheckStock(data);
@@ -5486,7 +5511,44 @@ html+='</tr>';
 html+='</tbody></table>';
 html+='<br />';
 html+='<br />';
-html+='<button class="btn btn-success" style="margin:20px;" onclick="deleteandreverseTHESE()">Delete Checked</buttno></div>';
+html+='<button class="btn btn-success" style="margin:20px;" onclick="deleteandreverseTHESE()">Delete Checked</button></div>';
+
+return html;
+}
+var REVData=[];
+function buildReverse(list){
+REVData=list;
+console.log(list);
+var html='';
+html+='<h2>Status of orders</h2>';
+html+='<table class="table"><thead><tr><th>Batch</th><th>Orders</th><th>Mixing</th><th>Production</th><th>Printing</th><th>Labelling</th><th>Packaging</th><th>Reverse Status</th></tr></thead>';
+html+='<tbody>';
+for(var i=0;i<list.length;i++){
+html+='<tr>';
+
+for(var j=0;j<list[i].length;j++){
+if(j==0){
+html+='<td>'+list[i][j]+'</td>';
+}else{
+
+  if(list[i][j][0]=='Completed'){
+  html+='<td bgcolor="#1BEF5B">';
+  }else if(list[i][j][0]=='Busy'||list[i][j][0]=='started'){
+   html+='<td bgcolor="#1BCFEF">';
+  }else{
+   html+='<td>';
+  }
+
+html+=list[i][j][0]+'</td>';
+}
+}
+html+='<td><input class="reversecheckbox" type="checkbox" value="'+list[i][0]+'" checked></td>';
+html+='</tr>';
+}
+html+='</tbody></table>';
+html+='<br />';
+html+='<br />';
+html+='<button class="btn btn-success" style="margin:20px;" onclick="reverseTHESE()">Reverse Checked</button></div>';
 
 return html;
 }
@@ -5559,7 +5621,34 @@ if(arr[i]==DELandREVData[j][0]){
 console.log(final);
 
 
-google.script.run.withSuccessHandler(deleteandreverseSuccess).deleteAndReverse(final);
+google.script.run.withSuccessHandler(deleteandreverseSuccess).deleteAndReverse(final,'delete');
+$('#htmlMSGmodal').modal('hide');
+
+}
+}
+function reverseTHESE(){
+console.log('REVData',REVData);
+var ms='Are you sure you want to proceed?'
+var r = confirm(ms);
+if (r == true) {
+$("#updating").css("display", "block");
+var arr = [];
+$('input.reversecheckbox:checkbox:checked').each(function () {
+arr.push($(this).val());
+});
+var final=[];
+
+for(var j=0; j<REVData.length;j++){
+for(var i =0;i<arr.length;i++){
+if(arr[i]==REVData[j][0]){
+  final.push(REVData[j])
+  }
+}
+}
+console.log(final);
+
+
+google.script.run.withSuccessHandler(deleteandreverseSuccess).deleteAndReverse(final,'reverse');
 $('#htmlMSGmodal').modal('hide');
 
 }

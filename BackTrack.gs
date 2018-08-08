@@ -396,7 +396,7 @@ function getBatchInfo(batches,key) {
             var existsinRett = rett.getIndex(batches[j]);
             if (existsinRett == -1) {
                 existsinRett = rett.length;
-                if(key=='deleteandreverse'){
+                if(key=='deleteandreverse'|| key=='reverse'){
                 rett.push([batches[j]]);
                 }else if(key=='statuscheck'){
                 if( shippingData[batches[j]]){
@@ -425,10 +425,10 @@ function getBatchInfo(batches,key) {
     return [rett, key];
 }
 function testDELANREV(){
-deleteAndReverse( getBatchInfo(['913768'])[0]) 
+deleteAndReverse( getBatchInfo(['913768'])[0],'reverse') 
 
 }
-function deleteAndReverse(data) {
+function deleteAndReverse(data, key) {
        var sheets = ['Packaging', 'Labelling', 'Printing', 'Production', 'MixingTeam', 'Orders'];
     //  var sheetStatus=['final_status','mixing_status','printing_status','labelling_status','packaging_status'];
     var orders = base.getData('Orders');
@@ -442,19 +442,23 @@ function deleteAndReverse(data) {
             } else {
                 var sheetItem = raw[data[j][0]];
             }
-            reverseLineItemMove(item, itemRaw, sheetItem,sheets[i]);
+            reverseLineItemMove(item, itemRaw, sheetItem,sheets[i],key);
         }
     }
+    
    var removed=[]; 
    for (var j = 0; j < data.length; j++) {
    removed.push(data[j][0]);
    }
-   
+   if(key=='delete'){
    return 'Removed: '+removed.join(', ');
-   
+   }else{
+    return 'Reversed: '+removed.join(', ');
+
+   }
 }
 
-function reverseLineItemMove(sheetItem, order, item,sheet) {
+function reverseLineItemMove(sheetItem, order, item,sheet,key) {
 Logger.log(item);
 Logger.log(order);
 Logger.log(sheetItem);
@@ -568,9 +572,11 @@ Logger.log(sheetItem);
             var boxname = order.boxname.sku;
             var tubes = botQ2 / tube;
             var box = tubes / packData.divTubesForBox;
-            if (item.packlabelsku) {
-
+            if(tube){
+              if (item.packlabelsku) {
+                
                 fromReservedToRunning('Labels/' + item.packlabelsku,  tubes );
+              }
             }
             fromReservedToRunning('Labels/' + label, item.bottles );
             var suffix = item.batch.substr(-1);
@@ -615,8 +621,10 @@ Logger.log(sheetItem);
             var boxname = order.boxname.sku;
             var tubes = botQ2 / tube;
             var box = tubes / packData.divTubesForBox;
-            if (item.packlabelsku) {
+            if(tube){
+              if (item.packlabelsku) {
                 fromCompletedToRunning('Labels/' + item.packlabelsku, tubes);
+              }
             }
             fromCompletedToRunning('Labels/' + label, item.bottles);
             var suffix = item.batch.substr(-1);
@@ -664,9 +672,11 @@ Logger.log(sheetItem);
             var boxname = order.boxname.sku;
             var tubes = botQ2 / tube;
             var box = tubes / packData.divTubesForBox;
+                if(tube){
             if (item.packlabelsku) {
       
                 fromReservedToRunning('Labels/' + item.packlabelsku, tubes);
+            }
             }
             fromReservedToRunning('Labels/' + label, item.bottles);
             var suffix = item.batch.substr(-1);
@@ -907,6 +917,7 @@ Logger.log(sheetItem);
                   fromCompletedToRunning('PremixesTypes/'+premix, order.coloredpremix);
                 }
                
+               
               }else{
                fromReservedToRunning("Color/"+item.Color.sku, item.QTY*10*item.Color.val);
                 if (for_premixed_stock) {
@@ -918,17 +929,43 @@ Logger.log(sheetItem);
               }
                 base.removeData('PremixColoring/' + sheetItem[0]);
             }
-        
-        
-        
+            
+            
+          base.removeData('Mixing/' + sheetItem[0]);
+          base.removeData('Production/' + sheetItem[0]);
+          base.removeData('Printing/' + sheetItem[0]);
+          base.removeData('Labelling/' + sheetItem[0]);
+          base.removeData('Packaging/' + sheetItem[0]);
+          base.removeData('Shipping/' + sheetItem[0]);
+          if(key=='delete'){
+            
             base.removeData('Orders/' + sheetItem[0]);
-            base.removeData('Mixing/' + sheetItem[0]);
-        
-            base.removeData('Production/' + sheetItem[0]);
-            base.removeData('Printing/' + sheetItem[0]);
-            base.removeData('Labelling/' + sheetItem[0]);
-            base.removeData('Packaging/' + sheetItem[0]);
-            base.removeData('Shipping/' + sheetItem[0]);
+          
+          }else{
+            var data= {
+              final_status:0,
+              runtime: 0,
+              started: 0,
+            }
+            data.removedProduction = 0
+            data.partialProduction = 0;
+            data.partialPackaging = 0;
+            data.removedPackaging = 0
+            data.saved = true;
+            data.unbranded = 0;
+            data.branded = 0;
+            data.premixed = 0;
+            data.coloredpremix = 0;
+            data.mixing = 0;
+            data.backtubed = 0;
+            data.mixing_status = 0;
+            data.production_status = 0;
+            data.printing_status = 0;
+            data.labeling_status = 0;
+            data.packaging_status = 0;
+              data.wentNegative=false;
+              base.updateData('Orders/' + sheetItem[0],data);
+          }
         }
    
 }

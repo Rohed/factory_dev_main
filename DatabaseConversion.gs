@@ -2,14 +2,14 @@ function deleteItems(){
 var id = '1yv7HQDGvNuLwDUgfMHOMuqLJdUoN7s_nz-09LvrF7V0';
 var sheets = SpreadsheetApp.openById(id).getSheets();
 var batchRow = [3,3,3,3,4,2];
-for(var i =1;i<2;i++){
+for(var i =2;i<3;i++){
 var name = sheets[i].getName();
-  if(name =='Production'){
+ 
 var data = sheets[i].getDataRange().getValues();
   for(var d=0;d<data.length;d++){
     base.removeData(name+'/'+data[d][batchRow[i]]);
   }
-}
+
 }
 
 

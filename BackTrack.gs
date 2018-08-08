@@ -44,6 +44,9 @@ function fromProduction(batch, bottles) {
   var premixColored = getPremixSKU(order,true);
   var forColored = order.recipe.Color ? true : false;
   var volume = bottles* order.fill/ 1000;
+  LOGARR.push(['Volume: ' , volume]);
+  LOGARR.push(['tominusP: ' , tominusP]);
+  LOGARR.push(['tomix: ' , tomix]);
    var amount = 0;
     var helper = 0;
   if(tominusP>0){
@@ -59,10 +62,14 @@ function fromProduction(batch, bottles) {
       helper=0;
     }
     if(forColored){
+     LOGARR.push(['COLORED: ' , "YES "+ premixColored]);
       fromReservedToRunning('PremixesTypes/' + premixColored, amount);
     }else{
+      LOGARR.push(['COLORED: ' , "NO " + premix]);
       fromReservedToRunning('PremixesTypes/' + premix, amount);
     }
+    LOGARR.push(['amount: ' , amount]);
+    LOGARR.push(['premixed: ' , helper]);
     var dat1 ={
       premixed:helper,
     }
@@ -70,6 +77,7 @@ function fromProduction(batch, bottles) {
     
   }
   if(tomix>0 && volume>0){
+   LOGARR.push(['Volume: ' , volume]);
     if(mixingData.movedtoNext != 1){
       var datMix = {
         POvolume:volume,
@@ -79,15 +87,19 @@ function fromProduction(batch, bottles) {
     }else{
       amount =volume;
       if(forColored){
+       LOGARR.push(['COLORED: ' , "YES " + premix]);
         PtoRunning(premixColored, amount);
       }else{
+       LOGARR.push(['COLORED: ' , "NO " + premix]);
         PtoRunning(premix, amount);
       }
     }
+    
      var dat1 ={
       mixing:tomix-volume,
     }
-      base.updateData('Orders/' + batch,dat1);
+     LOGARR.push(['mixing: ' , tomix-volume]);
+    base.updateData('Orders/' + batch,dat1);
   }
   LOGARR.push(['Removed bottles:', removeFromProduction]);
   removeFromReserved('Lids/' + prodData.lidSKU, removeFromProduction);

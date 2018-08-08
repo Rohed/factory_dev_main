@@ -1041,9 +1041,11 @@ function moveMain(item) {
             var boxname = order.boxname.sku;
             var tubes = botQ2 / tube;
             var box = tubes / packData.divTubesForBox;
+            if(tube){
             if (item.packlabelsku) {
                 LOGARR.push([item.packlabelsku, tubes]);
                 fromReservedtoCompleted('Labels/' + item.packlabelsku, tubes);
+            }
             }
             LOGARR.push([label, item.bottles]);
             fromReservedtoCompleted('Labels/' + label, item.bottles);

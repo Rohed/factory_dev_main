@@ -26,6 +26,9 @@ for(var j=0;j<tabs.length;j++){
       'Production Status', 'Printing Status', 'Labelling Status', 'Packaging Status', 'FINAL STATUS','Partial Production','Partial Packaging'];
     
     
+    
+    
+    
       var values=[];
       values.push(headerRow);
       for(var i=0;i<data.length;i++){
@@ -45,13 +48,14 @@ for(var j=0;j<tabs.length;j++){
        
           var data=getSheetData('Mixing');
         if(!data){continue;}
-     var headerRow=['Completed','Priority','Batch','OrderID','Product Code','Product Description','Recipe','Flavour','Order Date','QTY(Litres)','VG (MG)','AG (MG)',
+     var headerRow=['Completed','Priority','Batch','OrderID',"Brand",'Product Code','Product Description','Recipe','Flavour','Order Date','QTY(Litres)','VG (MG)','AG (MG)',
      'PG (MG)','Nicotine (MG)','Nicotine Salts (MG)','CBD (MG)','MCT (MG)','Flavour (MG)'];
        var values=[];
       values.push(headerRow);
       for(var i=0;i<data.length;i++){
        if(!data[i].recipe){continue;}
-      values.push([data[i].final_status,data.priority,data[i].batch,data[i].orderID,data[i].productcode,data[i].productdescription,data[i].recipe.name,data[i].flavour.name,formatDateDisplay(data[i].orderdate),
+       data[i].brand =   data[i].brand ?   data[i].brand : "";
+      values.push([data[i].final_status,data.priority,data[i].batch,data[i].orderID,data[i].brand,data[i].productcode,data[i].productdescription,data[i].recipe.name,data[i].flavour.name,formatDateDisplay(data[i].orderdate),
       data[i].QTY,data[i].VGval,data[i].AGval,data[i].PGval,data[i].Nico,data[i].Nicosalts,data[i].CBDvalue,data[i].MCTval,data[i].flavvalue]);
       }
       var sheet=file.insertSheet('Mixing');
@@ -330,7 +334,7 @@ for(var j=0;j<tabs.length;j++){
      var values=[];
      for(var i=0;i<data.length;i++)
      {
-       if(data[i].name){
+       if(data[i].sku||data[i].name||data[i].Running||data[i].Reserved||data[i].Completed){
          if(data[i].Stock){
          var stock=data[i].Stock;
          }else{

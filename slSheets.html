@@ -1203,7 +1203,7 @@ return false;
          }
             html += '<td>'+i+'</td><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
            // if (data[i].final_status == 'started' || data[i].final_status == 'Completed') {
-              //  html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Batch</a>';
+              //  html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Order</a>';
           //  } else {
 
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" id="select'+data[i].batch+'" href="#select' + data[i].batch + '">Select</a>';
@@ -1303,15 +1303,15 @@ function buildSLMixingTable(data){
 var qtyTotal=0;
 var rowsTotal=0;
 var html='';
-html+='<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Completed</th><th>Priority</th><th>Date of Production</th><th>Batch</th><th>Customers</th><th>Order Ids</th><th>Mix Batch Code</th>';
+html+='<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Completed</th><th>Priority</th><th>Date of Production</th><th>Batch</th><th>Customers</th><th>Order Ids</th><th>Brands</th><th>Mix Batch Code</th>';
 html+='<th>Recipe</th><th>Flavour</th><th>Order Date</th><th>QTY(Litres)</th><th>VG (MG)</th><th>AG (MG)</th><th>PG (MG)</th><th>Nicotine (MG)</th><th>Nicotine Salts (MG)</th><th>CBD (MG)</th><th>MCT (MG)</th>';
 html+='<th>Flavour (MG)</th><th>Notes - Mixing Dept</th><th>Factory</th><th>Location</th><th>Start Date</th><th>Completion Date</th><th>VG supplier batch </th><th>PG supplier batch </th><th>Nicotine supplier batch </th><th>Flavour supplier batch </th>';
 
 html += '</tr>';
-html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>QTY TOTAL</div><div id="qtyTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>';
+html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>QTY TOTAL</div><div id="qtyTotal"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>';
 
  if(data){
-         var keys=['Completed','priority','prodDate','batches','MIXNAME','RECIPE','FLAVOUR','orderDates','QTYTOTAL','VGval','AGval','PGval','Nico','Nicosalts','CBDvalue','MCTval','flavvalue','Notes','factory','Location','starttime','CompletionDate','vgSupplier','pgSupplier','nicSupplier','flavSupplier'];
+         var keys=['Completed','priority','prodDate','customer','orderID','brand','batches','MIXNAME','RECIPE','FLAVOUR','orderDates','QTYTOTAL','VGval','AGval','PGval','Nico','Nicosalts','CBDvalue','MCTval','flavvalue','Notes','factory','Location','starttime','CompletionDate','vgSupplier','pgSupplier','nicSupplier','flavSupplier'];
          var drpdowns='';
          html += '<tr><th></th><th></th>';
          console.log(keys);
@@ -1347,6 +1347,7 @@ html+=' </div></div></td>';
             var mixARR=[];
             var customers=[];
             var orderIDs=[];
+            var brands=[];
                var result = Object.keys(data[i].Batches).map(function(key) {
                     return [Number(key), data[i].Batches[key]];
                   });
@@ -1359,11 +1360,13 @@ html+=' </div></div></td>';
                   
             for(var j=0;j<mixARR.length;j++){
             try{
+                 mixARR[j].brand = mixARR[j].brand ? mixARR[j].brand : "";
             batches.push(mixARR[j].batch);
             orderDates.push(formatDateDisplay(mixARR[j].orderdate));
             priorities.push(mixARR[j].priority);
             customers.push(mixARR[j].customer);
             orderIDs.push(mixARR[j].orderID);
+              brands.push(mixARR[j].brand);
             }catch(e){console.log(e.message);}
             }
    html += '<td></td>';
@@ -1379,7 +1382,7 @@ html+=' </div></div></td>';
         data[i].MCTval=data[i].MCTval ? data[i].MCTval: ' ';
       
 
-html+='<td>'+data[i].Completed+'</td><td>'+priorities.join()+'</td><td>'+formatDateDisplay2(data[i].prodDate)+'</td><td>'+batches.join()+'</td><td>' + customers.join() + '</td><td>' + orderIDs.join() + '</td><td>'+data[i].MIXNAME+'</td><td>'+data[i].RECIPE+'</td>';
+html+='<td>'+data[i].Completed+'</td><td>'+priorities.join()+'</td><td>'+formatDateDisplay2(data[i].prodDate)+'</td><td>'+batches.join()+'</td><td>' + customers.join() + '</td><td>' + orderIDs.join() + '</td><td>' + brands.join() + '</td><td>'+data[i].MIXNAME+'</td><td>'+data[i].RECIPE+'</td>';
 html+='<td>'+data[i].FLAVOUR+'</td><td>'+ orderDates.join()+'</td><td>'+data[i].QTYTOTAL+'</td><td>'+data[i].VGval+'</td><td>'+data[i].AGval+'</td><td>'+data[i].PGval+'</td><td>'+data[i].Nico+'</td><td>'+data[i].Nicosalts+'</td><td>'+data[i].CBDvalue+'</td><td>'+data[i].MCTval+'</td>';
 html+='<td>'+data[i].flavvalue+'</td><td>'+data[i].Notes+'</td><td>'+data[i].factory+'</td><td>'+data[i].Location+'</td><td>'+formatDateDisplay2(data[i].starttime)+'</td><td>'+formatDateDisplay2(data[i].CompletionDate)+'</td><td>'+data[i].vgSupplier+'</td><td>'+data[i].pgSupplier+'</td><td>'+data[i].nicSupplier+'</td><td>'+data[i].flavSupplier+'</td></tr>';
 
@@ -2386,7 +2389,7 @@ google.script.run.withSuccessHandler(newItemSuccess).runBusy(batch,page);
             html += '<tr><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
 
 
-            html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteShipping' + data[i].batch + '">Delete Batch</a>';
+            html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteShipping' + data[i].batch + '">Delete Order</a>';
             html += '<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal3" href="#editShipping' + data[i].batch + '">Edit</a>';
 
             html += ' </div></div></td>';

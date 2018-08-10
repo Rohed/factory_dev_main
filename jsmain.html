@@ -873,7 +873,7 @@ edit_flavour_mix_order=true;
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#run' + data[i].batch + '">Run Order</a>';
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" id="select'+data[i].batch+'" href="#select' + data[i].batch + '">Select</a>';
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" style="display:none;" id="deselect'+data[i].batch+'" href="#select' + data[i].batch + '">Deselect</a>';
-                html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteFlavourMixOrder' + data[i].batch + '">Delete Batch</a>';
+                html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteFlavourMixOrder' + data[i].batch + '">Delete Order</a>';
                 html += '</div></div></td>';  
                 }else if(keys[j]=='flavourmix.name'){
                 html+= '<td>'+data[i].flavourmix.name+'</td>';
@@ -975,15 +975,15 @@ edit_flavour_mix_order=true;
          }
             html += '<td>'+i+'</td><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
            // if (data[i].final_status == 'started' || data[i].final_status == 'Completed') {
-              //  html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Batch</a>';
+              //  html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Order</a>';
           //  } else {
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal" href="#editOrder' + data[i].batch + '">Edit</a>';
-                html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#run' + data[i].batch + '">Run Batch</a>';
+                html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#run' + data[i].batch + '">Run Order</a>';
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" id="select'+data[i].batch+'" href="#select' + data[i].batch + '">Select</a>';
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" style="display:none;" id="deselect'+data[i].batch+'" href="#select' + data[i].batch + '">Deselect</a>';
-                html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Batch</a>';
-                html += '<a class="dropdown-item" onclick="return deleteandreverseSingle(this);" batch="' + data[i].batch + '">Delete and Reverse Batch</a>';
-               html += '<a class="dropdown-item" onclick="return reverseSingle(this);" batch="' + data[i].batch + '">Reverse Batch</a>';
+                html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Order</a>';
+                html += '<a class="dropdown-item" onclick="return deleteandreverseSingle(this);" batch="' + data[i].batch + '">Delete and Reverse Order</a>';
+               html += '<a class="dropdown-item" onclick="return reverseSingle(this);" batch="' + data[i].batch + '">Reverse Order</a>';
 
 
          //   }
@@ -1507,14 +1507,14 @@ var EDITORDER=false;
         var rowsTotal=0;
 
         var html='';
-        html+='<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Completed</th><th>Priority</th><th>Batch</th><th>Order ID</th><th>Code</th><th>Description</th><th>Recipe</th><th>Flavour</th><th>Order Date</th><th>QTY(Litres)</th><th>VG (MG)</th><th>AG (MG)</th><th>PG (MG)</th><th>Nicotine (MG)</th><th>Nicotine Salts (MG)</th><th>CBD (MG)</th><th>MCT (MG)</th>';
+        html+='<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Completed</th><th>Priority</th><th>Batch</th><th>Order ID</th><th>Brand</th><th>Code</th><th>Description</th><th>Recipe</th><th>Flavour</th><th>Order Date</th><th>QTY(Litres)</th><th>VG (MG)</th><th>AG (MG)</th><th>PG (MG)</th><th>Nicotine (MG)</th><th>Nicotine Salts (MG)</th><th>CBD (MG)</th><th>MCT (MG)</th>';
         html+='<th>Flavour (MG)</th>';
         html+='<th>Backed By Mixing</th><th>Backed By Premix</th><th>Backed By Unbranded</th><th>Backed By Branded</th><th>Backed By Branded Packaged</th>';
         html+='</tr>';
-    html+='<tr><th><div>ROWS TOTAL</div><div id="rowsTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>QTY TOTAL</div><div id="qtyTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>';
+    html+='<tr><th><div>ROWS TOTAL</div><div id="rowsTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>QTY TOTAL</div><div id="qtyTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>';
     html+='<th><div>MIXING TOTAL</div><div id="mixingTotal'+thisPage+'"></div></th><th><div>PREMIX TOTAL</div><div id="premixTotal'+thisPage+'"></div></th><th><div>UNBRANDED TOTAL</div><div id="unbrandedTotal'+thisPage+'"></div></th><th><div>BRANDED TOTAL</div><div id="brandedTotal'+thisPage+'"></div></th><th><div>TUBES TOTAL</div><div id="tubesTotal'+thisPage+'"></div></th></tr>';
     if(data){
-    var keys=['final_status','priority','batch','orderID','productcode','productdescription','recipe.name','flavour.name','orderdate','QTY','VGval','AGval','PGval','Nico','Nicosalts','CBDvalue','MCTval','flavvalue','mixing','premixed','unbranded','branded','backtubed'];
+    var keys=['final_status','priority','batch','orderID','brand','productcode','productdescription','recipe.name','flavour.name','orderdate','QTY','VGval','AGval','PGval','Nico','Nicosalts','CBDvalue','MCTval','flavvalue','mixing','premixed','unbranded','branded','backtubed'];
     var drpdowns='';
     html += '<tr><th></th><th></th>';
     console.log(keys);
@@ -1537,13 +1537,13 @@ var EDITORDER=false;
                  }
                 
                     html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
-        
+          data[i].brand=data[i].brand ? data[i].brand: ' ';
         html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteMix' + data[i].batch + '">Delete</a>';
         html+=' </div></div></td>';
         data[i].priority=data[i].priority ? data[i].priority: ' '; 
         html += '<td><button page="Mixing" batch="'+data[i].batch+'" onclick="moveUp(this)" id="moveUP"><i class="fa fa-arrow-up" aria-hidden="true"></i></button><button onclick="moveDown(this)" page="Mixing" batch="'+data[i].batch+'" id="moveDOWN"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>';
-        html+='<td>'+data[i].final_status+'</td><td>'+data[i].priority+'</td><td>'+data[i].batch+'</td><td>' + data[i].orderID + '</td><td>' + data[i].productcode + '</td><td>' + data[i].productdescription + '</td><td>'+data[i].recipe.name+'</td>';
-        
+        html+='<td>'+data[i].final_status+'</td><td>'+data[i].priority+'</td><td>'+data[i].batch+'</td><td>' + data[i].orderID + '</td><td>' + data[i].brand + '</td><td>' + data[i].productcode + '</td><td>' + data[i].productdescription + '</td><td>'+data[i].recipe.name+'</td>';
+      
         data[i].flavvalue=data[i].flavvalue ? data[i].flavvalue: ' ';
         data[i].VGval=data[i].VGval ? data[i].VGval: ' ';
         data[i].AGval=data[i].AGval ? data[i].AGval: ' ';
@@ -1758,12 +1758,12 @@ var EDITORDER=false;
         var qtyTotal=0;
         var rowsTotal=0;
 
-        html += '<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Completed</th><th>Priority</th><th>Date of Production</th><th>Batch</th><th>Customers</th><th>Order Ids</th><th>Mix Batch Code</th><th>Recipe</th><th>Flavour</th><th>Order Date</th><th>QTY(Litres)</th><th>VG (MG)</th><th>AG (MG)</th>';
+        html += '<table class="table"><thead><tr><th>Menu</th><th>Move</th><th>Completed</th><th>Priority</th><th>Date of Production</th><th>Batch</th><th>Customers</th><th>Order Ids</th><th>Brands</th><th>Mix Batch Code</th><th>Recipe</th><th>Flavour</th><th>Order Date</th><th>QTY(Litres)</th><th>VG (MG)</th><th>AG (MG)</th>';
         html += '<th>PG (MG)</th><th>Nicotine (MG)</th><th>Nicotine Salts (MG)</th><th>CBD (MG)</th><th>MCT (MG)</th><th>Flavour (MG)</th><th>Notes - Mixing Dept</th><th>Location</th><th>Factory</th><th>Start Date</th><th>Completion Date</th><th>VG supplier batch </th><th>PG supplier batch </th><th>Nicotine supplier batch </th><th>Flavour supplier batch </th>';
         html += '</tr>';
-         html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>QTY TOTAL</div><div id="qtyTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>';
+         html += '<tr><th><div>ROWS TOTAL</div><div id="rowsTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th><div>QTY TOTAL</div><div id="qtyTotal'+thisPage+'"></div></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>';
          if(data){
-         var keys=['Completed','priority','prodDate','batches','MIXNAME','RECIPE','FLAVOUR','orderDates','QTYTOTAL','VGval','AGval','PGval','Nico','Nicosalts','CBDvalue','MCTval','flavvalue','Notes','Location','factory','starttime','CompletionDate','vgSupplier','pgSupplier','nicSupplier','flavSupplier'];
+         var keys=['Completed','priority','prodDate','batches','customer','orderID','brands','MIXNAME','RECIPE','FLAVOUR','orderDates','QTYTOTAL','VGval','AGval','PGval','Nico','Nicosalts','CBDvalue','MCTval','flavvalue','Notes','Location','factory','starttime','CompletionDate','vgSupplier','pgSupplier','nicSupplier','flavSupplier'];
          var drpdowns='';
          html += '<tr><th></th><th></th>';
          console.log(keys);
@@ -1797,6 +1797,7 @@ var EDITORDER=false;
             var mixARR=[];
              var customers=[];
             var orderIDs=[];
+            var brands = [];
                var result = data[i].Batches? Object.keys(data[i].Batches).map(function(key) {return [Number(key), data[i].Batches[key]]; }) : [];
 
                   for(var j=0;j<result.length;j++){
@@ -1806,6 +1807,8 @@ var EDITORDER=false;
                   
             for(var j=0;j<mixARR.length;j++){
             try{
+            mixARR[j].brand = mixARR[j].brand ? mixARR[j].brand : "";
+            brands.push(mixARR[j].brand);
             batches.push(mixARR[j].batch);
             orderDates.push(formatDateDisplay(mixARR[j].orderdate));
             priorities.push(mixARR[j].priority);
@@ -1826,7 +1829,7 @@ var EDITORDER=false;
       
             
             html += '<td><button page="MixingTeam" batch="'+data[i].MIXNAME+'" onclick="moveUp(this)" id="moveUP"><i class="fa fa-arrow-up" aria-hidden="true"></i></button><button onclick="moveDown(this)" page="MixingTeam" batch="'+data[i].MIXNAME+'" id="moveDOWN"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>';
-            html += '<td>' + data[i].Completed + '</td><td>' + priorities.join() + '</td><td>' + formatDateDisplay2(data[i].prodDate) + '</td><td>' + batches.join() + '</td><td>' + customers.join() + '</td><td>' + orderIDs.join() + '</td><td>' + data[i].MIXNAME + '</td><td>' + data[i].RECIPE + '</td>';
+            html += '<td>' + data[i].Completed + '</td><td>' + priorities.join() + '</td><td>' + formatDateDisplay2(data[i].prodDate) + '</td><td>' + batches.join() + '</td><td>' + customers.join() + '</td><td>' + orderIDs.join() + '</td><td>' + brands.join() + '</td><td>' + data[i].MIXNAME + '</td><td>' + data[i].RECIPE + '</td>';
             html += '<td>' + data[i].FLAVOUR + '</td><td>' + orderDates.join() + '</td><td>' + data[i].QTYTOTAL + '</td><td>' + data[i].VGval + '</td><td>' + data[i].AGval + '</td><td>' + data[i].PGval + '</td><td>' + data[i].Nico + '</td><td>' + data[i].Nicosalts + '</td><td>' + data[i].CBDvalue + '</td><td>' + data[i].MCTval + '</td>';
             html += '<td>' + data[i].flavvalue + '</td><td>' + data[i].Notes + '</td>';
             html += '<td>' + data[i].Location + '</td>';
@@ -2325,7 +2328,7 @@ html += '<td><button page="Production" batch="'+data[i].batch+'" onclick="moveUp
             html += '<tr><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
 
 
-            html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteShipping' + data[i].batch + '">Delete Batch</a>';
+            html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteShipping' + data[i].batch + '">Delete Order</a>';
             html += '<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal3" href="#editShipping' + data[i].batch + '">Edit</a>';
 
             html += ' </div></div></td>';

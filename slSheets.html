@@ -1203,7 +1203,7 @@ return false;
          }
             html += '<td>'+i+'</td><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
            // if (data[i].final_status == 'started' || data[i].final_status == 'Completed') {
-              //  html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Order</a>';
+              //  html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteOrder' + data[i].batch + '">Delete Batch</a>';
           //  } else {
 
                 html += '<a class="dropdown-item" onclick="return menuClick(this);" id="select'+data[i].batch+'" href="#select' + data[i].batch + '">Select</a>';
@@ -2389,7 +2389,7 @@ google.script.run.withSuccessHandler(newItemSuccess).runBusy(batch,page);
             html += '<tr><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
 
 
-            html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteShipping' + data[i].batch + '">Delete Order</a>';
+            html += '<a class="dropdown-item" onclick="return menuClick(this);" href="#deleteShipping' + data[i].batch + '">Delete Batch</a>';
             html += '<a class="dropdown-item" onclick="return menuClick(this);" data-toggle="modal" data-target="#myModal3" href="#editShipping' + data[i].batch + '">Edit</a>';
 
             html += ' </div></div></td>';

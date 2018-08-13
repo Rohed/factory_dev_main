@@ -1279,7 +1279,7 @@ edit_flavour_mix_order=true;
     
     function multRun(msg){
     
-    alert(msg);
+       alert(msg);
      filterpage('xx',true);
    //buildOrders(SelAllOrders);
      $("#updating").css("display", "none");
@@ -1314,9 +1314,9 @@ edit_flavour_mix_order=true;
     }
 
     function runItem(batch) {
-        console.log(batch);
+        console.log(batch +" " + selPage);
         if(selPage=='Orders'){
-        google.script.run.withSuccessHandler(OrderItemSuccess).runItem(batch);
+        google.script.run.withSuccessHandler(OrderItemSuccess).runItem(batch,false);
         }else{
          google.script.run.withSuccessHandler(OrderItemSuccess).runflavourmixItem(batch);
         }
@@ -1326,7 +1326,7 @@ edit_flavour_mix_order=true;
 
 
     function OrderItemSuccess(rett) {
-        
+        console.log('rett',rett);
           //buildOrders(SelAllOrders);
         alert(rett);
         
@@ -5431,6 +5431,9 @@ var type=rett[1];
 htmlModalType=type;
 var built='';
 switch (type){
+    case 'backupAndRestore':
+    built= buildbackupAndRestore(data);
+    break;
     case 'deleteandreverse':
     built= buildDeleteAndReverse(data);
     break;
@@ -5766,6 +5769,15 @@ switch (resp[1]){
   }else{
   
   google.script.run.withSuccessHandler(checkProccessStatus).updateGeneratedDataPing();
+  }
+  break;
+  case 'restorePoint':
+  if(resp[0]){
+  loopTimeout=0;
+  createRestoreSuccess(resp[2]);
+  }else{
+  
+  google.script.run.withSuccessHandler(checkProccessStatus).restorePointPing();
   }
   break;
   default:
@@ -6430,4 +6442,90 @@ closemainmodal();
 }
 //END SHCEDULING CODE
 
+
+function backupAndRestore(){
+var password = prompt("Please enter your password:", "");
+ google.script.run.withSuccessHandler(verifyUserResult).verifyUser(password,'backupAndRestore');
+}
+
+function verifyUserResult(result){
+  if(result[0]){
+  switch (result[1]){
+  case 'backupAndRestore':
+   google.script.run.withSuccessHandler(buildhtmlmodal).getFileList();
+  break;
+  default:
+  alert('Success');
+  }
+
+  }else{
+    alert('Wrong Password');
+  }
+}
+
+
+function buildbackupAndRestore(arr){
+var html = '';
+html+='\
+<div id="restoreBody"><h2>Backup and Restore</h2><ul id="restoreList" class="list-group"><div><p id="restoreStatus"></p></div>';
+for(var i =0;i<arr.length;i++){
+
+html+='<li class="list-group-item" value = "'+arr[i]+'">\
+<div class="radio">\
+  <label><input style="margin: 0 20px;" type="radio" value="'+arr[i]+'" name="restoreradio">'+formatDateDisplay2(parseInt(arr[i].replace('.zip',''),10))+'</label>\
+</div>\
+</li>';
+
+}
+html+='</ul>\
+<button type="button" class="btn btn-primary sarButton" onclick="restoreSelected()" >Restore</button>\
+<button type="button" class="btn btn-danger sarButton" onclick="deleteSelected()" >Delete</button>\
+<button type="button" class="btn btn-success sarButton" onclick="saveCurrentPoint()" >Save Current</button>\
+</div>';
+return html;
+}
+
+
+function restoreSelected(){
+var name = $('input[name=restoreradio]:checked').val();
+console.log('restorename',name);
+
+
+if (confirm('Restoring to the selected will reset all changes from that point forwards.')) {
+$("#updating").css("display", "block");
+google.script.run.withSuccessHandler(checkProccessStatus).restorePoint(name);
+
+} 
+}
+
+
+function deleteSelected(){
+var name = $('input[name=restoreradio]:checked').val();
+console.log('restorename',name);
+if (confirm('Are you sure you want to delete this save?')) {
+$("#updating").css("display", "block");
+google.script.run.withSuccessHandler(saveandrestoremsg).deleteBackup(name);
+
+}
+
+}
+
+
+
+function saveCurrentPoint(){
+$("#updating").css("display", "block");
+alert('Saving');
+ google.script.run.withSuccessHandler(saveandrestoremsg).createBackup();
+}
+
+function createRestoreSuccess(msg){
+$('#restoreStatus').html(msg);
+$("#updating").css("display", "none");
+}
+
+function saveandrestoremsg(msg){
+
+alert(msg);
+google.script.run.withSuccessHandler(buildhtmlmodal).getFileList();
+}
 </script>

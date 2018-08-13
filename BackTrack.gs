@@ -15,11 +15,11 @@ function filter(batch, newBottles, sheet) {
     };
     LOGDATA.data.push(['New Bottles:', newBottles]);
     if (sheet == 'Production') {
-        LOGDATA.data = LOGDATA.data.concat(fromProduction(batch, newBottles));
+        LOGDATA.data.concat(fromProduction(batch, newBottles));
     } else {
-        LOGDATA.data = LOGDATA.data.concat(fromPackaging(batch, newBottles));
+        LOGDATA.data.concat(fromPackaging(batch, newBottles));
     }
-   LOGDATA.data = LOGDATA.data.concat(updateOrder(batch, newBottles, sheet));
+    LOGDATA.data.concat(updateOrder(batch, newBottles, sheet));
     logItem(LOGDATA);
 }
 

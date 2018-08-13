@@ -6529,8 +6529,8 @@ alert(msg);
 google.script.run.withSuccessHandler(buildFileList).getFileList();
 }
 
-function buildFileList(arr){
-
+function buildFileList(rett){
+var arr = rett[0];
 var html ='';
 for(var i =0;i<arr.length;i++){
 

@@ -6467,7 +6467,7 @@ function verifyUserResult(result){
 function buildbackupAndRestore(arr){
 var html = '';
 html+='\
-<div id="restoreBody"><h2>Backup and Restore</h2><ul id="restoreList" class="list-group"><div><p id="restoreStatus"></p></div>';
+<div id="restoreBody"><h2>Backup and Restore</h2><div><p id="restoreStatus"></p></div><ul id="restoreList" class="list-group">';
 for(var i =0;i<arr.length;i++){
 
 html+='<li class="list-group-item" value = "'+arr[i]+'">\
@@ -6526,6 +6526,22 @@ $("#updating").css("display", "none");
 function saveandrestoremsg(msg){
 
 alert(msg);
-google.script.run.withSuccessHandler(buildhtmlmodal).getFileList();
+google.script.run.withSuccessHandler(buildFileList).getFileList();
+}
+
+function buildFileList(arr){
+
+var html ='';
+for(var i =0;i<arr.length;i++){
+
+html+='<li class="list-group-item" value = "'+arr[i]+'">\
+<div class="radio">\
+  <label><input style="margin: 0 20px;" type="radio" value="'+arr[i]+'" name="restoreradio">'+formatDateDisplay2(parseInt(arr[i].replace('.gz',''),10))+'</label>\
+</div>\
+</li>';
+
+}
+$('#restoreList').html(html);
+
 }
 </script>

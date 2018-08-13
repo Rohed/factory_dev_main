@@ -7,7 +7,7 @@ function createBackup() {
   }
   var url='http://212.69.229.10:4000/'+NODE_PATH+'/createbackup?path='+NODE_PATH;
   var response=UrlFetchApp.fetch(url, params).getContentText();
-  Utilities.sleep(25000);
+  Utilities.sleep(30000);
   return 'Created';
 }
 function deleteBackup(filename) {

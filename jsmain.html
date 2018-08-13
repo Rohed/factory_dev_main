@@ -6526,6 +6526,7 @@ $("#updating").css("display", "none");
 function saveandrestoremsg(msg){
 
 alert(msg);
+
 google.script.run.withSuccessHandler(buildFileList).getFileList();
 }
 
@@ -6541,6 +6542,7 @@ html+='<li class="list-group-item" value = "'+arr[i]+'">\
 </li>';
 
 }
+$("#updating").css("display", "none");
 $('#restoreList').html(html);
 
 }

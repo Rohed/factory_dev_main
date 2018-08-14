@@ -1031,7 +1031,7 @@ Logger.log(sheetItem);
           base.removeData('Packaging/' + sheetItem[0]);
           base.removeData('Shipping/' + sheetItem[0]);
           if(key=='delete'){
-            
+            LogDARTransaction(sheetItem[0]);
             base.removeData('Orders/' + sheetItem[0]);
           
           }else{
@@ -1057,6 +1057,7 @@ Logger.log(sheetItem);
             data.labeling_status = 0;
             data.packaging_status = 0;
               data.wentNegative=false;
+               LogRTransaction(sheetItem[0]);
               base.updateData('Orders/' + sheetItem[0],data);
           }
         }

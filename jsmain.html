@@ -6546,4 +6546,13 @@ $("#updating").css("display", "none");
 $('#restoreList').html(html);
 
 }
+
+function refreshOrders(){
+$("#updating").css("display", "block");
+google.script.run.withSuccessHandler(refreshOrdersMSG).refreshOrderPC();
+}
+function refreshOrdersMSG(msg){
+alert(msg);
+$("#updating").css("display", "none");
+}
 </script>

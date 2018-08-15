@@ -752,8 +752,14 @@ function createRefferenceDBORIG(id) {
 
     return msg + ' \n Updated.';
 }
+function MANUALcreateRefferenceDB(){
+var id = '1nLMH2C3lPCMHqoVTnxLqsI0iB6DJLfs5nnsZZ1C8m0c';
 
-function createRefferenceDB(id) {
+createRefferenceDB(id)
+}
+
+
+function createRefferenceDB(id,id1,id2) {
     // base.removeData('References');
     var LOGDATA = {
         status: true,
@@ -768,6 +774,9 @@ function createRefferenceDB(id) {
     var ss = SpreadsheetApp.openById(id);
     LOGDATA.batch = ss.getId();
     var data = ss.getSheets()[0].getDataRange().getValues();
+  if(data.length>600){
+    return 'Please use less than 600 rows.';
+  }
     var options1 = '{';
     var options2 = '{';
     var options3 = '{';

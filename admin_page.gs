@@ -1023,22 +1023,21 @@ function TESTSEARCHFOR() {
     var searcharr = [];
 
     
-    var params = {
-        orderBy: ['brand'],
-        equalTo: "Jesta Silver",
-
-    }
-    searcharr.push(['Shipping', params]);
+//    var params = {
+//        orderBy: ['brand'],
+//        equalTo: "Jesta Silver",
+//
+//    }
+//    searcharr.push(['Shipping', params]);
 
     var params = {
         orderBy: ['final_status'],
         equalTo: "Not Run",
 
     }
-    searcharr.push(['Shipping', params]);
+    searcharr.push(['Orders', params]);
 
-
-    var data=searchFor(searcharr);
+   var data=searchFor(searcharr);
     Logger.log(data);
 }
 
@@ -1698,4 +1697,52 @@ function checkStatus(SELECTED){
   
     return getBatchInfo(batches,'statuscheck')
  
+}
+
+
+function refreshOrderPC(){
+
+var list=JSONtoARR(base.getData('Orders')).filter(function(item){
+    return item.final_status==0;
+  });
+
+  for(var i=0;i<list.length;i++){
+    if(list[i].final_status==0){
+      var dataPC = base.getData("References/ProductCodes/"+list[i].productcode)
+
+          list[i].boxname=dataPC.boxname;
+          list[i].fill=dataPC.fill;
+          list[i].brand= dataPC.brand;
+          list[i].brandSKU= dataPC.brandSKU;
+          list[i].flavour= dataPC.flavour;
+          list[i].recipe= dataPC.recipe;
+          list[i].btype= dataPC.btype;
+          list[i].lid= dataPC.lid;
+          list[i].botSKU= dataPC.botSKU;
+          list[i].lidSKU= dataPC.lidSKU;
+          list[i].packaging= dataPC.packaging;
+          list[i].packagingType= dataPC.packagingType;
+          list[i].productcode= dataPC.prod;
+          list[i].productdescription= dataPC.descr;
+      if (list[i].ppb) {
+        list[i].botlabel = dataPC.ppbotlabel;
+        list[i].botlabelsku = dataPC.ppbotlabelsku;
+      } else {
+        list[i].botlabel = dataPC.botlabel;
+        list[i].botlabelsku = dataPC.botlabelsku;
+      }
+      if (list[i].ppp) {
+        list[i].packlabel = dataPC.pppacklabel;
+        list[i].packlabelsku = dataPC.pppacklabelsku;
+      } else {
+        list[i].packlabel = dataPC.packlabel;
+        list[i].packlabelsku = dataPC.packlabelsku;
+      }
+      
+      base.updateData('Orders/'+list[i].batch,list[i]);
+      }
+      
+    
+  }
+return "Completed";
 }

@@ -934,6 +934,10 @@ var forord=false;
                     if (params.equalTo == 'Not Run') {
                         params.orderBy[0] = 'final_status';
                         params.equalTo = 0;
+                        var data = JSONtoARR(base.getData(page)).filter(function(item){
+                        return item.final_status==0;
+                      });
+                        return [page, data];
                     } else if (params.equalTo == 'Busy') {
                         params.orderBy[0] = 'final_status';
                         params.equalTo = 'started';
@@ -942,6 +946,10 @@ var forord=false;
                       params.orderBy[0] = 'wentNegative';
                       params.equalTo = true;
                       neg=true;
+                      var data =  JSONtoARR(base.getData(page)).filter(function(item){
+                        return item.wentNegative;
+                      });
+                     return [page, data];
                     }
                 } else if (page == 'MixingTeam') {
                     if (params.equalTo == 'Busy') {

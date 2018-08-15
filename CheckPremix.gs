@@ -406,12 +406,13 @@ function checkColoredPremix(data){
             dat3.premixed = 0;
         }
 
-        base.updateData('Orders/' + data.batch, dat3)
+        
 
 
 
 
-        var newmixvol = data.QTY - premixstock;
+        var newmixvol = data.QTY - dat3.premixed;
+      base.updateData('Orders/' + data.batch, dat3)
         data.QTY = newmixvol;
 
       var PMIXRUN = CheckPremixed(data);

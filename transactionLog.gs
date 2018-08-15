@@ -63,7 +63,7 @@ function LogTransaction(usageArr){
   }
 
   var lastRow= sheet.getLastRow();
-  lastRow = lastRow > 2 ? lastRow +=4 : lastRow +1;
+  lastRow = lastRow +1;
   sheet.insertRowsAfter(sheet.getMaxRows(), usageArr.length);
 //  sheet.getRange(lastRow, 1).setBackground('#D9A744').setValue('NEW LOG ' + formattedDate);
   sheet.getRange(lastRow+1, 1, usageArr.length, usageArr[0].length).setValues(usageArr);

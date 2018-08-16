@@ -153,30 +153,30 @@ function checkStockValues(BATCHES) {
                   
                   
                   
-                   var colorCheck = base.getData('Colors/' + data.Color.sku);
+                   var colorCheck = base.getData('Colors/' + data.recipe.Color.sku);
                   if (!colorCheck) {
                     var colorCheck = {
                       Running: 0
                     };
                   }
-                  var exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                  var exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                   if (exists1 == -1) {
                     
-                    OrigColorsArr.push([data.Color.sku, colorCheck.Running]);
-                    exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                    OrigColorsArr.push([data.recipe.Color.sku, colorCheck.Running]);
+                    exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                   }
                   
-                  var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.Color.val * data.QTY *10);
+                  var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.recipe.Color.val * data.QTY *10);
                   OrigColorsArr[exists1][1] = ColorOBJ.running;
                   
-                  var exists2 = colorsArr.getIndex(data.Color.sku);
+                  var exists2 = colorsArr.getIndex(data.recipe.Color.sku);
                   if (exists2 == -1) {
                     
-                    colorsArr.push([data.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.Color.val * data.QTY*10])
+                    colorsArr.push([data.recipe.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.recipe.Color.val * data.QTY*10])
                   } else {
                     colorsArr[exists2][1] += ColorOBJ.used;
                     colorsArr[exists2][2] += ColorOBJ.left;
-                     colorsArr[exists2][3] += data.Color.val * data.QTY *10;
+                     colorsArr[exists2][3] += data.recipe.Color.val * data.QTY *10;
                   }
                   
                   
@@ -226,31 +226,31 @@ function checkStockValues(BATCHES) {
                       flavoursArr[exists2][3] += data.flavrecipe;
                 }
 
-                if(data.Color){
-                  var colorCheck = base.getData('Colors/' + data.Color.sku);
+                if(data.recipe.Color){
+                  var colorCheck = base.getData('Colors/' + data.recipe.Color.sku);
                   if (!colorCheck) {
                     var colorCheck = {
                       Running: 0
                     };
                   }
-                  var exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                  var exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                   if (exists1 == -1) {
                     
-                    OrigColorsArr.push([data.Color.sku, colorCheck.Running]);
-                    exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                    OrigColorsArr.push([data.recipe.Color.sku, colorCheck.Running]);
+                    exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                   }
                   
-                  var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.Color.val * data.QTY *10);
+                  var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.recipe.Color.val * data.QTY *10);
                   OrigColorsArr[exists1][1] = ColorOBJ.running;
                   
-                  var exists2 = colorsArr.getIndex(data.Color.sku);
+                  var exists2 = colorsArr.getIndex(data.recipe.Color.sku);
                   if (exists2 == -1) {
                     
-                    colorsArr.push([data.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.Color.val * data.QTY*10])
+                    colorsArr.push([data.recipe.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.recipe.Color.val * data.QTY*10])
                   } else {
                     colorsArr[exists2][1] += ColorOBJ.used;
                     colorsArr[exists2][2] += ColorOBJ.left;
-                     colorsArr[exists2][3] += data.Color.val * data.QTY *10;
+                     colorsArr[exists2][3] += data.recipe.Color.val * data.QTY *10;
                   }
                   
                 
@@ -274,7 +274,7 @@ function checkStockValues(BATCHES) {
                 
         }
             } else if (suffix == 'U') {
-             if(data.Color){
+             if(data.recipe.Color){
                       var premix = getPremixSKU(data,true);
                       
                       var premixCheck = base.getData("PremixesTypes/" + premix);
@@ -301,30 +301,30 @@ function checkStockValues(BATCHES) {
                         PremixArr[exists2][1] += pmixOBJ.used;
                       }
                      if (pmixOBJ.left <= 0) {continue;}else{
-                       var colorCheck = base.getData('Colors/' + data.Color.sku);
+                       var colorCheck = base.getData('Colors/' + data.recipe.Color.sku);
                        if (!colorCheck) {
                          var colorCheck = {
                            Running: 0
                          };
                        }
-                       var exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                       var exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                        if (exists1 == -1) {
                          
-                         OrigColorsArr.push([data.Color.sku, colorCheck.Running]);
-                         exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                         OrigColorsArr.push([data.recipe.Color.sku, colorCheck.Running]);
+                         exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                        }
                        
-                       var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.Color.val * data.QTY *10);
+                       var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.recipe.Color.val * data.QTY *10);
                        OrigColorsArr[exists1][1] = ColorOBJ.running;
                        
-                       var exists2 = colorsArr.getIndex(data.Color.sku);
+                       var exists2 = colorsArr.getIndex(data.recipe.Color.sku);
                        if (exists2 == -1) {
                          
-                         colorsArr.push([data.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.Color.val * data.QTY*10])
+                         colorsArr.push([data.recipe.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.recipe.Color.val * data.QTY*10])
                        } else {
                          colorsArr[exists2][1] += ColorOBJ.used;
                          colorsArr[exists2][2] += ColorOBJ.left;
-                         colorsArr[exists2][3] += data.Color.val * data.QTY *10;
+                         colorsArr[exists2][3] += data.recipe.Color.val * data.QTY *10;
                        }
                        
                        
@@ -606,7 +606,7 @@ function checkStockValues(BATCHES) {
                 if (UBOBJ.left > 0) {
                     data.QTY = (UBOBJ.left / 1000) * data.fill;
                     data.bottles = UBOBJ.left;
-                    if(data.Color){
+                    if(data.recipe.Color){
                       var premix = getPremixSKU(data,true);
                       
                       var premixCheck = base.getData("PremixesTypes/" + premix);
@@ -633,30 +633,30 @@ function checkStockValues(BATCHES) {
                         PremixArr[exists2][1] += pmixOBJ.used;
                       }
                      if (pmixOBJ.left <= 0) {continue;}else{
-                       var colorCheck = base.getData('Colors/' + data.Color.sku);
+                       var colorCheck = base.getData('Colors/' + data.recipe.Color.sku);
                        if (!colorCheck) {
                          var colorCheck = {
                            Running: 0
                          };
                        }
-                       var exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                       var exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                        if (exists1 == -1) {
                          
-                         OrigColorsArr.push([data.Color.sku, colorCheck.Running]);
-                         exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                         OrigColorsArr.push([data.recipe.Color.sku, colorCheck.Running]);
+                         exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                        }
                        
-                       var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.Color.val * data.QTY *10);
+                       var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.recipe.Color.val * data.QTY *10);
                        OrigColorsArr[exists1][1] = ColorOBJ.running;
                        
-                       var exists2 = colorsArr.getIndex(data.Color.sku);
+                       var exists2 = colorsArr.getIndex(data.recipe.Color.sku);
                        if (exists2 == -1) {
                          
-                         colorsArr.push([data.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.Color.val * data.QTY*10])
+                         colorsArr.push([data.recipe.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.recipe.Color.val * data.QTY*10])
                        } else {
                          colorsArr[exists2][1] += ColorOBJ.used;
                          colorsArr[exists2][2] += ColorOBJ.left;
-                          colorsArr[exists2][3] += data.Color.val * data.QTY *10;
+                          colorsArr[exists2][3] += data.recipe.Color.val * data.QTY *10;
                        }
                        
                        
@@ -1033,7 +1033,7 @@ function checkStockValues(BATCHES) {
                             if (UBOBJ.left > 0) {
                                 data.QTY = (UBOBJ.left / 1000) * data.fill;
                                 data.bottles = UBOBJ.left;
-                              if(data.Color){
+                              if(data.recipe.Color){
                                 var premix = getPremixSKU(data,true);
                                 
                                 var premixCheck = base.getData("PremixesTypes/" + premix);
@@ -1060,30 +1060,30 @@ function checkStockValues(BATCHES) {
                                   PremixArr[exists2][1] += pmixOBJ.used;
                                 }
                                 if (pmixOBJ.left <= 0) {continue;}else{
-                       var colorCheck = base.getData('Colors/' + data.Color.sku);
+                       var colorCheck = base.getData('Colors/' + data.recipe.Color.sku);
                        if (!colorCheck) {
                          var colorCheck = {
                            Running: 0
                          };
                        }
-                       var exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                       var exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                        if (exists1 == -1) {
                          
-                         OrigColorsArr.push([data.Color.sku, colorCheck.Running]);
-                         exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                         OrigColorsArr.push([data.recipe.Color.sku, colorCheck.Running]);
+                         exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                        }
                        
-                       var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.Color.val * data.QTY *10);
+                       var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.recipe.Color.val * data.QTY *10);
                        OrigColorsArr[exists1][1] = ColorOBJ.running;
                        
-                       var exists2 = colorsArr.getIndex(data.Color.sku);
+                       var exists2 = colorsArr.getIndex(data.recipe.Color.sku);
                        if (exists2 == -1) {
                          
-                         colorsArr.push([data.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.Color.val * data.QTY*10])
+                         colorsArr.push([data.recipe.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.recipe.Color.val * data.QTY*10])
                        } else {
                          colorsArr[exists2][1] +=ColorOBJ.used;
                          colorsArr[exists2][2] += ColorOBJ.left;
-                        colorsArr[exists2][3] += data.Color.val * data.QTY *10;
+                        colorsArr[exists2][3] += data.recipe.Color.val * data.QTY *10;
                        }
                        
                        
@@ -1276,7 +1276,7 @@ function checkStockValues(BATCHES) {
                             data.QTY = (UBOBJ.left / 1000) * data.fill;
                             data.bottles = UBOBJ.left;
                             
-                              if(data.Color){
+                              if(data.recipe.Color){
                                 var premix = getPremixSKU(data,true);
                                 
                                 var premixCheck = base.getData("PremixesTypes/" + premix);
@@ -1303,30 +1303,30 @@ function checkStockValues(BATCHES) {
                                   PremixArr[exists2][1] += pmixOBJ.used;
                                 }
                                 if (pmixOBJ.left <= 0) {continue;}else{
-                       var colorCheck = base.getData('Colors/' + data.Color.sku);
+                       var colorCheck = base.getData('Colors/' + data.recipe.Color.sku);
                        if (!colorCheck) {
                          var colorCheck = {
                            Running: 0
                          };
                        }
-                       var exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                       var exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                        if (exists1 == -1) {
                          
-                         OrigColorsArr.push([data.Color.sku, colorCheck.Running]);
-                         exists1 = OrigColorsArr.getIndex(data.Color.sku);
+                         OrigColorsArr.push([data.recipe.Color.sku, colorCheck.Running]);
+                         exists1 = OrigColorsArr.getIndex(data.recipe.Color.sku);
                        }
                        
-                       var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.Color.val * data.QTY *10);
+                       var ColorOBJ = checkALL(OrigColorsArr[exists1][1],data.recipe.Color.val * data.QTY *10);
                        OrigColorsArr[exists1][1] = ColorOBJ.running;
                        
-                       var exists2 = colorsArr.getIndex(data.Color.sku);
+                       var exists2 = colorsArr.getIndex(data.recipe.Color.sku);
                        if (exists2 == -1) {
                          
-                         colorsArr.push([data.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.Color.val * data.QTY*10])
+                         colorsArr.push([data.recipe.Color.sku, ColorOBJ.used, ColorOBJ.left ,data.recipe.Color.val * data.QTY*10])
                        } else {
                          colorsArr[exists2][1] += ColorOBJ.used;
                          colorsArr[exists2][2] += ColorOBJ.left;
-                           colorsArr[exists2][3] += data.Color.val * data.QTY *10;
+                           colorsArr[exists2][3] += data.recipe.Color.val * data.QTY *10;
                        }
                        
                        

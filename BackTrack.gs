@@ -14,12 +14,13 @@ function filter(batch, newBottles, sheet) {
         data: new Array()
     };
     LOGDATA.data.push(['New Bottles:', newBottles]);
+    var item = base.getData(sheet+'/' + batch);
     if (sheet == 'Production') {
         LOGDATA.data = LOGDATA.data.concat(fromProduction(batch, newBottles));
     } else {
         LOGDATA.data = LOGDATA.data.concat(fromPackaging(batch, newBottles));
     }
-   LOGDATA.data = LOGDATA.data.concat(updateOrder(batch, newBottles, sheet));
+   LOGDATA.data = LOGDATA.data.concat(updateOrder(batch, newBottles, sheet,item));
     logItem(LOGDATA);
 }
 
@@ -389,27 +390,28 @@ var USAGE ={};
     return LOGARR;
 }
 
-function updateOrder(batch, bottles, sheet) {
+function updateOrder(batch, bottles, sheet,originalItem) {
         var LOGARR = [];
         var order = base.getData('Orders/' + batch);
-        var item = base.getData(sheet+'/' + batch);
+      
         if (sheet == 'Production') {
             var dat1 = {
                 partialProduction: bottles,
-                removedProduction: item.bottles - bottles
+                removedProduction: originalItem.bottles - bottles
             };
             LOGARR.push(['Partial Production:', bottles]);
-            LOGARR.push(['Removed:', item.bottles - bottles]);
+            LOGARR.push(['Removed:', originalItem.bottles - bottles]);
         } else {
             var dat1 = {
                 partialPackaging: bottles,
-                removedPackaging: item.bottles - bottles
+                removedPackaging: originalItem.bottles - bottles
             };
             LOGARR.push(['Partial Packaging:', bottles]);
-            LOGARR.push(['Removed:', item.bottles - bottles]);
+            LOGARR.push(['Removed:', originalItem.bottles - bottles]);
         }
         base.updateData('Orders/' + batch, dat1);
-        var leftover = item.bottles - bottles;
+        var item = base.getData(sheet+'/' + batch);
+        var leftover = item.bottles;
         //NEWORDER
         var object = {
             fill: order.fill,
@@ -1048,7 +1050,7 @@ Logger.log(sheetItem);
             data.unbranded = 0;
             data.branded = 0;
             data.premixed = 0;
-            data.coloredpremix = 0;
+            data.recipe.Coloredpremix = 0;
             data.mixing = 0;
             data.backtubed = 0;
             data.mixing_status = 0;

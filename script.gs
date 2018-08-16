@@ -22,7 +22,7 @@ function toPremixColoring(data){
         data.Completed=0;
         data.Notes='';
         data.movedtoNext=0;
-        data.ColorQTY=data.Color.val*data.QTY*10;
+        data.ColorQTY=data.recipe.Color.val*data.QTY*10;
         data.Location=0;
         data.row=row;
         data.userset=false;

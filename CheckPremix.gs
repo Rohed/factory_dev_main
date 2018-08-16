@@ -39,15 +39,15 @@ function CheckPremixed(data) {
         return {LogData:LOGARR,USAGE:USAGE};
       }
     }
-  if(data.Color){
+  if(data.recipe.Color){
     USAGE.Color = {
-      sku:data.Color.sku,
-      name:data.Color.name,
-      qty: data.QTY*10*data.Color.val,
+      sku:data.recipe.Color.sku,
+      name:data.recipe.Color.name,
+      qty: data.QTY*10*data.recipe.Color.val,
     };
-    data.used.push(['Color/', data.Color.sku, data.QTY*10*data.Color.val]);
-    LOGARR.push(['Color:',data.QTY*10*data.Color.val]);
-    var neg = fromRunningtoReserved('Color/' + data.Color.sku, data.QTY*10*data.Color.val);
+    data.used.push(['Color/', data.recipe.Color.sku, data.QTY*10*data.recipe.Color.val]);
+    LOGARR.push(['Color:',data.QTY*10*data.recipe.Color.val]);
+    var neg = fromRunningtoReserved('Color/' + data.recipe.Color.sku, data.QTY*10*data.recipe.Color.val);
     if (neg<0) {
       LOGARR = LOGARR.concat(returnData(data,neg))
       return {LogData:LOGARR,USAGE:USAGE};
@@ -451,7 +451,7 @@ function returnData(data,neg) {
       }
 
     base.updateData('Orders/' + data.batch, dat);
-    var sheets2 = ['Production', 'Printing', 'Labelling', 'Packaging', 'Shipping'];
+    var sheets2 = ['PremixColoring','Production', 'Printing', 'Labelling', 'Packaging', 'Shipping'];
 
     for (var i = 0; i < sheets2.length; i++) {
         try{

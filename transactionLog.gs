@@ -28,7 +28,7 @@ convertUsageToArr(data,USAGE)
 function convertUsageToArr(data,usage){
   var arr = [data.batch,data.orderID];
   var pages=['Packaged Branded','Branded','Unbranded','Premix','Colored Premix',
-             'Mixing','Flavour','Colour','Bottles','Caps',
+             'Mixing','Flavour','Color','Bottles','Caps',
              'Packages','Bottle Label','Pack Label','Pre Bottle Label','Pre Pack Label']
   
   var standardItems = ['sku','name','qty'];
@@ -63,7 +63,7 @@ function LogTransaction(usageArr){
   }
 
   var lastRow= sheet.getLastRow();
-  lastRow = lastRow +1;
+
   sheet.insertRowsAfter(sheet.getMaxRows(), usageArr.length);
 //  sheet.getRange(lastRow, 1).setBackground('#D9A744').setValue('NEW LOG ' + formattedDate);
   sheet.getRange(lastRow+1, 1, usageArr.length, usageArr[0].length).setValues(usageArr);

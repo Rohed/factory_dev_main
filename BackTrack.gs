@@ -407,11 +407,12 @@ function updateOrder(batch, bottles, sheet,originalItem) {
                 removedPackaging: originalItem.bottles - bottles
             };
             LOGARR.push(['Partial Packaging:', bottles]);
-            LOGARR.push(['Removed:', originalItem.bottles - bottles]);
+            LOGARR.push(['Removed:', originalItem.bottles ]);
         }
         base.updateData('Orders/' + batch, dat1);
+        var leftover = originalItem.bottles - bottles;
         var item = base.getData(sheet+'/' + batch);
-        var leftover = item.bottles;
+ 
         //NEWORDER
         var object = {
             fill: order.fill,

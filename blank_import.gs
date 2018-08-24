@@ -174,7 +174,7 @@ function updateGeneratedDataPing() {
     
     logItem(LOGDATA);
     base.removeData('importBlankPCPD');
-    var resp2=createRefferenceDB2(resp.id,data)
+  //  var resp2=createRefferenceDB2(resp.id,data)
     return  [true,'updateGeneratedData',resp2];
   } catch (e) {
     Logger.log(e);

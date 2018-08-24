@@ -4,6 +4,7 @@ filter('913933', 5, 'Production')
 }
 
 function filter(batch, newBottles, sheet) {
+newBottles = parseInt(newBottles,10);
     var LOGDATA = {
         status: true,
         msg: '',
@@ -52,6 +53,7 @@ function fromProduction(batch, bottles) {
   LOGARR.push(['tomix: ' , tomix]);
    var amount = 0;
     var helper = 0;
+ 
   if(tominusP>0){
     if(tominusP>volume){
       
@@ -391,6 +393,7 @@ var USAGE ={};
 }
 
 function updateOrder(batch, bottles, sheet,originalItem) {
+
         var LOGARR = [];
         var order = base.getData('Orders/' + batch);
       
